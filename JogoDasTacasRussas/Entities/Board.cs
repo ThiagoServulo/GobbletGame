@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
     class Board
     {
-        PictureBox[] pictureBoxes = new PictureBox[102];
+        private PictureBox[] _pictureBoxes = new PictureBox[102];
 
         public Board(Form1 form)
         {
-            pictureBoxes = new PictureBox[]{ 
+            _pictureBoxes = new PictureBox[]{ 
                 form.pictureBox1,   form.pictureBox2,   form.pictureBox3,   form.pictureBox4,   form.pictureBox6,   
                 form.pictureBox7,   form.pictureBox8,   form.pictureBox9,   form.pictureBox11,  form.pictureBox12, 
                 form.pictureBox13,  form.pictureBox14,  form.pictureBox16,  form.pictureBox17,  form.pictureBox18,  
@@ -35,16 +36,22 @@ namespace JogoDasTacasRussas.Entities
                 form.pictureBox119, form.pictureBox137, form.pictureBox138, form.pictureBox139, form.pictureBox140,
                 form.pictureBox141, form.pictureBox142};
 
-            foreach (PictureBox pictureBox in pictureBoxes)
+            foreach (PictureBox pictureBox in _pictureBoxes)
             {
                 DrawLine(pictureBox);
             }
 
-            Size size = form.pictureBox5.Size;
-            DrawCircle(form.pictureBox5,  Color.Black,  5,  5, size.Width - 10, size.Height - 10);
-            DrawCircle(form.pictureBox10, Color.Black, 10, 10, size.Width - 20, size.Height - 20);
-            DrawCircle(form.pictureBox20, Color.Black, 15, 15, size.Width - 30, size.Height - 30);
-            DrawCircle(form.pictureBox15, Color.Black, 20, 20, size.Width - 40, size.Height - 40);
+            // área de teste
+            Circle cir = new Circle(Color.Black, CircleType.Type1);
+            DrawCircle(form.pictureBox5, cir);
+            Circle cir2 = new Circle(Color.Black, CircleType.Type2);
+            DrawCircle(form.pictureBox10, cir2);
+            if(cir2.CompareTo(cir) > 0)
+            {
+                DrawCircle(form.pictureBox15, cir2);
+            }
+
+            DrawCircle(form.pictureBox10, null);
         }
 
         public void DrawLine(PictureBox pictureBox)
@@ -55,17 +62,17 @@ namespace JogoDasTacasRussas.Entities
             paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
         }
 
-        private void DrawCircle(PictureBox pictureBox, Color color, int x, int y, int width, int height)
+        private void DrawCircle(PictureBox pictureBox, Circle circle)
         {
-            if (x == y && y == width && width == height && height == 0)
+            if (circle == null)
             {
                 pictureBox.Dispose();
                 return;
             }
 
             Graphics paper = pictureBox.CreateGraphics();
-            SolidBrush solidBrush = new SolidBrush(color);
-            paper.FillEllipse(solidBrush, x, y, width, height);
+            SolidBrush solidBrush = new SolidBrush(circle.color);
+            paper.FillEllipse(solidBrush, circle.x, circle.y, circle.width, circle.height);
         }
     }
 }

@@ -6,9 +6,9 @@ namespace JogoDasTacasRussas.Entities.Enums
 {
     enum CircleType: int
     {
-        CircleType1 = 1,
-        CircleType2 = 2,
-        CircleType3 = 3,
-        CircleType4 = 4
+        Type1 = 1,
+        Type2 = 2,
+        Type3 = 3,
+        Type4 = 4
     }
 }
