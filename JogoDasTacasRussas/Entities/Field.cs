@@ -68,7 +68,7 @@ namespace JogoDasTacasRussas.Entities
 
             Graphics paper = this.pictureBox.CreateGraphics();
 
-            if (circle.colorInfo.Type == ColorType.Primary)
+            if (circle.colorInfo.TypeCurrent == ColorType.Primary)
             {
                 solidBrush = new SolidBrush(circle.colorInfo.Primary);
             }

@@ -51,7 +51,7 @@ namespace JogoDasTacasRussas.Entities
                 new Field(form.pictureBoxX4),  new Field(form.pictureBoxX5),  new Field(form.pictureBoxX6),
                 new Field(form.pictureBoxX7),  new Field(form.pictureBoxX8),  new Field(form.pictureBoxX9),
                 new Field(form.pictureBoxX10), new Field(form.pictureBoxX11), new Field(form.pictureBoxX12)};
-            InitFieldsPlayer(_fieldsPlayerX, Color.DarkRed, Color.IndianRed);
+            InitFields(_fieldsPlayerX, Color.DarkRed, Color.IndianRed);
 
             // Inicialização das peças do Jogador Y
             _fieldsPlayerY = new Field[] {
@@ -59,7 +59,7 @@ namespace JogoDasTacasRussas.Entities
                 new Field(form.pictureBoxY4),  new Field(form.pictureBoxY5),  new Field(form.pictureBoxY6),
                 new Field(form.pictureBoxY7),  new Field(form.pictureBoxY8),  new Field(form.pictureBoxY9),
                 new Field(form.pictureBoxY10), new Field(form.pictureBoxY11), new Field(form.pictureBoxY12)};
-            InitFieldsPlayer(_fieldsPlayerY, Color.DarkBlue, Color.LightBlue);
+            InitFields(_fieldsPlayerY, Color.DarkBlue, Color.LightBlue);
 
             // Inicialização do tabuleiro
             _fieldsBoard = new Field[] {
@@ -67,7 +67,7 @@ namespace JogoDasTacasRussas.Entities
                 new Field(form.pictureBoxB1), new Field(form.pictureBoxB2), new Field(form.pictureBoxB3), new Field(form.pictureBoxB4),  
                 new Field(form.pictureBoxC1), new Field(form.pictureBoxC2), new Field(form.pictureBoxC3), new Field(form.pictureBoxC4),
                 new Field(form.pictureBoxD1), new Field(form.pictureBoxD2), new Field(form.pictureBoxD3), new Field(form.pictureBoxD4)};
-            InitFieldsPlayer(_fieldsBoard, null, null);
+            InitFields(_fieldsBoard, null, null);
 
             // Concatena todos os campos do tabuleiro
             _allFields = new Field[][] { _fieldsBoard, _fieldsPlayerY, _fieldsPlayerX };
@@ -81,7 +81,7 @@ namespace JogoDasTacasRussas.Entities
             paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
         }
 
-        public void InitFieldsPlayer(Field[] fieldsPlayer, Color? primaryColor, Color? secundaryColor)
+        public void InitFields(Field[] fieldsPlayer, Color? primaryColor, Color? secundaryColor)
         {
             for (int i = 0; i < fieldsPlayer.Length; i++)
             {

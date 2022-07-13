@@ -10,30 +10,30 @@ namespace JogoDasTacasRussas.Entities
     {
         public Color Primary;
         public Color Secundary;
-        public ColorType Type;
+        public ColorType TypeCurrent;
 
         public ColorInfo(Color primary, Color secundary)
         {
             this.Primary = primary;
             this.Secundary = secundary;
-            this.Type = ColorType.Primary;
+            this.TypeCurrent = ColorType.Primary;
         }
 
         public void ChangeColor()
         {
-            if(this.Type == ColorType.Primary)
+            if(this.TypeCurrent == ColorType.Primary)
             {
-                this.Type = ColorType.Secundary;
+                this.TypeCurrent = ColorType.Secundary;
             }
             else
             {
-                this.Type = ColorType.Primary;
+                this.TypeCurrent = ColorType.Primary;
             }
         }
 
         public ColorType GetColorType()
         {
-            return this.Type;
+            return this.TypeCurrent;
         }
     }
 }
