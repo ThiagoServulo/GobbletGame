@@ -13,7 +13,7 @@ namespace JogoDasTacasRussas.Entities
         private Field[] _fieldsPlayerX = new Field[12];
         private Field[] _fieldsPlayerY = new Field[12];
         private Field[] _fieldsBoard   = new Field[16];
-
+        private Field[][] _allFields;
         public Board(Form1 form)
         {
             // Inicialização do design do tabuleiro
@@ -68,6 +68,9 @@ namespace JogoDasTacasRussas.Entities
                 new Field(form.pictureBoxC1), new Field(form.pictureBoxC2), new Field(form.pictureBoxC3), new Field(form.pictureBoxC4),
                 new Field(form.pictureBoxD1), new Field(form.pictureBoxD2), new Field(form.pictureBoxD3), new Field(form.pictureBoxD4)};
             InitFieldsPlayer(_fieldsBoard, null, null);
+
+            // Concatena todos os campos do tabuleiro
+            _allFields = new Field[][] { _fieldsBoard, _fieldsPlayerY, _fieldsPlayerX };
         }
 
         public void DrawLine(PictureBox pictureBox)
@@ -105,16 +108,25 @@ namespace JogoDasTacasRussas.Entities
             }
         }
 
-        public void Teste(PictureBox pictureBox)
+        public bool Teste(PictureBox pictureBox)
         {
-            foreach(Field field in _fieldsPlayerX)
+            Field field = GetField(pictureBox);
+            return (field.ChangeCircleColor());
+        }
+
+        public Field GetField(PictureBox pictureBox)
+        {
+            foreach(Field[] listFields in _allFields)
             {
-                if(field.pictureBox == pictureBox)
+                foreach (Field field in listFields)
                 {
-                    field.ChangeCircleColor(Color.DarkRed);
+                    if (field.pictureBox == pictureBox)
+                    {
+                        return field;
+                    }
                 }
             }
-
+            return null;
         }
     }
 }

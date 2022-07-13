@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
     class Field
     {
-        // Macros
-        int PRIMARY_COLOR = 1;
-        int SECUNDARY_COLOR = 2;
-
         public PictureBox pictureBox;
         private Stack<Circle> _value = new Stack<Circle>();
 
@@ -24,22 +21,22 @@ namespace JogoDasTacasRussas.Entities
         public void AddCircle(Circle circle)
         {
             this._value.Push(circle);
-            DrawCircle(circle, PRIMARY_COLOR);
+            DrawCircle(circle);
         }
 
         public void PopCircle()
         {
             this._value.Pop();
-            DrawCircle(GetLast(), PRIMARY_COLOR);
+            DrawCircle(GetLast());
         }
-
-        public bool ChangeCircleColor(Color color)
+        public bool ChangeCircleColor()
         {
             Circle circle = GetLast();
-            if (circle.primaryColor == color)
+            if (circle != null)
             {
                 this._value.Pop();
-                DrawCircle(circle, SECUNDARY_COLOR);
+                circle.colorInfo.ChangeColor();
+                AddCircle(circle);
                 return true;
             }
             return false;
@@ -59,7 +56,7 @@ namespace JogoDasTacasRussas.Entities
             this._value.Clear();
         }
 
-        private void DrawCircle(Circle circle, int colorType)
+        private void DrawCircle(Circle circle)
         {
             SolidBrush solidBrush;
 
@@ -71,13 +68,13 @@ namespace JogoDasTacasRussas.Entities
 
             Graphics paper = this.pictureBox.CreateGraphics();
 
-            if (colorType == 1)
+            if (circle.colorInfo.Type == ColorType.Primary)
             {
-                solidBrush = new SolidBrush(circle.primaryColor);
+                solidBrush = new SolidBrush(circle.colorInfo.Primary);
             }
             else
             {
-                solidBrush = new SolidBrush(circle.secundaryColor);
+                solidBrush = new SolidBrush(circle.colorInfo.Secundary);
             }
 
             paper.FillEllipse(solidBrush, circle.x, circle.y, circle.width, circle.height);

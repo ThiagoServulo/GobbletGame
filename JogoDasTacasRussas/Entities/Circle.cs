@@ -8,8 +8,7 @@ namespace JogoDasTacasRussas.Entities
 {
     class Circle: IComparable
     {
-        public Color primaryColor;
-        public Color secundaryColor;
+        public ColorInfo colorInfo;
         public int x;
         public int y;
         public int width;
@@ -18,11 +17,10 @@ namespace JogoDasTacasRussas.Entities
 
         public Circle(Color primaryColor, Color secundaryColor, CircleType type)
         {
-            this.primaryColor = primaryColor;
-            this.secundaryColor = secundaryColor;
+            this.colorInfo = new ColorInfo(primaryColor, secundaryColor);
             this.type = type;
-            
-            switch(this.type)
+
+            switch (this.type)
             {
                 case CircleType.Type4:
                     x = y = 5;
