@@ -8,16 +8,18 @@ namespace JogoDasTacasRussas.Entities
 {
     class Circle: IComparable
     {
-        public Color color;
+        public Color primaryColor;
+        public Color secundaryColor;
         public int x;
         public int y;
         public int width;
         public int height;
         public CircleType type;
 
-        public Circle(Color color, CircleType type)
+        public Circle(Color primaryColor, Color secundaryColor, CircleType type)
         {
-            this.color = color;
+            this.primaryColor = primaryColor;
+            this.secundaryColor = secundaryColor;
             this.type = type;
             
             switch(this.type)

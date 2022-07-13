@@ -373,6 +373,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxX1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX1.TabIndex = 7;
             this.pictureBoxX1.TabStop = false;
+            this.pictureBoxX1.Click += new System.EventHandler(this.pictureBoxX1_Click);
             // 
             // pictureBoxX4
             // 

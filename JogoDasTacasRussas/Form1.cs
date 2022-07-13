@@ -34,5 +34,10 @@ namespace JogoDasTacasRussas
         {
 
         }
+
+        private void pictureBoxX1_Click(object sender, EventArgs e)
+        {
+            board.Teste(pictureBoxX1);
+        }
     }
 }

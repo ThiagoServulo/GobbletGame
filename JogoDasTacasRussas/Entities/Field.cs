@@ -8,6 +8,10 @@ namespace JogoDasTacasRussas.Entities
 {
     class Field
     {
+        // Macros
+        int PRIMARY_COLOR = 1;
+        int SECUNDARY_COLOR = 2;
+
         public PictureBox pictureBox;
         private Stack<Circle> _value = new Stack<Circle>();
 
@@ -17,16 +21,28 @@ namespace JogoDasTacasRussas.Entities
             this._value.Clear();
         }
 
-        public void Add(Circle circle)
+        public void AddCircle(Circle circle)
         {
             this._value.Push(circle);
-            DrawCircle(circle);
+            DrawCircle(circle, PRIMARY_COLOR);
         }
 
-        public void Pop()
+        public void PopCircle()
         {
             this._value.Pop();
-            DrawCircle(GetLast());
+            DrawCircle(GetLast(), PRIMARY_COLOR);
+        }
+
+        public bool ChangeCircleColor(Color color)
+        {
+            Circle circle = GetLast();
+            if (circle.primaryColor == color)
+            {
+                this._value.Pop();
+                DrawCircle(circle, SECUNDARY_COLOR);
+                return true;
+            }
+            return false;
         }
 
         public Circle GetLast()
@@ -43,8 +59,10 @@ namespace JogoDasTacasRussas.Entities
             this._value.Clear();
         }
 
-        private void DrawCircle(Circle circle)
+        private void DrawCircle(Circle circle, int colorType)
         {
+            SolidBrush solidBrush;
+
             if (circle == null)
             {
                 this.pictureBox.Dispose();
@@ -52,8 +70,19 @@ namespace JogoDasTacasRussas.Entities
             }
 
             Graphics paper = this.pictureBox.CreateGraphics();
-            SolidBrush solidBrush = new SolidBrush(circle.color);
+
+            if (colorType == 1)
+            {
+                solidBrush = new SolidBrush(circle.primaryColor);
+            }
+            else
+            {
+                solidBrush = new SolidBrush(circle.secundaryColor);
+            }
+
             paper.FillEllipse(solidBrush, circle.x, circle.y, circle.width, circle.height);
         }
+
+
     }
 }

@@ -10,9 +10,13 @@ namespace JogoDasTacasRussas.Entities
     class Board
     {
         private PictureBox[] _pictureBoxes = new PictureBox[102];
-        private Field[] _fieldsPlayer1 = new Field[12];
+        private Field[] _fieldsPlayerX = new Field[12];
+        private Field[] _fieldsPlayerY = new Field[12];
+        private Field[] _fieldsBoard   = new Field[16];
+
         public Board(Form1 form)
         {
+            // Inicialização do design do tabuleiro
             _pictureBoxes = new PictureBox[]{ 
                 form.pictureBox1,   form.pictureBox2,   form.pictureBox3,   form.pictureBox4,   form.pictureBox6,   
                 form.pictureBox7,   form.pictureBox8,   form.pictureBox9,   form.pictureBox11,  form.pictureBox12, 
@@ -41,46 +45,29 @@ namespace JogoDasTacasRussas.Entities
                 DrawLine(pictureBox);
             }
 
-            // área de teste (não sei se deve ficar aqui)
-            _fieldsPlayer1 = new Field[] { 
+            // Inicialização das peças do Jogador X
+            _fieldsPlayerX = new Field[] { 
                 new Field(form.pictureBoxX1),  new Field(form.pictureBoxX2),  new Field(form.pictureBoxX3),
                 new Field(form.pictureBoxX4),  new Field(form.pictureBoxX5),  new Field(form.pictureBoxX6),
                 new Field(form.pictureBoxX7),  new Field(form.pictureBoxX8),  new Field(form.pictureBoxX9),
                 new Field(form.pictureBoxX10), new Field(form.pictureBoxX11), new Field(form.pictureBoxX12)};
+            InitFieldsPlayer(_fieldsPlayerX, Color.DarkRed, Color.IndianRed);
 
-            for(int i = 0; i < _fieldsPlayer1.Length; i++)
-            {
-                if(i < 3)
-                {
-                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type1));
-                }
-                else if (i < 6)
-                {
-                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type2));
-                }
-                else if (i < 9)
-                {
-                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type3));
-                }
-                else
-                {
-                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type4));
-                }
-            }
+            // Inicialização das peças do Jogador Y
+            _fieldsPlayerY = new Field[] {
+                new Field(form.pictureBoxY1),  new Field(form.pictureBoxY2),  new Field(form.pictureBoxY3),
+                new Field(form.pictureBoxY4),  new Field(form.pictureBoxY5),  new Field(form.pictureBoxY6),
+                new Field(form.pictureBoxY7),  new Field(form.pictureBoxY8),  new Field(form.pictureBoxY9),
+                new Field(form.pictureBoxY10), new Field(form.pictureBoxY11), new Field(form.pictureBoxY12)};
+            InitFieldsPlayer(_fieldsPlayerY, Color.DarkBlue, Color.LightBlue);
 
-            /*
-            // área de teste
-            Circle cir = new Circle(Color.Black, CircleType.Type1);
-            DrawCircle(form.pictureBoxX1, cir);
-            Circle cir2 = new Circle(Color.Black, CircleType.Type2);
-            DrawCircle(form.pictureBoxX4, cir2);
-            if(cir2.CompareTo(cir) > 0)
-            {
-                DrawCircle(form.pictureBoxX10, cir2);
-            }
-
-            DrawCircle(form.pictureBoxX4, null);
-            */
+            // Inicialização do tabuleiro
+            _fieldsBoard = new Field[] {
+                new Field(form.pictureBoxA1), new Field(form.pictureBoxA2), new Field(form.pictureBoxA3), new Field(form.pictureBoxA4), 
+                new Field(form.pictureBoxB1), new Field(form.pictureBoxB2), new Field(form.pictureBoxB3), new Field(form.pictureBoxB4),  
+                new Field(form.pictureBoxC1), new Field(form.pictureBoxC2), new Field(form.pictureBoxC3), new Field(form.pictureBoxC4),
+                new Field(form.pictureBoxD1), new Field(form.pictureBoxD2), new Field(form.pictureBoxD3), new Field(form.pictureBoxD4)};
+            InitFieldsPlayer(_fieldsBoard, null, null);
         }
 
         public void DrawLine(PictureBox pictureBox)
@@ -91,17 +78,43 @@ namespace JogoDasTacasRussas.Entities
             paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
         }
 
-        private void DrawCircle(PictureBox pictureBox, Circle circle)
+        public void InitFieldsPlayer(Field[] fieldsPlayer, Color? primaryColor, Color? secundaryColor)
         {
-            if (circle == null)
+            for (int i = 0; i < fieldsPlayer.Length; i++)
             {
-                pictureBox.Dispose();
-                return;
+                if(primaryColor == null || secundaryColor == null)
+                {
+                    fieldsPlayer[i].Clear();
+                }
+                else if (i < 3)
+                {
+                    fieldsPlayer[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type1));
+                }
+                else if (i < 6)
+                {
+                    fieldsPlayer[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type2));
+                }
+                else if (i < 9)
+                {
+                    fieldsPlayer[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type3));
+                }
+                else
+                {
+                    fieldsPlayer[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type4));
+                }
+            }
+        }
+
+        public void Teste(PictureBox pictureBox)
+        {
+            foreach(Field field in _fieldsPlayerX)
+            {
+                if(field.pictureBox == pictureBox)
+                {
+                    field.ChangeCircleColor(Color.DarkRed);
+                }
             }
 
-            Graphics paper = pictureBox.CreateGraphics();
-            SolidBrush solidBrush = new SolidBrush(circle.color);
-            paper.FillEllipse(solidBrush, circle.x, circle.y, circle.width, circle.height);
         }
     }
 }
