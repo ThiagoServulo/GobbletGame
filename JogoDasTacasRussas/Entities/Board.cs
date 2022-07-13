@@ -10,7 +10,7 @@ namespace JogoDasTacasRussas.Entities
     class Board
     {
         private PictureBox[] _pictureBoxes = new PictureBox[102];
-
+        private Field[] _fieldsPlayer1 = new Field[12];
         public Board(Form1 form)
         {
             _pictureBoxes = new PictureBox[]{ 
@@ -41,17 +41,46 @@ namespace JogoDasTacasRussas.Entities
                 DrawLine(pictureBox);
             }
 
-            // área de teste
-            Circle cir = new Circle(Color.Black, CircleType.Type1);
-            DrawCircle(form.pictureBox5, cir);
-            Circle cir2 = new Circle(Color.Black, CircleType.Type2);
-            DrawCircle(form.pictureBox10, cir2);
-            if(cir2.CompareTo(cir) > 0)
+            // área de teste (não sei se deve ficar aqui)
+            _fieldsPlayer1 = new Field[] { 
+                new Field(form.pictureBoxX1),  new Field(form.pictureBoxX2),  new Field(form.pictureBoxX3),
+                new Field(form.pictureBoxX4),  new Field(form.pictureBoxX5),  new Field(form.pictureBoxX6),
+                new Field(form.pictureBoxX7),  new Field(form.pictureBoxX8),  new Field(form.pictureBoxX9),
+                new Field(form.pictureBoxX10), new Field(form.pictureBoxX11), new Field(form.pictureBoxX12)};
+
+            for(int i = 0; i < _fieldsPlayer1.Length; i++)
             {
-                DrawCircle(form.pictureBox15, cir2);
+                if(i < 3)
+                {
+                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type1));
+                }
+                else if (i < 6)
+                {
+                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type2));
+                }
+                else if (i < 9)
+                {
+                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type3));
+                }
+                else
+                {
+                    _fieldsPlayer1[i].Add(new Circle(Color.Black, CircleType.Type4));
+                }
             }
 
-            DrawCircle(form.pictureBox10, null);
+            /*
+            // área de teste
+            Circle cir = new Circle(Color.Black, CircleType.Type1);
+            DrawCircle(form.pictureBoxX1, cir);
+            Circle cir2 = new Circle(Color.Black, CircleType.Type2);
+            DrawCircle(form.pictureBoxX4, cir2);
+            if(cir2.CompareTo(cir) > 0)
+            {
+                DrawCircle(form.pictureBoxX10, cir2);
+            }
+
+            DrawCircle(form.pictureBoxX4, null);
+            */
         }
 
         public void DrawLine(PictureBox pictureBox)
