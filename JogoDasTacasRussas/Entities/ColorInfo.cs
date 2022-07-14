@@ -21,14 +21,7 @@ namespace JogoDasTacasRussas.Entities
 
         public void ChangeColor()
         {
-            if(this.TypeCurrent == ColorType.Primary)
-            {
-                this.TypeCurrent = ColorType.Secundary;
-            }
-            else
-            {
-                this.TypeCurrent = ColorType.Primary;
-            }
+            this.TypeCurrent = (this.TypeCurrent == ColorType.Primary) ? ColorType.Secundary : ColorType.Primary;
         }
 
         public ColorType GetColorType()

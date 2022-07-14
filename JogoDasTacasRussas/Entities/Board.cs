@@ -9,6 +9,7 @@ namespace JogoDasTacasRussas.Entities
 {
     class Board
     {
+        private Move move = new Move();
         private PictureBox[] _pictureBoxes = new PictureBox[102];
         private Field[] _fieldsPlayerX = new Field[12];
         private Field[] _fieldsPlayerY = new Field[12];
@@ -108,10 +109,14 @@ namespace JogoDasTacasRussas.Entities
             }
         }
 
-        public bool Teste(PictureBox pictureBox)
+        public bool Click(PictureBox pictureBox)
         {
             Field field = GetField(pictureBox);
-            return (field.ChangeCircleColor());
+            if(this.move.Play(field, 1) > 0)
+            {
+                return (field.ChangeCircleColor());
+            }
+            return false;
         }
 
         public Field GetField(PictureBox pictureBox)
