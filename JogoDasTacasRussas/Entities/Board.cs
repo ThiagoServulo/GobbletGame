@@ -15,6 +15,11 @@ namespace JogoDasTacasRussas.Entities
         private Field[] _fieldsPlayerY = new Field[12];
         private Field[] _fieldsBoard   = new Field[16];
         private Field[][] _allFields;
+        private Player _playerX;
+        private Player _playerY;
+        private Player _currentPlayer;
+
+
         public Board(Form1 form)
         {
             // Inicialização do design do tabuleiro
@@ -72,6 +77,11 @@ namespace JogoDasTacasRussas.Entities
 
             // Concatena todos os campos do tabuleiro
             _allFields = new Field[][] { _fieldsBoard, _fieldsPlayerY, _fieldsPlayerX };
+
+            // Inicialização dos jogadores
+            this._playerX = new Player(PlayerType.PlayerX);
+            this._playerY = new Player(PlayerType.PlayerY);
+            this._currentPlayer = this._playerX;
         }
 
         public void DrawLine(PictureBox pictureBox)
@@ -109,14 +119,13 @@ namespace JogoDasTacasRussas.Entities
             }
         }
 
-        public bool Click(PictureBox pictureBox)
+        public void Click(PictureBox pictureBox)
         {
             Field field = GetField(pictureBox);
-            if(this.move.Play(field, 1) > 0)
+            if(this.move.Play(field, this._currentPlayer) == 2)
             {
-                return (field.ChangeCircleColor());
+                this.ChangeCurrentPlayer();
             }
-            return false;
         }
 
         public Field GetField(PictureBox pictureBox)
@@ -132,6 +141,11 @@ namespace JogoDasTacasRussas.Entities
                 }
             }
             return null;
+        }
+
+        public void ChangeCurrentPlayer()
+        {
+            this._currentPlayer = (this._currentPlayer.Type == PlayerType.PlayerX) ? this._playerY : this._playerX;
         }
     }
 }

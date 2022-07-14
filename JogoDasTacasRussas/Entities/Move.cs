@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
@@ -17,19 +18,17 @@ namespace JogoDasTacasRussas.Entities
             this.Destiny = null;
         }
         
-        public int Play(Field field, int jogador)
+        public int Play(Field field, Player player)
         {
-            // Checa se o movimento é válido
-            if (!IsValidMove(field, jogador)) 
-            {
-                MessageBox.Show("nao");
-                return 0;
-            }
-
-            // Se não existir a origem, ela será atribuída
             if (this.Origin == null) 
             {
+                if (!IsValidOrigin(field, player))
+                {
+                    MessageBox.Show($"saposo{player.Type}");
+                    return 0;
+                }
                 this.Origin = field;
+                this.Origin.ChangeCircleColor();
                 return 1;
             }
 
@@ -41,37 +40,76 @@ namespace JogoDasTacasRussas.Entities
                 return 0;
             }
 
-            // Se for selecionado um campo inicial, ele será atribuído
-            if ((field.pictureBox.Name.Contains('X') && (jogador == 1)) ||
-                (field.pictureBox.Name.Contains('Y') && (jogador == 2))) 
+            // Se for selecionado um outro campo de origm, o antigo campo retorna ao estado inicial, e o novo será atribuído
+            if ((field.pictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
+                (field.pictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY))) 
             {
                 this.Origin.ChangeCircleColor();
                 this.Origin = field;
+                this.Origin.ChangeCircleColor();
                 return 1;
             }
             else
             {
                 // Checa se a peça pode ser colocada no lugar desejado
-                if(this.Origin.GetLast().CompareTo(field.GetLast()) > 0)
+                if(IsValidDestiny(field, player))
                 {
+                    //field.ChangeCircleColor();
                     this.Destiny = field;
-                    MessageBox.Show("2");
+                    MovePiece();
                     return 2;
                 }
                 return 1;
             }         
         }
 
-        public bool IsValidMove(Field field, int jogador)
+        private void MovePiece()
         {
-            if ((field.pictureBox.Name.Contains('X') && (jogador == 1)) ||
-                (field.pictureBox.Name.Contains('Y') && (jogador == 2)))
+            if (this.Origin.pictureBox.Name.Contains('X') || this.Origin.pictureBox.Name.Contains('Y'))
+            {
+                this.Origin.pictureBox.Enabled = false;
+            }
+            Circle circle = this.Origin.PopCircle();
+            circle.colorInfo.ChangeColor();
+            this.Destiny.AddCircle(circle);
+            this.Origin = this.Destiny = null;
+        }
+
+        public bool IsValidOrigin(Field field, Player player)
+        {
+            if ((field.pictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
+                (field.pictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY)))
             {
                 return true;
             }
 
-            if(((field.GetLast().colorInfo.Primary == Color.Blue) && (jogador == 1)) ||
-                ((field.GetLast().colorInfo.Primary == Color.Red) && (jogador == 2)))
+            if(field.GetLast() == null)
+            {
+                return false;
+            }
+
+            if(((field.GetLast().colorInfo.Primary == Color.DarkRed) && (player.Type == PlayerType.PlayerX)) ||
+                ((field.GetLast().colorInfo.Primary == Color.DarkBlue) && (player.Type == PlayerType.PlayerY)))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsValidDestiny(Field field, Player player)
+        {
+            if (field.pictureBox.Name.Contains('X') || field.pictureBox.Name.Contains('Y'))
+            {
+                return false;
+            }
+
+            if (field.GetLast() == null)
+            {
+                return true;
+            }
+
+            if (this.Origin.GetLast().CompareTo(field.GetLast()) > 0)
             {
                 return true;
             }

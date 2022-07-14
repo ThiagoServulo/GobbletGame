@@ -46,9 +46,9 @@ namespace JogoDasTacasRussas.Entities
 
         public int CompareTo(object obj)
         {
-            if (!(obj is Circle))
+            if(obj == null)
             {
-                throw new ArgumentException("Comparing error: argument is not an Employee");
+                return 1;
             }
             Circle other = obj as Circle;  // Downcasting
             return type.CompareTo(other.type);

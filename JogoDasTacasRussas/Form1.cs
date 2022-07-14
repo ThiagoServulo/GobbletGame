@@ -144,5 +144,85 @@ namespace JogoDasTacasRussas
         {
             board.Click(pictureBoxY12);
         }
+
+        private void PictureBoxA1Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxA1);
+        }
+
+        private void PictureBoxA2Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxA2);
+        }
+
+        private void PictureBoxA3Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxA3);
+        }
+
+        private void PictureBoxA4Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxA4);
+        }
+
+        private void PictureBoxB1Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxB1);
+        }
+
+        private void PictureBoxB2Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxB2);
+        }
+
+        private void PictureBoxB3Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxB3);
+        }
+
+        private void PictureBoxB4Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxB4);
+        }
+
+        private void PictureBoxC1Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxC1);
+        }
+
+        private void PictureBoxC2Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxC2);
+        }
+
+        private void PictureBoxC3Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxC3);
+        }
+
+        private void PictureBoxC4Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxC4);
+        }
+
+        private void PictureBoxD1Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxD1);
+        }
+
+        private void PictureBoxD2Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxD2);
+        }
+
+        private void PictureBoxD3Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxD3);
+        }
+
+        private void PictureBoxD4Click(object sender, EventArgs e)
+        {
+            board.Click(pictureBoxD4);
+        }
     }
 }

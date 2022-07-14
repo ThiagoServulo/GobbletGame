@@ -24,10 +24,11 @@ namespace JogoDasTacasRussas.Entities
             DrawCircle(circle);
         }
 
-        public void PopCircle()
+        public Circle PopCircle()
         {
-            this._value.Pop();
+            Circle circle = this._value.Pop();
             DrawCircle(GetLast());
+            return circle;
         }
         public bool ChangeCircleColor()
         {
@@ -62,7 +63,7 @@ namespace JogoDasTacasRussas.Entities
 
             if (circle == null)
             {
-                this.pictureBox.Dispose();
+                this.pictureBox.Image = null;
                 return;
             }
 

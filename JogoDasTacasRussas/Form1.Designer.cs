@@ -1325,6 +1325,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxA1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA1.TabIndex = 123;
             this.pictureBoxA1.TabStop = false;
+            this.pictureBoxA1.Click += new System.EventHandler(this.PictureBoxA1Click);
             // 
             // pictureBoxA2
             // 
@@ -1333,6 +1334,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxA2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA2.TabIndex = 124;
             this.pictureBoxA2.TabStop = false;
+            this.pictureBoxA2.Click += new System.EventHandler(this.PictureBoxA2Click);
             // 
             // pictureBoxA3
             // 
@@ -1341,6 +1343,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxA3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA3.TabIndex = 125;
             this.pictureBoxA3.TabStop = false;
+            this.pictureBoxA3.Click += new System.EventHandler(this.PictureBoxA3Click);
             // 
             // pictureBoxA4
             // 
@@ -1349,6 +1352,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxA4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA4.TabIndex = 126;
             this.pictureBoxA4.TabStop = false;
+            this.pictureBoxA4.Click += new System.EventHandler(this.PictureBoxA4Click);
             // 
             // pictureBoxB4
             // 
@@ -1357,6 +1361,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxB4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB4.TabIndex = 130;
             this.pictureBoxB4.TabStop = false;
+            this.pictureBoxB4.Click += new System.EventHandler(this.PictureBoxB4Click);
             // 
             // pictureBoxB3
             // 
@@ -1365,6 +1370,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxB3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB3.TabIndex = 129;
             this.pictureBoxB3.TabStop = false;
+            this.pictureBoxB3.Click += new System.EventHandler(this.PictureBoxB3Click);
             // 
             // pictureBoxB2
             // 
@@ -1373,6 +1379,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxB2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB2.TabIndex = 128;
             this.pictureBoxB2.TabStop = false;
+            this.pictureBoxB2.Click += new System.EventHandler(this.PictureBoxB2Click);
             // 
             // pictureBoxB1
             // 
@@ -1381,6 +1388,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxB1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB1.TabIndex = 127;
             this.pictureBoxB1.TabStop = false;
+            this.pictureBoxB1.Click += new System.EventHandler(this.PictureBoxB1Click);
             // 
             // pictureBoxD4
             // 
@@ -1389,6 +1397,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxD4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD4.TabIndex = 138;
             this.pictureBoxD4.TabStop = false;
+            this.pictureBoxD4.Click += new System.EventHandler(this.PictureBoxD4Click);
             // 
             // pictureBoxD3
             // 
@@ -1397,6 +1406,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxD3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD3.TabIndex = 137;
             this.pictureBoxD3.TabStop = false;
+            this.pictureBoxD3.Click += new System.EventHandler(this.PictureBoxD3Click);
             // 
             // pictureBoxD2
             // 
@@ -1405,6 +1415,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxD2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD2.TabIndex = 136;
             this.pictureBoxD2.TabStop = false;
+            this.pictureBoxD2.Click += new System.EventHandler(this.PictureBoxD2Click);
             // 
             // pictureBoxD1
             // 
@@ -1413,6 +1424,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxD1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD1.TabIndex = 135;
             this.pictureBoxD1.TabStop = false;
+            this.pictureBoxD1.Click += new System.EventHandler(this.PictureBoxD1Click);
             // 
             // pictureBoxC4
             // 
@@ -1421,6 +1433,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxC4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC4.TabIndex = 134;
             this.pictureBoxC4.TabStop = false;
+            this.pictureBoxC4.Click += new System.EventHandler(this.PictureBoxC4Click);
             // 
             // pictureBoxC3
             // 
@@ -1429,6 +1442,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxC3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC3.TabIndex = 133;
             this.pictureBoxC3.TabStop = false;
+            this.pictureBoxC3.Click += new System.EventHandler(this.PictureBoxC3Click);
             // 
             // pictureBoxC2
             // 
@@ -1437,6 +1451,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxC2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC2.TabIndex = 132;
             this.pictureBoxC2.TabStop = false;
+            this.pictureBoxC2.Click += new System.EventHandler(this.PictureBoxC2Click);
             // 
             // pictureBoxC1
             // 
@@ -1445,6 +1460,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxC1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC1.TabIndex = 131;
             this.pictureBoxC1.TabStop = false;
+            this.pictureBoxC1.Click += new System.EventHandler(this.PictureBoxC1Click);
             // 
             // pictureBox137
             // 
