@@ -360,6 +360,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox3.Location = new System.Drawing.Point(98, 60);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(6, 92);
@@ -373,6 +374,7 @@ namespace JogoDasTacasRussas
             this.pictureBoxX1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX1.TabIndex = 7;
             this.pictureBoxX1.TabStop = false;
+            this.pictureBoxX1.WaitOnLoad = true;
             this.pictureBoxX1.Click += new System.EventHandler(this.PictureBoxX1Click);
             // 
             // pictureBoxX4

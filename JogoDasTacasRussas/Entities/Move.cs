@@ -1,30 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*******************************************************************************
+ * Arquivo: Move.cs                                                            *
+ * Autor: Thiago Sérvulo Guimarães                                             *
+ * Data: 14/07/2022                                                            *
+ *                                                                             *
+ * Classe: Move                                                                *
+ * Descrição: A classe 'Move' armazena as informações referentes a jogada que  *
+ *            está sendo realizada. Logo, ela contém o campo de origem e de    *
+ *            destino do movimento que será realizado.                         *
+ * Atributos:                                                                  *
+ *  Field Origin: Atributo público que contém o campo de origem da jogada.     *
+ *  Field Destiny: Atributo público que contém o campo de destino da jogada.   *
+ *******************************************************************************/
+
 using System.Drawing;
-using System.Windows.Forms;
 using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
     class Move
     {
-        public Field Origin = null;
-        public Field Destiny = null;
+        //-------------------------------------------------------------
+        // Atributos
+        //-------------------------------------------------------------
+        public Field Origin { get; private set; }
+        public Field Destiny { get; private set; }
 
+        //-------------------------------------------------------------
+        // Construtor da classe 'Move'
+        //-------------------------------------------------------------
         public Move()
         {
             this.Origin = null;
             this.Destiny = null;
         }
-        
+
+        //-------------------------------------------------------------
+        // Função responsável por processar a jogada realizada
+        // Parâmetros:
+        //    field: campo selecionado pelo jogador
+        //    player: jogador que está realizando a jogada
+        // Retorno:
+        //todo: Avaliar os retornos da função, talvez é nescessário mudar
+        //-------------------------------------------------------------
         public int Play(Field field, Player player)
         {
             if (this.Origin == null) 
             {
                 if (!IsValidOrigin(field, player))
                 {
-                    MessageBox.Show($"saposo{player.Type}");
                     return 0;
                 }
                 this.Origin = field;
@@ -40,7 +63,7 @@ namespace JogoDasTacasRussas.Entities
                 return 0;
             }
 
-            // Se for selecionado um outro campo de origm, o antigo campo retorna ao estado inicial, e o novo será atribuído
+            // Se for selecionado um outro campo de origem, o antigo campo retorna ao estado inicial e o novo é atribuído
             if ((field.pictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
                 (field.pictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY))) 
             {
