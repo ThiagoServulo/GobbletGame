@@ -1738,6 +1738,8 @@ namespace JogoDasTacasRussas
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -61,6 +61,8 @@ namespace JogoDasTacasRussas.Entities
         {
             SolidBrush solidBrush;
 
+            EraseField();
+
             if (circle == null)
             {
                 this.pictureBox.Image = null;
@@ -81,6 +83,12 @@ namespace JogoDasTacasRussas.Entities
             paper.FillEllipse(solidBrush, circle.x, circle.y, circle.width, circle.height);
         }
 
-
+        public void EraseField()
+        {
+            Graphics paper = pictureBox.CreateGraphics();
+            SolidBrush solidBrush = new SolidBrush(Color.FromArgb(240, 240, 240));
+            Size size = pictureBox.Size;
+            paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
+        }
     }
 }
