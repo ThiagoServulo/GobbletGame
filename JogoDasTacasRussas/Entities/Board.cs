@@ -122,7 +122,7 @@ namespace JogoDasTacasRussas.Entities
         public void Click(PictureBox pictureBox)
         {
             Field field = GetField(pictureBox);
-            if(this.move.Play(field, this._currentPlayer) == 2)
+            if(this.move.Play(field, this._currentPlayer) == PlayStatus.Finish)
             {
                 this.ChangeCurrentPlayer();
             }
