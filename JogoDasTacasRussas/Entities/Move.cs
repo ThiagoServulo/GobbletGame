@@ -5,11 +5,11 @@
  *                                                                             *
  * Classe: Move                                                                *
  * Descrição: A classe 'Move' armazena as informações referentes a jogada que  *
- *            está sendo realizada. Logo, ela contém o campo de origem e de    *
- *            destino do movimento que será realizado.                         *
+ *   está sendo realizada. Logo, ela contém o campo de origem e de destino do  *
+ *   movimento que será realizado.                                             *
  * Atributos:                                                                  *
- *  Field Origin: Atributo público que contém o campo de origem da jogada.     *
- *  Field Destiny: Atributo público que contém o campo de destino da jogada.   *
+ *   Origin [Field]: Campo de origem da jogada.                                *
+ *   Destiny [Field]: Campo de destino da jogada.                              *
  *******************************************************************************/
 
 using System.Drawing;
@@ -86,7 +86,7 @@ namespace JogoDasTacasRussas.Entities
             if (IsValidDestiny(field))
             {
                 this.Destiny = field;
-                MovePiece();
+                this.MovePiece();
                 return PlayStatus.Finish;
             }
 
