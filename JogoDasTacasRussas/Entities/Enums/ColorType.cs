@@ -8,7 +8,7 @@
  *   pode apresentar.                                                          *
  * Tipo de dado dos itens: inteiro.                                            *
  * Itens da enumeração:                                                        *
- *   Primary: Cor primária da peça .                                           *
+ *   Primary: Cor primária da peça.                                            *
  *   Secundary: Cor secundária da peça.                                        *
  *******************************************************************************/
 
