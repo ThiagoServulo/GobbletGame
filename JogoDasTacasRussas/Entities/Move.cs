@@ -39,8 +39,8 @@ namespace JogoDasTacasRussas.Entities
         //    Função responsável por processar a jogada realizada, atribuindo o
         //    campo selecionado a posição de origem ou destino da jogada.
         // Parâmetros:
-        //    field [Field]: campo selecionado pelo jogador.
-        //    player [Player]: jogador que está realizando a jogada.
+        //    field [Field]: Campo selecionado pelo jogador.
+        //    player [Player]: Jogador que está realizando a jogada.
         // Retorno:
         //    Valor do tipo 'PlayStatus', indicando o status atual da jogada
         //    que está sendo realizada.
@@ -111,7 +111,7 @@ namespace JogoDasTacasRussas.Entities
                 this.Origin.pictureBox.Enabled = false;
             }
             Circle circle = this.Origin.PopCircle();
-            circle.colorInfo.ChangeColor();
+            circle.Color.ChangeColor();
             this.Destiny.AddCircle(circle);
             this.Origin = this.Destiny = null;
         }
@@ -121,8 +121,8 @@ namespace JogoDasTacasRussas.Entities
         //    Função que valida se o campo de origem selecionado é válido para
         //    um determinado jogador.
         // Parâmetros:
-        //    field [Field]: campo selecionado pelo jogador.
-        //    player [Player]: jogador que está realizando a jogada.
+        //    field [Field]: Campo selecionado pelo jogador.
+        //    player [Player]: Jogador que está realizando a jogada.
         // Retorno:
         //    Valor do tipo 'bool', inicando se o campo de origem é válida ou
         //    não.
@@ -143,8 +143,8 @@ namespace JogoDasTacasRussas.Entities
             }
 
             // Um jogador só poderá selecionar um campo incial que contenha alguma peça de sua cor
-            if (((field.GetLast().colorInfo.Primary == Color.DarkRed) && (player.Type == PlayerType.PlayerX)) ||
-                ((field.GetLast().colorInfo.Primary == Color.DarkBlue) && (player.Type == PlayerType.PlayerY)))
+            if (((field.GetLast().Color.Primary == Color.DarkRed) && (player.Type == PlayerType.PlayerX)) ||
+                ((field.GetLast().Color.Primary == Color.DarkBlue) && (player.Type == PlayerType.PlayerY)))
             {
                 return true;
             }
@@ -158,7 +158,7 @@ namespace JogoDasTacasRussas.Entities
         //    Função que valida se o campo de destino selecionado é válido para
         //    um determinado jogador.
         // Parâmetros:
-        //    field [Field]: campo selecionado pelo jogador.
+        //    field [Field]: Campo selecionado pelo jogador.
         // Retorno:
         //    Valor do tipo 'bool', inicando se o campo de destino é válida ou
         //    não.

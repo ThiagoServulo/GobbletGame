@@ -36,7 +36,7 @@ namespace JogoDasTacasRussas.Entities
             if (circle != null)
             {
                 this._value.Pop();
-                circle.colorInfo.ChangeColor();
+                circle.Color.ChangeColor();
                 AddCircle(circle);
                 return true;
             }
@@ -71,16 +71,16 @@ namespace JogoDasTacasRussas.Entities
 
             Graphics paper = this.pictureBox.CreateGraphics();
 
-            if (circle.colorInfo.TypeCurrent == ColorType.Primary)
+            if (circle.Color.TypeCurrent == ColorType.Primary)
             {
-                solidBrush = new SolidBrush(circle.colorInfo.Primary);
+                solidBrush = new SolidBrush(circle.Color.Primary);
             }
             else
             {
-                solidBrush = new SolidBrush(circle.colorInfo.Secundary);
+                solidBrush = new SolidBrush(circle.Color.Secundary);
             }
 
-            paper.FillEllipse(solidBrush, circle.x, circle.y, circle.width, circle.height);
+            paper.FillEllipse(solidBrush, circle.X, circle.Y, circle.Width, circle.Height);
         }
 
         public void EraseField()
