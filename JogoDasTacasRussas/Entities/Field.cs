@@ -51,7 +51,7 @@ namespace JogoDasTacasRussas.Entities
             this.StackCircles.Push(circle);
 
             // Desenha o novo círculo que se encontra no topo da pilha
-            DrawCircle(circle);
+            this.DrawCircle(circle);
         }
 
         //----------------------------------------------------------------------
@@ -70,7 +70,7 @@ namespace JogoDasTacasRussas.Entities
             Circle circle = this.StackCircles.Pop();
 
             // Desenha o novo círculo que se encontra no topo da pilha
-            DrawCircle(GetLast());
+            this.DrawCircle(this.GetLast());
             return circle;
         }
 
@@ -85,14 +85,14 @@ namespace JogoDasTacasRussas.Entities
         public void ChangeCircleColor()
         {
             // Pega o círculo que está no topo da pilha
-            Circle circle = GetLast();
+            Circle circle = this.GetLast();
 
             // Se o círculo não for null, sua cor será alterada
             if (circle != null)
             {
                 this.StackCircles.Pop();
                 circle.Color.ChangeColor();
-                AddCircle(circle);
+                this.AddCircle(circle);
             }
         }
 
@@ -141,7 +141,7 @@ namespace JogoDasTacasRussas.Entities
             SolidBrush solidBrush;
 
             // Limpa o campo antes de desenhar o círculo
-            EraseField();
+            this.EraseField();
 
             if (circle == null)
             {
@@ -178,6 +178,43 @@ namespace JogoDasTacasRussas.Entities
             SolidBrush solidBrush = new SolidBrush(Color.FromArgb(240, 240, 240)); // Cor inicial do campo
             Size size = FieldPictureBox.Size;
             paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
+        }
+
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função sobrescrita responsável por comprar dois objetos do tipo
+        //    'Field'.
+        // Parâmetros:
+        //    obj [object]: Objeto do tipo 'Field' que será comparado.
+        // Retorno:
+        //    Um valor do tipo 'bool', inicando se os dois objetos comparados
+        //    são iguais ou não.
+        //----------------------------------------------------------------------
+        public override bool Equals(object obj)
+        {
+            Circle circle = this.GetLast();
+
+            if ((!(obj is Field)) || (circle == null))
+            {
+                return false;
+            }
+
+            Field other = obj as Field;  // Downcasting
+            return circle.Equals(other.GetLast());
+        }
+
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função sobrescrita responsável por gerar uma hash referente a este
+        //    objeto.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Um valor do tipo 'int', que consiste na chave referente ao objeto.
+        //----------------------------------------------------------------------
+        public override int GetHashCode()
+        {
+            return this.GetLast().GetHashCode();
         }
     }
 }

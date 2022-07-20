@@ -46,28 +46,26 @@ namespace JogoDasTacasRussas.Entities
             switch (this.Type)
             {
                 case CircleType.Type4:
-                    this.X = this.Y = 5;
-                    this.Width = this.Height = 70;
+                    this.X = this.Y = 3;
                 break;
 
                 case CircleType.Type3:
-                    this.X = this.Y = 10;
-                    this.Width = this.Height = 60;
+                    this.X = this.Y = 13;
                 break;
 
                 case CircleType.Type2:
-                    this.X = this.Y = 15;
-                    this.Width = this.Height = 50;
+                    this.X = this.Y = 22;
                 break;
 
                 case CircleType.Type1:
-                    this.X = this.Y = 20;
-                    this.Width = this.Height = 40;
+                    this.X = this.Y = 30;
                 break;
 
                 default:
                     throw new Exception("Tipo de círculo inválido");
             }
+
+            this.Width = this.Height = 80 - (this.X * 2);
         }
 
         //----------------------------------------------------------------------
@@ -92,6 +90,41 @@ namespace JogoDasTacasRussas.Entities
 
             Circle other = obj as Circle;  // Downcasting
             return this.Type.CompareTo(other.Type);
+        }
+
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função sobrescrita responsável por comprar dois objetos do tipo
+        //    'Circle'.
+        // Parâmetros:
+        //    obj [object]: Objeto do tipo 'Circle' que será comparado.
+        // Retorno:
+        //    Um valor do tipo 'bool', inicando se os dois objetos comparados
+        //    são iguais ou não.
+        //----------------------------------------------------------------------
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Circle) || (obj == null))
+            {
+                return false;
+            }
+
+            Circle other = obj as Circle;  // Downcasting
+            return this.Color.Primary == other.Color.Primary;
+        }
+
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função sobrescrita responsável por gerar uma hash referente a este
+        //    objeto.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Um valor do tipo 'int', que consiste na chave referente ao objeto.
+        //----------------------------------------------------------------------
+        public override int GetHashCode()
+        {
+            return this.Color.Primary.GetHashCode();
         }
     }
 }

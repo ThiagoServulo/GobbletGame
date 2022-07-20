@@ -51,7 +51,7 @@ namespace JogoDasTacasRussas.Entities
             if (this.Origin == null)
             {
                 // Checa se o campo de origem é válido para aquele jogador
-                if (!IsValidOrigin(field, player))
+                if (!this.IsValidOrigin(field, player))
                 {
                     return PlayStatus.WaitOriginField;
                 }
@@ -83,7 +83,7 @@ namespace JogoDasTacasRussas.Entities
             }
 
             // Checa se o campo de destino é válido para aquele jogador
-            if (IsValidDestiny(field))
+            if (this.IsValidDestiny(field))
             {
                 this.Destiny = field;
                 this.MovePiece();

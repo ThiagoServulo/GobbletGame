@@ -128,11 +128,12 @@ namespace JogoDasTacasRussas.Entities
         //----------------------------------------------------------------------
         public void Click(PictureBox pictureBox)
         {
-            Field field = GetField(pictureBox);
+            Field field = this.GetField(pictureBox);
 
             // Se a jogada estiver sido finalizada, será alternado para o próximo jogador
-            if(this.PlayerMove.Play(field, this.CurrentPlayer) == PlayStatus.Finish)
+            if (this.PlayerMove.Play(field, this.CurrentPlayer) == PlayStatus.Finish)
             {
+                this.CheckWinner();
                 this.ChangeCurrentPlayer();
             }
         }
@@ -173,6 +174,45 @@ namespace JogoDasTacasRussas.Entities
         public void ChangeCurrentPlayer()
         {
             this.CurrentPlayer = (this.CurrentPlayer.Type == PlayerType.PlayerX) ? this.PlayerY : this.PlayerX;
+        }
+
+        public Player CheckWinner()
+        {
+            // Checar colunas
+            for(int i = 0; i <= 12; i+=4)
+            {
+                if (FieldsBoard[i].Equals(FieldsBoard[i + 1]) && FieldsBoard[i].Equals(FieldsBoard[i + 2]) &&
+                    FieldsBoard[i].Equals(FieldsBoard[i + 3]))
+                {
+                    MessageBox.Show("cccccccc");
+                }
+            }
+
+            // Checar linhas
+            for (int i = 0; i <= 4; i++)
+            {
+                if (FieldsBoard[i].Equals(FieldsBoard[i + 4]) && FieldsBoard[i].Equals(FieldsBoard[i + 8]) &&
+                    FieldsBoard[i].Equals(FieldsBoard[i + 12]))
+                {
+                    MessageBox.Show("lllllll");
+                }
+            }
+
+            // Checar diagonal principal
+            if (FieldsBoard[0].Equals(FieldsBoard[5]) && FieldsBoard[0].Equals(FieldsBoard[10]) &&
+                FieldsBoard[0].Equals(FieldsBoard[15]))
+            {
+                MessageBox.Show("ppppppppppp");
+            }
+
+            // Checar diagonal principal
+            if (FieldsBoard[3].Equals(FieldsBoard[6]) && FieldsBoard[3].Equals(FieldsBoard[9]) &&
+                FieldsBoard[3].Equals(FieldsBoard[12]))
+            {
+                MessageBox.Show("ssssssss");
+            }
+
+            return null;
         }
     }
 }
