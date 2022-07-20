@@ -1,6 +1,18 @@
-﻿using System;
+﻿/*******************************************************************************
+ * Arquivo: Field.cs                                                           *
+ * Autor: Thiago Sérvulo Guimarães                                             *
+ * Data: 20/07/2022                                                            *
+ *                                                                             *
+ * Classe: Field                                                               *
+ * Descrição: A classe 'Field' armazena as informações referentes aos campos   *
+ *   que o tabuleiro irá conter.                                               *
+ * Atributos:                                                                  *
+ *   FieldPictureBox [PictureBox]: 'pictureBox' referente a este campo.        *
+ *   StackCircles [Stack<Circle>]: Pilha que recebe os círculos adicionados    *
+ *                                 a este campo.                               *
+ *******************************************************************************/
+
 using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using JogoDasTacasRussas.Entities.Enums;
@@ -9,68 +21,136 @@ namespace JogoDasTacasRussas.Entities
 {
     class Field
     {
-        public PictureBox pictureBox;
-        private Stack<Circle> _value = new Stack<Circle>();
+        //----------------------------------------------------------------------
+        // Atributos
+        //----------------------------------------------------------------------
+        public PictureBox FieldPictureBox { get; private set; }
+        public Stack<Circle> StackCircles { get; private set; }
 
+        //----------------------------------------------------------------------
+        // Construtor da classe 'Field'
+        //----------------------------------------------------------------------
         public Field(PictureBox pictureBox)
         {
-            this.pictureBox = pictureBox;
-            this._value.Clear();
+            this.FieldPictureBox = pictureBox;
+            this.StackCircles = new Stack<Circle>();
+            this.StackCircles.Clear();
         }
 
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por adicionar um círculo ao topo da pilha.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Nenhum.
+        //----------------------------------------------------------------------
         public void AddCircle(Circle circle)
         {
-            this._value.Push(circle);
+            // Adiciona o círculo ao topo da pilha
+            this.StackCircles.Push(circle);
+
+            // Desenha o novo círculo que se encontra no topo da pilha
             DrawCircle(circle);
         }
 
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por remover o círculo que está no topo da pilha
+        //    deste campo e retorna-o.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Valor do tipo 'Circle', que corresponde ao círculo que estava no
+        //    topo da pilha.
+        //----------------------------------------------------------------------
         public Circle PopCircle()
         {
-            Circle circle = this._value.Pop();
+            // Remove o círculo que está no topo da pilha
+            Circle circle = this.StackCircles.Pop();
+
+            // Desenha o novo círculo que se encontra no topo da pilha
             DrawCircle(GetLast());
             return circle;
         }
-        public bool ChangeCircleColor()
+
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por trocar a cor de um determinado círculo.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Nenhum.
+        //----------------------------------------------------------------------
+        public void ChangeCircleColor()
         {
+            // Pega o círculo que está no topo da pilha
             Circle circle = GetLast();
+
+            // Se o círculo não for null, sua cor será alterada
             if (circle != null)
             {
-                this._value.Pop();
+                this.StackCircles.Pop();
                 circle.Color.ChangeColor();
                 AddCircle(circle);
-                return true;
             }
-            return false;
         }
 
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por pegar o círculo que se encontra no topo da
+        //    pilha e retornar suas informações.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Valor do tipo 'Circle', que corresponde ao círculo que está no
+        //    topo da pilha.
+        //----------------------------------------------------------------------
         public Circle GetLast()
         {
-            if (this._value.Count == 0)
+            if (this.StackCircles.Count == 0)
             {
                 return null;
             }
-            return this._value.Peek();
+            return this.StackCircles.Peek();
         }
 
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por limpar a pilha de círculos.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Nenhum.
+        //----------------------------------------------------------------------
         public void Clear()
         {
-            this._value.Clear();
+            this.StackCircles.Clear();
         }
 
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por desenhar um círculo em um campo.
+        // Parâmetros:
+        //    circle [Circle]: Círculo que será desenhado.
+        // Retorno:
+        //    Nenhum.
+        //----------------------------------------------------------------------
         private void DrawCircle(Circle circle)
         {
             SolidBrush solidBrush;
 
+            // Limpa o campo antes de desenhar o círculo
             EraseField();
 
             if (circle == null)
             {
-                this.pictureBox.Image = null;
                 return;
             }
 
-            Graphics paper = this.pictureBox.CreateGraphics();
+            Graphics paper = this.FieldPictureBox.CreateGraphics();
 
+            // Verifica qual tipo de cor o círculo terá
             if (circle.Color.TypeCurrent == ColorType.Primary)
             {
                 solidBrush = new SolidBrush(circle.Color.Primary);
@@ -80,14 +160,23 @@ namespace JogoDasTacasRussas.Entities
                 solidBrush = new SolidBrush(circle.Color.Secundary);
             }
 
+            // Desenha o círculo informado
             paper.FillEllipse(solidBrush, circle.X, circle.Y, circle.Width, circle.Height);
         }
 
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por limpar o campo.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Nenhum.
+        //----------------------------------------------------------------------
         public void EraseField()
         {
-            Graphics paper = pictureBox.CreateGraphics();
-            SolidBrush solidBrush = new SolidBrush(Color.FromArgb(240, 240, 240));
-            Size size = pictureBox.Size;
+            Graphics paper = FieldPictureBox.CreateGraphics();
+            SolidBrush solidBrush = new SolidBrush(Color.FromArgb(240, 240, 240)); // Cor inicial do campo
+            Size size = FieldPictureBox.Size;
             paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
         }
     }

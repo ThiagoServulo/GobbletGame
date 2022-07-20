@@ -73,8 +73,8 @@ namespace JogoDasTacasRussas.Entities
 
             // Se for selecionado um outro campo de origem, o antigo campo retorna ao estado inicial
             // e o novo é atribuído
-            if ((field.pictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
-                (field.pictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY)))
+            if ((field.FieldPictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
+                (field.FieldPictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY)))
             {
                 this.Origin.ChangeCircleColor();
                 this.Origin = field;
@@ -106,9 +106,9 @@ namespace JogoDasTacasRussas.Entities
         //----------------------------------------------------------------------
         private void MovePiece()
         {
-            if (this.Origin.pictureBox.Name.Contains('X') || this.Origin.pictureBox.Name.Contains('Y'))
+            if (this.Origin.FieldPictureBox.Name.Contains('X') || this.Origin.FieldPictureBox.Name.Contains('Y'))
             {
-                this.Origin.pictureBox.Enabled = false;
+                this.Origin.FieldPictureBox.Enabled = false;
             }
             Circle circle = this.Origin.PopCircle();
             circle.Color.ChangeColor();
@@ -130,8 +130,8 @@ namespace JogoDasTacasRussas.Entities
         public bool IsValidOrigin(Field field, Player player)
         {
             // Um jogador só poderá selecionar os campos iniciais referentes a sua cor
-            if ((field.pictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
-                (field.pictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY)))
+            if ((field.FieldPictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
+                (field.FieldPictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY)))
             {
                 return true;
             }
@@ -166,7 +166,7 @@ namespace JogoDasTacasRussas.Entities
         public bool IsValidDestiny(Field field)
         {
             // O campo de destino não pode ser um campo inicial
-            if (field.pictureBox.Name.Contains('X') || field.pictureBox.Name.Contains('Y'))
+            if (field.FieldPictureBox.Name.Contains('X') || field.FieldPictureBox.Name.Contains('Y'))
             {
                 return false;
             }

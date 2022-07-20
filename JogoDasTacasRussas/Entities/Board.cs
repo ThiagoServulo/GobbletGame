@@ -153,7 +153,7 @@ namespace JogoDasTacasRussas.Entities
             {
                 foreach (Field field in listFields)
                 {
-                    if (field.pictureBox == pictureBox)
+                    if (field.FieldPictureBox == pictureBox)
                     {
                         return field;
                     }
