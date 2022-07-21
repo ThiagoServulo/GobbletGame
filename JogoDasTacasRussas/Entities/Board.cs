@@ -15,6 +15,7 @@
  *   PlayerX [Player]: Informações relativas ao jogador X.                     *
  *   PlayerY [Player]: Informações relativas ao jogador Y.                     *
  *   CurrentPlayer [Player]: Informações relativas ao jogador atual.           *
+ *   Form [Form1]: Tela onde o tabuleiro será apresentado.                     *
  *******************************************************************************/
 
 using System.Drawing;
@@ -36,47 +37,65 @@ namespace JogoDasTacasRussas.Entities
         public Player PlayerX { get; private set; }
         public Player PlayerY { get; private set; }
         public Player CurrentPlayer { get; private set; }
-
+        public Form1 Form { get; private set; }
 
         //----------------------------------------------------------------------
         // Construtor da classe 'Board'
         //----------------------------------------------------------------------
         public Board(Form1 form)
         {
-            // Inicialização da movimentação
-            this.PlayerMove = new Move();
-
-            // Inicialização das peças do Jogador X
-            this.InitFieldsPlayerX = new Field[] { 
-                new Field(form.pictureBoxX1),  new Field(form.pictureBoxX2),  new Field(form.pictureBoxX3),
-                new Field(form.pictureBoxX4),  new Field(form.pictureBoxX5),  new Field(form.pictureBoxX6),
-                new Field(form.pictureBoxX7),  new Field(form.pictureBoxX8),  new Field(form.pictureBoxX9),
-                new Field(form.pictureBoxX10), new Field(form.pictureBoxX11), new Field(form.pictureBoxX12)};
-            InitFields(this.InitFieldsPlayerX, Color.DarkRed, Color.IndianRed);
-
-            // Inicialização das peças do Jogador Y
-            this.InitFieldsPlayerY = new Field[] {
-                new Field(form.pictureBoxY1),  new Field(form.pictureBoxY2),  new Field(form.pictureBoxY3),
-                new Field(form.pictureBoxY4),  new Field(form.pictureBoxY5),  new Field(form.pictureBoxY6),
-                new Field(form.pictureBoxY7),  new Field(form.pictureBoxY8),  new Field(form.pictureBoxY9),
-                new Field(form.pictureBoxY10), new Field(form.pictureBoxY11), new Field(form.pictureBoxY12)};
-            InitFields(this.InitFieldsPlayerY, Color.DarkBlue, Color.LightBlue);
+            this.Form = form;
 
             // Inicialização do tabuleiro
-            this.FieldsBoard = new Field[] {
-                new Field(form.pictureBoxA1), new Field(form.pictureBoxA2), new Field(form.pictureBoxA3), new Field(form.pictureBoxA4), 
-                new Field(form.pictureBoxB1), new Field(form.pictureBoxB2), new Field(form.pictureBoxB3), new Field(form.pictureBoxB4),  
-                new Field(form.pictureBoxC1), new Field(form.pictureBoxC2), new Field(form.pictureBoxC3), new Field(form.pictureBoxC4),
-                new Field(form.pictureBoxD1), new Field(form.pictureBoxD2), new Field(form.pictureBoxD3), new Field(form.pictureBoxD4)};
-            InitFields(this.FieldsBoard, null, null);
-
-            // Concatenação de todos os campos do tabuleiro
-            this.AllFields = new Field[][] { this.FieldsBoard, this.InitFieldsPlayerY, this.InitFieldsPlayerX };
+            this.InitBoard();
 
             // Inicialização dos jogadores
             this.PlayerX = new Player(PlayerType.PlayerX);
             this.PlayerY = new Player(PlayerType.PlayerY);
             this.CurrentPlayer = this.PlayerX;
+        }
+
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por inicializar o tabuleiro.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Nenhum.
+        //----------------------------------------------------------------------
+        public void InitBoard()
+        {
+            // Inicialização da movimentação
+            this.PlayerMove = new Move();
+
+            // Inicialização das peças do Jogador X
+            this.InitFieldsPlayerX = new Field[] { 
+                new Field(this.Form.pictureBoxX1),  new Field(this.Form.pictureBoxX2),  new Field(this.Form.pictureBoxX3),
+                new Field(this.Form.pictureBoxX4),  new Field(this.Form.pictureBoxX5),  new Field(this.Form.pictureBoxX6),
+                new Field(this.Form.pictureBoxX7),  new Field(this.Form.pictureBoxX8),  new Field(this.Form.pictureBoxX9),
+                new Field(this.Form.pictureBoxX10), new Field(this.Form.pictureBoxX11), new Field(this.Form.pictureBoxX12)};
+            this.InitFields(this.InitFieldsPlayerX, Color.DarkRed, Color.IndianRed);
+
+            // Inicialização das peças do Jogador Y
+            this.InitFieldsPlayerY = new Field[] {
+                new Field(this.Form.pictureBoxY1),  new Field(this.Form.pictureBoxY2),  new Field(this.Form.pictureBoxY3),
+                new Field(this.Form.pictureBoxY4),  new Field(this.Form.pictureBoxY5),  new Field(this.Form.pictureBoxY6),
+                new Field(this.Form.pictureBoxY7),  new Field(this.Form.pictureBoxY8),  new Field(this.Form.pictureBoxY9),
+                new Field(this.Form.pictureBoxY10), new Field(this.Form.pictureBoxY11), new Field(this.Form.pictureBoxY12)};
+            this.InitFields(this.InitFieldsPlayerY, Color.DarkBlue, Color.LightBlue);
+
+            // Inicialização do tabuleiro
+            this.FieldsBoard = new Field[] {
+                new Field(this.Form.pictureBoxA1), new Field(this.Form.pictureBoxA2), new Field(this.Form.pictureBoxA3), 
+                new Field(this.Form.pictureBoxA4), new Field(this.Form.pictureBoxB1), new Field(this.Form.pictureBoxB2), 
+                new Field(this.Form.pictureBoxB3), new Field(this.Form.pictureBoxB4), new Field(this.Form.pictureBoxC1),
+                new Field(this.Form.pictureBoxC2), new Field(this.Form.pictureBoxC3), new Field(this.Form.pictureBoxC4),
+                new Field(this.Form.pictureBoxD1), new Field(this.Form.pictureBoxD2), new Field(this.Form.pictureBoxD3), 
+                new Field(this.Form.pictureBoxD4)};
+            this.InitFields(this.FieldsBoard, null, null);
+
+            // Concatenação de todos os campos do tabuleiro
+            this.AllFields = new Field[][] { this.FieldsBoard, this.InitFieldsPlayerY, this.InitFieldsPlayerX };
         }
 
         //----------------------------------------------------------------------
@@ -94,9 +113,12 @@ namespace JogoDasTacasRussas.Entities
         {
             for (int i = 0; i < fields.Length; i++)
             {
-                if(primaryColor == null || secundaryColor == null) // Se as cores forem nulas, o campo será limpado
+                // Habilitar para que o campo possa ser selecionado
+                fields[i].FieldPictureBox.Enabled = true;
+
+                if (primaryColor == null || secundaryColor == null) // Se as cores forem nulas, o campo será limpado
                 {
-                    fields[i].Clear();
+                    fields[i].DrawCircle(null);
                 }
                 else if (i < 3) // Adiciona o menor círculo existente
                 {
@@ -137,6 +159,7 @@ namespace JogoDasTacasRussas.Entities
                 if (playerWinner != null)
                 {
                     MessageBox.Show($"{playerWinner}");
+                    this.InitBoard();
                 }
                 this.ChangeCurrentPlayer();
             }
@@ -194,35 +217,39 @@ namespace JogoDasTacasRussas.Entities
             // Checar colunas
             for(int i = 0; i <= 12; i+=4)
             {
-                if (FieldsBoard[i].Equals(FieldsBoard[i + 1]) && FieldsBoard[i].Equals(FieldsBoard[i + 2]) &&
-                    FieldsBoard[i].Equals(FieldsBoard[i + 3]))
+                if (this.FieldsBoard[i].Equals(this.FieldsBoard[i + 1]) && 
+                    this.FieldsBoard[i].Equals(this.FieldsBoard[i + 2]) && 
+                    this.FieldsBoard[i].Equals(this.FieldsBoard[i + 3]))
                 {
-                    return this.CheckPlayer(FieldsBoard[i]);
+                    return this.CheckPlayer(this.FieldsBoard[i]);
                 }
             }
 
             // Checar linhas
             for (int i = 0; i <= 4; i++)
             {
-                if (FieldsBoard[i].Equals(FieldsBoard[i + 4]) && FieldsBoard[i].Equals(FieldsBoard[i + 8]) &&
-                    FieldsBoard[i].Equals(FieldsBoard[i + 12]))
+                if (this.FieldsBoard[i].Equals(this.FieldsBoard[i + 4]) &&
+                    this.FieldsBoard[i].Equals(this.FieldsBoard[i + 8]) &&
+                    this.FieldsBoard[i].Equals(this.FieldsBoard[i + 12]))
                 {
-                    return this.CheckPlayer(FieldsBoard[i]);
+                    return this.CheckPlayer(this.FieldsBoard[i]);
                 }
             }
 
             // Checar diagonal principal
-            if (FieldsBoard[0].Equals(FieldsBoard[5]) && FieldsBoard[0].Equals(FieldsBoard[10]) &&
-                FieldsBoard[0].Equals(FieldsBoard[15]))
+            if (this.FieldsBoard[0].Equals(this.FieldsBoard[5]) &&
+                this.FieldsBoard[0].Equals(this.FieldsBoard[10]) &&
+                this.FieldsBoard[0].Equals(this.FieldsBoard[15]))
             {
-                return this.CheckPlayer(FieldsBoard[0]);
+                return this.CheckPlayer(this.FieldsBoard[0]);
             }
 
             // Checar diagonal principal
-            if (FieldsBoard[3].Equals(FieldsBoard[6]) && FieldsBoard[3].Equals(FieldsBoard[9]) &&
-                FieldsBoard[3].Equals(FieldsBoard[12]))
+            if (this.FieldsBoard[3].Equals(this.FieldsBoard[6]) &&
+                this.FieldsBoard[3].Equals(this.FieldsBoard[9]) &&
+                this.FieldsBoard[3].Equals(this.FieldsBoard[12]))
             {
-                return this.CheckPlayer(FieldsBoard[3]);
+                return this.CheckPlayer(this.FieldsBoard[3]);
             }
 
             // Retorna null se não houver ganhador

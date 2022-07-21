@@ -136,7 +136,7 @@ namespace JogoDasTacasRussas.Entities
         // Retorno:
         //    Nenhum.
         //----------------------------------------------------------------------
-        private void DrawCircle(Circle circle)
+        public void DrawCircle(Circle circle)
         {
             SolidBrush solidBrush;
 
@@ -145,6 +145,7 @@ namespace JogoDasTacasRussas.Entities
 
             if (circle == null)
             {
+                this.StackCircles.Clear();
                 return;
             }
 
