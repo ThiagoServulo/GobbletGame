@@ -133,7 +133,11 @@ namespace JogoDasTacasRussas.Entities
             // Se a jogada estiver sido finalizada, será alternado para o próximo jogador
             if (this.PlayerMove.Play(field, this.CurrentPlayer) == PlayStatus.Finish)
             {
-                this.CheckWinner();
+                Player playerWinner = this.CheckWinner();
+                if (playerWinner != null)
+                {
+                    MessageBox.Show($"{playerWinner}");
+                }
                 this.ChangeCurrentPlayer();
             }
         }
@@ -176,6 +180,15 @@ namespace JogoDasTacasRussas.Entities
             this.CurrentPlayer = (this.CurrentPlayer.Type == PlayerType.PlayerX) ? this.PlayerY : this.PlayerX;
         }
 
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por verificar se há um ganhador na partida.
+        // Parâmetros:
+        //    Nenhum.
+        // Retorno:
+        //    Valor do tipo 'Player', indicando o ganhador da partida atual. Se
+        //    não ouver ganhador é retornado 'null'.
+        //----------------------------------------------------------------------
         public Player CheckWinner()
         {
             // Checar colunas
@@ -184,7 +197,7 @@ namespace JogoDasTacasRussas.Entities
                 if (FieldsBoard[i].Equals(FieldsBoard[i + 1]) && FieldsBoard[i].Equals(FieldsBoard[i + 2]) &&
                     FieldsBoard[i].Equals(FieldsBoard[i + 3]))
                 {
-                    MessageBox.Show("cccccccc");
+                    return this.CheckPlayer(FieldsBoard[i]);
                 }
             }
 
@@ -194,7 +207,7 @@ namespace JogoDasTacasRussas.Entities
                 if (FieldsBoard[i].Equals(FieldsBoard[i + 4]) && FieldsBoard[i].Equals(FieldsBoard[i + 8]) &&
                     FieldsBoard[i].Equals(FieldsBoard[i + 12]))
                 {
-                    MessageBox.Show("lllllll");
+                    return this.CheckPlayer(FieldsBoard[i]);
                 }
             }
 
@@ -202,16 +215,46 @@ namespace JogoDasTacasRussas.Entities
             if (FieldsBoard[0].Equals(FieldsBoard[5]) && FieldsBoard[0].Equals(FieldsBoard[10]) &&
                 FieldsBoard[0].Equals(FieldsBoard[15]))
             {
-                MessageBox.Show("ppppppppppp");
+                return this.CheckPlayer(FieldsBoard[0]);
             }
 
             // Checar diagonal principal
             if (FieldsBoard[3].Equals(FieldsBoard[6]) && FieldsBoard[3].Equals(FieldsBoard[9]) &&
                 FieldsBoard[3].Equals(FieldsBoard[12]))
             {
-                MessageBox.Show("ssssssss");
+                return this.CheckPlayer(FieldsBoard[3]);
             }
 
+            // Retorna null se não houver ganhador
+            return null;
+        }
+
+        //----------------------------------------------------------------------
+        // Descrição:
+        //    Função responsável por checar de qual jogador é a peça que está
+        //    no campo informado.
+        // Parâmetros:
+        //    field [Field]: Campo que será analizado.
+        // Retorno:
+        //    Valor do tipo 'Player', indicando o jogador dono da peça presnete
+        //    no campo.
+        //----------------------------------------------------------------------
+        public Player CheckPlayer(Field field)
+        {
+            // Pega a cor do círculo presnete no campo
+            Color circleColor = field.GetLast().Color.Primary;
+
+            // Ver o jogador dono desta peça
+            if(circleColor == Color.DarkRed)
+            {
+                return this.PlayerX;
+            }
+            else if (circleColor == Color.DarkBlue)
+            {
+                return this.PlayerY;
+            }
+
+            // Retorna null se o jogador não for encontrado
             return null;
         }
     }
