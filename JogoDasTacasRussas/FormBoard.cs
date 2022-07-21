@@ -4,11 +4,11 @@ using JogoDasTacasRussas.Entities;
 
 namespace JogoDasTacasRussas
 {
-    public partial class Form1 : Form
+    public partial class FormBoard : Form
     {
         Board board;
 
-        public Form1()
+        public FormBoard()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace JogoDasTacasRussas
 {
-    partial class Form1
+    partial class FormBoard
     {
         /// <summary>
         ///  Required designer variable.

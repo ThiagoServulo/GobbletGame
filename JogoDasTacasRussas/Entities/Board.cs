@@ -37,12 +37,12 @@ namespace JogoDasTacasRussas.Entities
         public Player PlayerX { get; private set; }
         public Player PlayerY { get; private set; }
         public Player CurrentPlayer { get; private set; }
-        public Form1 Form { get; private set; }
+        public FormBoard Form { get; private set; }
 
         //----------------------------------------------------------------------
         // Construtor da classe 'Board'
         //----------------------------------------------------------------------
-        public Board(Form1 form)
+        public Board(FormBoard form)
         {
             this.Form = form;
 
