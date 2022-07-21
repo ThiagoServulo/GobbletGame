@@ -158,8 +158,9 @@ namespace JogoDasTacasRussas.Entities
                 Player playerWinner = this.CheckWinner();
                 if (playerWinner != null)
                 {
-                    MessageBox.Show($"{playerWinner}");
+                    playerWinner.AddVictory();
                     this.InitBoard();
+                    MessageBox.Show($"{PlayerX.Victories} - {PlayerY.Victories}");
                 }
                 this.ChangeCurrentPlayer();
             }

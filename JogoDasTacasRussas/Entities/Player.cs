@@ -6,11 +6,10 @@
  * Classe: Player                                                              *
  * Descrição: A classe 'Player' armazena as informações referentes ao jogador  *
  *   que está realizando uma movimentação de uma peça. Logo, ela contém as     *
- *   informações referentes ao jogador (quantidade de vitórias, derrotas e     *
- *   empates), além do tipo de jogador (Jogador X ou Y).                       *
+ *   a quantidade de vitórias que o jogador possui e o tipo de jogador         *
+ *   (Jogador X ou Y) que ele é.                                               *
  * Atributos:                                                                  *
  *   Victories [int]: Quantidade de vitórias do jogador.                       *
- *   Defeats [int]: Quantidade de derrotas do jogador.                         *
  *   Type [PlayerType]: Tipo do jogador (Jogador X ou Y) .                     *
  *******************************************************************************/
 
@@ -24,7 +23,6 @@ namespace JogoDasTacasRussas.Entities
         // Atributos
         //----------------------------------------------------------------------
         public int Victories { get; private set; }
-        public int Defeats { get; private set; }
         public PlayerType Type { get; private set; }
 
         //----------------------------------------------------------------------
@@ -33,7 +31,7 @@ namespace JogoDasTacasRussas.Entities
         public Player(PlayerType type)
         {
             this.Type = type;
-            this.Defeats = this.Victories = 0;
+            this.Victories = 0;
         }
 
         //----------------------------------------------------------------------
@@ -47,19 +45,6 @@ namespace JogoDasTacasRussas.Entities
         public void AddVictory()
         {
             this.Victories += 1;
-        }
-
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por adicionar uma derrota para o jogador.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
-        public void AddDefeat()
-        {
-            this.Defeats += 1;
         }
     }
 }
