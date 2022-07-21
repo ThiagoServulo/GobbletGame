@@ -13,6 +13,11 @@ namespace JogoDasTacasRussas
             InitializeComponent();
         }
 
+        public void teste()
+        {
+            this.board = new Board(this);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.board = new Board(this);

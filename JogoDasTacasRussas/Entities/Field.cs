@@ -175,9 +175,9 @@ namespace JogoDasTacasRussas.Entities
         //----------------------------------------------------------------------
         public void EraseField()
         {
-            Graphics paper = FieldPictureBox.CreateGraphics();
+            Graphics paper = this.FieldPictureBox.CreateGraphics();
             SolidBrush solidBrush = new SolidBrush(Color.FromArgb(240, 240, 240)); // Cor inicial do campo
-            Size size = FieldPictureBox.Size;
+            Size size = this.FieldPictureBox.Size;
             paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
         }
 
