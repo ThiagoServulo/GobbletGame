@@ -1,50 +1,47 @@
-﻿/*******************************************************************************
- * Arquivo: Move.cs                                                            *
- * Autor: Thiago Sérvulo Guimarães                                             *
- * Data: 14/07/2022                                                            *
- *                                                                             *
- * Classe: Move                                                                *
- * Descrição: A classe 'Move' armazena as informações referentes a jogada que  *
- *   está sendo realizada. Logo, ela contém o campo de origem e de destino do  *
- *   movimento que será realizado.                                             *
- * Atributos:                                                                  *
- *   Origin [Field]: Campo de origem da jogada.                                *
- *   Destiny [Field]: Campo de destino da jogada.                              *
- *******************************************************************************/
-
-using System.Drawing;
+﻿using System.Drawing;
 using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
+    /** ************************************************************************
+    * \brief Informações sobre a movimentação das peças.
+    * \details A classe Move armazena as informações referentes a jogada que 
+    * está sendo realizada. Logo, ela contém o campo de origem e de destino 
+    * do movimento que será realizado.
+    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+    * \date 14/07/2022
+    * \version v1.0
+    ***************************************************************************/
     class Move
     {
-        //----------------------------------------------------------------------
-        // Atributos
-        //----------------------------------------------------------------------
+        /***************************************************************************
+        * Atributos da classe
+        ***************************************************************************/
+        /// \brief Campo de origem da jogada.
         public Field Origin { get; private set; }
+
+        /// \brief Campo de destino da jogada.
         public Field Destiny { get; private set; }
 
-        //----------------------------------------------------------------------
-        // Construtor da classe 'Move'
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Construtor da classe Move.
+        ***************************************************************************/
         public Move()
         {
             this.Origin = null;
             this.Destiny = null;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por processar a jogada realizada, atribuindo o
-        //    campo selecionado a posição de origem ou destino da jogada.
-        // Parâmetros:
-        //    field [Field]: Campo selecionado pelo jogador.
-        //    player [Player]: Jogador que está realizando a jogada.
-        // Retorno:
-        //    Valor do tipo 'PlayStatus', indicando o status atual da jogada
-        //    que está sendo realizada.
-        //----------------------------------------------------------------------
+        /** ************************************************************************
+        * \brief Processa a jogada atual.
+        * \details Função responsável por processar a jogada realizada, atribuindo
+        * o campo selecionado a posição de origem ou destino da jogada.
+        * \param field Campo selecionado pelo jogador.
+        * \param player Jogador que está realizando a jogada.
+        * \return Valor do tipo \link JogoDasTacasRussas.Entities.Enums PlayStatus
+        * \endlink, indicando o status atual da jogada que está sendo realizada.
+        ***************************************************************************/
         public PlayStatus Play(Field field, Player player)
         {
             // Se o campo de origem estiver vazio ele será atribuído
@@ -95,16 +92,12 @@ namespace JogoDasTacasRussas.Entities
 
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por realizar a movimentação da peça, ou seja,
-        //    transferir a peça da posição de origem para a posição de destino.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
-        private void MovePiece()
+        /** ************************************************************************
+        * \brief Processa a movimentação da peça.
+        * \details Função responsável por realizar a movimentação da peça, ou 
+        * seja, transferir a peça da posição de origem para a posição de destino.
+        ***************************************************************************/
+        public void MovePiece()
         {
             if (this.Origin.FieldPictureBox.Name.Contains('X') || this.Origin.FieldPictureBox.Name.Contains('Y'))
             {
@@ -116,17 +109,15 @@ namespace JogoDasTacasRussas.Entities
             this.Origin = this.Destiny = null;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função que valida se o campo de origem selecionado é válido para
-        //    um determinado jogador.
-        // Parâmetros:
-        //    field [Field]: Campo selecionado pelo jogador.
-        //    player [Player]: Jogador que está realizando a jogada.
-        // Retorno:
-        //    Valor do tipo 'bool', inicando se o campo de origem é válida ou
-        //    não.
-        //----------------------------------------------------------------------
+        /** ************************************************************************
+        * \brief Valida o campo de origem da jogada.
+        * \details Função que valida se o campo de origem selecionado é válido 
+        * para um determinado jogador.
+        * \param field Campo selecionado pelo jogador.
+        * \param player Jogador que está realizando a jogada.
+        * \return Valor do tipo booleano, inicando se o campo de origem é válida 
+        * ou não
+        ***************************************************************************/
         public bool IsValidOrigin(Field field, Player player)
         {
             // Um jogador só poderá selecionar os campos iniciais referentes a sua cor
@@ -153,16 +144,13 @@ namespace JogoDasTacasRussas.Entities
             return false;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função que valida se o campo de destino selecionado é válido para
-        //    um determinado jogador.
-        // Parâmetros:
-        //    field [Field]: Campo selecionado pelo jogador.
-        // Retorno:
-        //    Valor do tipo 'bool', inicando se o campo de destino é válida ou
-        //    não.
-        //----------------------------------------------------------------------
+        /** ************************************************************************
+        * \brief Valida o campo de destino da jogada.
+        * \details Função que valida se o campo de destino selecionado é válido.
+        * \param field Campo selecionado pelo jogador.
+        * \return Valor do tipo booleano, inicando se o campo de destino é válida
+        * ou não
+        ***************************************************************************/
         public bool IsValidDestiny(Field field)
         {
             // O campo de destino não pode ser um campo inicial

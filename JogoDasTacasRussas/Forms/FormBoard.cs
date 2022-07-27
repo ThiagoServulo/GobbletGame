@@ -8,14 +8,12 @@ namespace JogoDasTacasRussas
     {
         Board board;
 
+        /// <summary>
+        ///  This is the constructor of the class 'FormBoard'.
+        /// </summary>
         public FormBoard()
         {
             InitializeComponent();
-        }
-
-        public void teste()
-        {
-            this.board = new Board(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
