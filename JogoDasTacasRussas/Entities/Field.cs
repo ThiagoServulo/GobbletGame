@@ -136,14 +136,9 @@ namespace JogoDasTacasRussas.Entities
             Graphics paper = this.FieldPictureBox.CreateGraphics();
 
             // Verifica qual tipo de cor o círculo terá
-            if (circle.Color.TypeCurrent == ColorType.Primary)
-            {
-                solidBrush = new SolidBrush(circle.Color.Primary);
-            }
-            else
-            {
-                solidBrush = new SolidBrush(circle.Color.Secundary);
-            }
+            solidBrush = (circle.Color.TypeCurrent == ColorType.Primary) ? 
+                new SolidBrush(circle.Color.Primary): 
+                new SolidBrush(circle.Color.Secundary);
 
             // Desenha o círculo informado
             paper.FillEllipse(solidBrush, circle.X, circle.Y, circle.Width, circle.Height);

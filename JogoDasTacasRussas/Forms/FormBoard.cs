@@ -220,5 +220,13 @@ namespace JogoDasTacasRussas
         {
             this.board.Click(this.pictureBoxD4);
         }
+
+        private void BoardMove(object sender, EventArgs e)
+        {
+            if(this.board != null)
+            {
+                this.board.UpdateBoard();
+            }
+        }
     }
 }

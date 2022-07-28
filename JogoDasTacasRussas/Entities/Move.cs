@@ -87,7 +87,6 @@ namespace JogoDasTacasRussas.Entities
 
             // Caso nenhuma condição acima satisfaça, o campo selecionado é atribuído como o de destino
             return PlayStatus.WaitDestinyField;
-
         }
 
 

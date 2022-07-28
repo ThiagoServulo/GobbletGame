@@ -275,5 +275,22 @@ namespace JogoDasTacasRussas.Entities
             // Retorna null se o jogador não for encontrado
             return null;
         }
+
+
+        /** ************************************************************************
+        * \brief Atualiza o tabuleiro.
+        * \details Função responsável por atualizar o tabuleiro, recolocando as
+        * peças nos lugares que elas estavam.
+        ***************************************************************************/
+        public void UpdateBoard()
+        {
+            foreach (Field[] listFields in this.AllFields)
+            {
+                foreach (Field field in listFields)
+                {
+                    field.DrawCircle(field.GetLast());
+                }
+            }
+        }
     }
 }
