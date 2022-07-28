@@ -18,7 +18,16 @@ namespace JogoDasTacasRussas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.board = new Board(this);
+            this.board = new Board(new PictureBox[]{
+                this.pictureBoxX1,  this.pictureBoxX2,  this.pictureBoxX3,  this.pictureBoxX4,  this.pictureBoxX5,
+                this.pictureBoxX6,  this.pictureBoxX7,  this.pictureBoxX8,  this.pictureBoxX9,  this.pictureBoxX10,
+                this.pictureBoxX11, this.pictureBoxX12, this.pictureBoxY1,  this.pictureBoxY2,  this.pictureBoxY3,
+                this.pictureBoxY4,  this.pictureBoxY5,  this.pictureBoxY6,  this.pictureBoxY7,  this.pictureBoxY8,
+                this.pictureBoxY9,  this.pictureBoxY10, this.pictureBoxY11, this.pictureBoxY12, this.pictureBoxA1,
+                this.pictureBoxA2,  this.pictureBoxA3,  this.pictureBoxA4,  this.pictureBoxB1,  this.pictureBoxB2,
+                this.pictureBoxB3,  this.pictureBoxB4,  this.pictureBoxC1,  this.pictureBoxC2,  this.pictureBoxC3,
+                this.pictureBoxC4,  this.pictureBoxD1,  this.pictureBoxD2,  this.pictureBoxD3,  this.pictureBoxD4
+            });
         }
 
         private void PictureBoxX1Click(object sender, EventArgs e)

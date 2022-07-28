@@ -47,28 +47,14 @@ namespace JogoDasTacasRussas.Entities
             this.Type = type;
 
             // Define as dimensões do círculo, com base no seu tipo
-            switch (this.Type)
+            this.X = this.Type switch
             {
-                case CircleType.Type4:
-                    this.X = this.Y = 3;
-                break;
-
-                case CircleType.Type3:
-                    this.X = this.Y = 13;
-                break;
-
-                case CircleType.Type2:
-                    this.X = this.Y = 22;
-                break;
-
-                case CircleType.Type1:
-                    this.X = this.Y = 30;
-                break;
-
-                default:
-                    throw new Exception("Tipo de círculo inválido");
-            }
-
+                CircleType.Type4 => this.Y = 3,
+                CircleType.Type3 => this.Y = 13,
+                CircleType.Type2 => this.Y = 22,
+                CircleType.Type1 => this.Y = 30,
+                _ => throw new Exception("Tipo de círculo inválido"),
+            };
             this.Width = this.Height = 80 - (this.X * 2);
         }
 
@@ -111,7 +97,8 @@ namespace JogoDasTacasRussas.Entities
                 return false;
             }
 
-            Circle other = obj as Circle;  // Downcasting
+            // Realizar o downcasting
+            Circle other = obj as Circle;  
             return this.Color.Primary == other.Color.Primary;
         }
 

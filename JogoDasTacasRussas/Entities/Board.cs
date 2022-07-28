@@ -18,13 +18,13 @@ namespace JogoDasTacasRussas.Entities
         public Move PlayerMove { get; private set; }
 
         /// \brief Lista contendo os campos iniciais do jogador X.
-        public Field[] InitFieldsPlayerX { get; private set; }
+        public Field[] InitFieldsPlayerX { get; private set; } = new Field[12]; 
 
         /// \brief Lista contendo os campos iniciais do jogador Y.
-        public Field[] InitFieldsPlayerY { get; private set; }
+        public Field[] InitFieldsPlayerY { get; private set; } = new Field[12];
 
         /// \brief Lista contendo os campos do tabuleiro comum para os jogadores.
-        public Field[] FieldsBoard { get; private set; }
+        public Field[] FieldsBoard { get; private set; } = new Field[16];
 
         /// \brief Lista contendo todos os campos do tabuleiro.
         public Field[][] AllFields { get; private set; }
@@ -38,17 +38,18 @@ namespace JogoDasTacasRussas.Entities
         /// \brief Informações relativas ao jogador atual.
         public Player CurrentPlayer { get; private set; }
 
-        /// \brief Tela onde o tabuleiro será apresentado.
-        public FormBoard Form { get; private set; }
+        /// \brief Lista contendo os \a pictureBoxes do tabuleiro.
+        public PictureBox[] PictureBoxes { get; private set; }
 
 
         /** ************************************************************************
         * \brief Construtor da classe Board.
-        * \param form Tela onde o tabuleiro será apresentado.
+        * \param pictureBoxes Lista contendo os \a pictureBoxes do tabuleiro.
         ***************************************************************************/
-        public Board(FormBoard form)
+        public Board(PictureBox[] pictureBoxes)
         {
-            this.Form = form;
+            // Guarda os pictureBoxes do tabuleiro.
+            this.PictureBoxes = pictureBoxes;
 
             // Inicialização do tabuleiro
             this.InitBoard();
@@ -68,31 +69,40 @@ namespace JogoDasTacasRussas.Entities
         {
             // Inicialização da movimentação
             this.PlayerMove = new Move();
+            
+            int indexFieldsPlayerX = 0;
+            int indexFieldsPlayerY = 0;
+            int indexFieldsBoard = 0;
+
+            for (int i = 0; i < this.PictureBoxes.Length; i++)
+            {
+                if (this.PictureBoxes[i].Name.Contains('X'))
+                {
+                    // Agrupamento dos campos iniciais do Jogador X
+                    this.InitFieldsPlayerX[indexFieldsPlayerX] = new Field(PictureBoxes[i]);
+                    indexFieldsPlayerX += 1;
+                }
+                else if (this.PictureBoxes[i].Name.Contains('Y'))
+                {
+                    // Agrupamento dos campos iniciais do Jogador Y
+                    this.InitFieldsPlayerY[indexFieldsPlayerY] = new Field(PictureBoxes[i]);
+                    ++indexFieldsPlayerY;
+                }
+                else
+                {
+                    // Agrupamento dos campos do tabuleiro comum aos jogadores
+                    this.FieldsBoard[indexFieldsBoard] = new Field(PictureBoxes[i]);
+                    ++indexFieldsBoard;
+                }
+            }
 
             // Inicialização das peças do Jogador X
-            this.InitFieldsPlayerX = new Field[] { 
-                new Field(this.Form.pictureBoxX1),  new Field(this.Form.pictureBoxX2),  new Field(this.Form.pictureBoxX3),
-                new Field(this.Form.pictureBoxX4),  new Field(this.Form.pictureBoxX5),  new Field(this.Form.pictureBoxX6),
-                new Field(this.Form.pictureBoxX7),  new Field(this.Form.pictureBoxX8),  new Field(this.Form.pictureBoxX9),
-                new Field(this.Form.pictureBoxX10), new Field(this.Form.pictureBoxX11), new Field(this.Form.pictureBoxX12)};
             this.InitFields(this.InitFieldsPlayerX, Color.DarkRed, Color.IndianRed);
 
             // Inicialização das peças do Jogador Y
-            this.InitFieldsPlayerY = new Field[] {
-                new Field(this.Form.pictureBoxY1),  new Field(this.Form.pictureBoxY2),  new Field(this.Form.pictureBoxY3),
-                new Field(this.Form.pictureBoxY4),  new Field(this.Form.pictureBoxY5),  new Field(this.Form.pictureBoxY6),
-                new Field(this.Form.pictureBoxY7),  new Field(this.Form.pictureBoxY8),  new Field(this.Form.pictureBoxY9),
-                new Field(this.Form.pictureBoxY10), new Field(this.Form.pictureBoxY11), new Field(this.Form.pictureBoxY12)};
             this.InitFields(this.InitFieldsPlayerY, Color.DarkBlue, Color.LightBlue);
 
             // Inicialização do tabuleiro
-            this.FieldsBoard = new Field[] {
-                new Field(this.Form.pictureBoxA1), new Field(this.Form.pictureBoxA2), new Field(this.Form.pictureBoxA3), 
-                new Field(this.Form.pictureBoxA4), new Field(this.Form.pictureBoxB1), new Field(this.Form.pictureBoxB2), 
-                new Field(this.Form.pictureBoxB3), new Field(this.Form.pictureBoxB4), new Field(this.Form.pictureBoxC1),
-                new Field(this.Form.pictureBoxC2), new Field(this.Form.pictureBoxC3), new Field(this.Form.pictureBoxC4),
-                new Field(this.Form.pictureBoxD1), new Field(this.Form.pictureBoxD2), new Field(this.Form.pictureBoxD3), 
-                new Field(this.Form.pictureBoxD4)};
             this.InitFields(this.FieldsBoard, null, null);
 
             // Concatenação de todos os campos do tabuleiro
@@ -156,8 +166,8 @@ namespace JogoDasTacasRussas.Entities
                 if (playerWinner != null)
                 {
                     playerWinner.AddVictory();
-                    this.InitBoard();
                     MessageBox.Show($"{PlayerX.Victories} - {PlayerY.Victories}");
+                    this.InitBoard();
                 }
                 this.ChangeCurrentPlayer();
             }
