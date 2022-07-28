@@ -14,9 +14,6 @@ namespace JogoDasTacasRussas.Entities
     ***************************************************************************/
     class Move
     {
-        /***************************************************************************
-        * Atributos da classe
-        ***************************************************************************/
         /// \brief Campo de origem da jogada.
         public Field Origin { get; private set; }
 
@@ -32,6 +29,7 @@ namespace JogoDasTacasRussas.Entities
             this.Origin = null;
             this.Destiny = null;
         }
+
 
         /** ************************************************************************
         * \brief Processa a jogada atual.
@@ -92,6 +90,7 @@ namespace JogoDasTacasRussas.Entities
 
         }
 
+
         /** ************************************************************************
         * \brief Processa a movimentação da peça.
         * \details Função responsável por realizar a movimentação da peça, ou 
@@ -108,6 +107,7 @@ namespace JogoDasTacasRussas.Entities
             this.Destiny.AddCircle(circle);
             this.Origin = this.Destiny = null;
         }
+
 
         /** ************************************************************************
         * \brief Valida o campo de origem da jogada.
@@ -143,6 +143,7 @@ namespace JogoDasTacasRussas.Entities
             // Se nenhuma condição acima for satisfeita, o campo de origem é inválido para a jogada
             return false;
         }
+
 
         /** ************************************************************************
         * \brief Valida o campo de destino da jogada.

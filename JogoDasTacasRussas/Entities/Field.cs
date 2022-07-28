@@ -1,35 +1,31 @@
-﻿/*******************************************************************************
- * Arquivo: Field.cs                                                           *
- * Autor: Thiago Sérvulo Guimarães                                             *
- * Data: 20/07/2022                                                            *
- *                                                                             *
- * Classe: Field                                                               *
- * Descrição: A classe 'Field' armazena as informações referentes aos campos   *
- *   que o tabuleiro irá conter.                                               *
- * Atributos:                                                                  *
- *   FieldPictureBox [PictureBox]: 'pictureBox' referente a este campo.        *
- *   StackCircles [Stack<Circle>]: Pilha que recebe os círculos adicionados    *
- *                                 a este campo.                               *
- *******************************************************************************/
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
+    /** ************************************************************************
+    * \brief Informações sobre o campo.
+    * \details A classe Field armazena as informações referentes aos campos
+    * que o tabuleiro irá conter.  
+    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+    * \date 20/07/2022
+    * \version v1.0
+    ***************************************************************************/
     class Field
     {
-        //----------------------------------------------------------------------
-        // Atributos
-        //----------------------------------------------------------------------
+        /// \brief \a pictureBox referente a este campo.
         public PictureBox FieldPictureBox { get; private set; }
+        
+        /// \brief Pilha que recebe os círculos adicionados neste campo.
         public Stack<Circle> StackCircles { get; private set; }
 
-        //----------------------------------------------------------------------
-        // Construtor da classe 'Field'
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Construtor da classe Field.
+        * \param pictureBox \a pictureBox referente a este campo.
+        ***************************************************************************/
         public Field(PictureBox pictureBox)
         {
             this.FieldPictureBox = pictureBox;
@@ -37,14 +33,13 @@ namespace JogoDasTacasRussas.Entities
             this.StackCircles.Clear();
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por adicionar um círculo ao topo da pilha.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Adiciona um círculo no campo.
+        * \details Função responsável por adicionar um círculo ao topo da pilha 
+        * referente a este campo.
+        * \param circle Círculo que será adicionado neste campo.
+        ***************************************************************************/
         public void AddCircle(Circle circle)
         {
             // Adiciona o círculo ao topo da pilha
@@ -54,16 +49,14 @@ namespace JogoDasTacasRussas.Entities
             this.DrawCircle(circle);
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por remover o círculo que está no topo da pilha
-        //    deste campo e retorna-o.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Valor do tipo 'Circle', que corresponde ao círculo que estava no
-        //    topo da pilha.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Remove um círculo do campo.
+        * \details Função responsável por remover o círculo que está no topo da
+        * pilha deste campo e retorná-lo.
+        * \return Valor do tipo Circle, que corresponde ao círculo que estava no
+        * topo da pilha deste campo.
+        ***************************************************************************/
         public Circle PopCircle()
         {
             // Remove o círculo que está no topo da pilha
@@ -74,14 +67,12 @@ namespace JogoDasTacasRussas.Entities
             return circle;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por trocar a cor de um determinado círculo.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Troca a cor do círculo.
+        * \details Função responsável por trocar a cor do círculo que se encontra
+        * neste campo.
+        ***************************************************************************/
         public void ChangeCircleColor()
         {
             // Pega o círculo que está no topo da pilha
@@ -96,16 +87,14 @@ namespace JogoDasTacasRussas.Entities
             }
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por pegar o círculo que se encontra no topo da
-        //    pilha e retornar suas informações.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Valor do tipo 'Circle', que corresponde ao círculo que está no
-        //    topo da pilha.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Pega as informações do círculo atual de um campo.
+        * \details Função responsável por pegar o círculo que se encontra no topo 
+        * da pilha deste campo e retornar suas informações.
+        * \return Valor do tipo Circle, que corresponde ao círculo que estava no
+        * topo da pilha deste campo.
+        ***************************************************************************/
         public Circle GetLast()
         {
             if (this.StackCircles.Count == 0)
@@ -115,27 +104,22 @@ namespace JogoDasTacasRussas.Entities
             return this.StackCircles.Peek();
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por limpar a pilha de círculos.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Limpa a pilha de círculos.
+        * \details Função responsável por limpar a pilha de círculos deste campo.
+        ***************************************************************************/
         public void Clear()
         {
             this.StackCircles.Clear();
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por desenhar um círculo em um campo.
-        // Parâmetros:
-        //    circle [Circle]: Círculo que será desenhado.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Desenha um círculo.
+        * \details Função responsável por desenhar um círculo neste campo.
+        * \param circle Círculo que será desenhado.
+        ***************************************************************************/
         public void DrawCircle(Circle circle)
         {
             SolidBrush solidBrush;
@@ -165,14 +149,11 @@ namespace JogoDasTacasRussas.Entities
             paper.FillEllipse(solidBrush, circle.X, circle.Y, circle.Width, circle.Height);
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por limpar o campo.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Limpa o campo.
+        * \details Função responsável por limpar o campo.
+        ***************************************************************************/
         public void EraseField()
         {
             Graphics paper = this.FieldPictureBox.CreateGraphics();
@@ -181,16 +162,15 @@ namespace JogoDasTacasRussas.Entities
             paper.FillRectangle(solidBrush, 0, 0, size.Width, size.Height);
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função sobrescrita responsável por comprar dois objetos do tipo
-        //    'Field'.
-        // Parâmetros:
-        //    obj [object]: Objeto do tipo 'Field' que será comparado.
-        // Retorno:
-        //    Um valor do tipo 'bool', inicando se os dois objetos comparados
-        //    são iguais ou não.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Compara dois campos.
+        * \details Função sobrescrita responsável por comprar dois objetos do tipo 
+        * Field.
+        * \param obj Campo que será comparado.
+        * \return Um valor do tipo booleano, inicando se os dois campos comparados
+        * são iguais ou não.
+        ***************************************************************************/
         public override bool Equals(object obj)
         {
             Circle circle = this.GetLast();
@@ -200,19 +180,19 @@ namespace JogoDasTacasRussas.Entities
                 return false;
             }
 
-            Field other = obj as Field;  // Downcasting
+            // Realizar um downcasting
+            Field other = obj as Field;  
             return circle.Equals(other.GetLast());
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função sobrescrita responsável por gerar uma hash referente a este
-        //    objeto.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Um valor do tipo 'int', que consiste na chave referente ao objeto.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Gera a chave hash referente ao campo.
+        * \details Função sobrescrita responsável por gerar uma chave hash referente 
+        * a este campo.
+        * \return Um valor do tipo inteiro, que consiste na chave hash referente 
+        * ao campo.
+        ***************************************************************************/
         public override int GetHashCode()
         {
             return this.GetLast().GetHashCode();

@@ -1,47 +1,51 @@
-﻿/*******************************************************************************
- * Arquivo: Board.cs                                                           *
- * Autor: Thiago Sérvulo Guimarães                                             *
- * Data: 19/07/2022                                                            *
- *                                                                             *
- * Classe: Board                                                               *
- * Descrição: A classe 'Board' armazena as informações referentes ao tabuleiro *
- *   do jogo, ou seja, onde as peças serão colocadas.                          *
- * Atributos:                                                                  *
- *   PlayerMove [Move]: Informações da jogada atual.                           *
- *   InitFieldsPlayerX [Field[]]: Campos iniciais do jogador X.                *
- *   InitFieldsPlayerY [Field[]]: Campos iniciais do jogador Y.                *
- *   FieldsBoard [Field[]]: Campos do tabuleiro do jogo.                       * 
- *   AllFields [Field[][]]: Todos os campos do jogo.                           *
- *   PlayerX [Player]: Informações relativas ao jogador X.                     *
- *   PlayerY [Player]: Informações relativas ao jogador Y.                     *
- *   CurrentPlayer [Player]: Informações relativas ao jogador atual.           *
- *   Form [Form1]: Tela onde o tabuleiro será apresentado.                     *
- *******************************************************************************/
-
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
+    /** ************************************************************************
+    * \brief Informações sobre o tabuleiro.
+    * \details A classe Board armazena as informações referentes ao tabuleiro 
+    * do jogo, ou seja, onde as peças serão colocadas.
+    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+    * \date 19/07/2022
+    * \version v1.0
+    ***************************************************************************/
     class Board
     {
-        //----------------------------------------------------------------------
-        // Atributos
-        //----------------------------------------------------------------------
+        /// \brief Informações da jogada atual.
         public Move PlayerMove { get; private set; }
+
+        /// \brief Lista contendo os campos iniciais do jogador X.
         public Field[] InitFieldsPlayerX { get; private set; }
+
+        /// \brief Lista contendo os campos iniciais do jogador Y.
         public Field[] InitFieldsPlayerY { get; private set; }
+
+        /// \brief Lista contendo os campos do tabuleiro comum para os jogadores.
         public Field[] FieldsBoard { get; private set; }
+
+        /// \brief Lista contendo todos os campos do tabuleiro.
         public Field[][] AllFields { get; private set; }
+
+        /// \brief Informações relativas ao jogador X.
         public Player PlayerX { get; private set; }
+
+        /// \brief Informações relativas ao jogador Y.
         public Player PlayerY { get; private set; }
+
+        /// \brief Informações relativas ao jogador atual.
         public Player CurrentPlayer { get; private set; }
+
+        /// \brief Tela onde o tabuleiro será apresentado.
         public FormBoard Form { get; private set; }
 
-        //----------------------------------------------------------------------
-        // Construtor da classe 'Board'
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Construtor da classe Board.
+        * \param form Tela onde o tabuleiro será apresentado.
+        ***************************************************************************/
         public Board(FormBoard form)
         {
             this.Form = form;
@@ -55,14 +59,11 @@ namespace JogoDasTacasRussas.Entities
             this.CurrentPlayer = this.PlayerX;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por inicializar o tabuleiro.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Inicializa o tabuleiro.
+        * \details Função responsável por inicializar o tabuleiro do jogo.
+        ***************************************************************************/
         public void InitBoard()
         {
             // Inicialização da movimentação
@@ -98,17 +99,15 @@ namespace JogoDasTacasRussas.Entities
             this.AllFields = new Field[][] { this.FieldsBoard, this.InitFieldsPlayerY, this.InitFieldsPlayerX };
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por inicializar os campos do tabuleiro,
-        //    adicionando as peças ou deixando-os vazios.
-        // Parâmetros:
-        //    fields [Field[]]: Campos que serão inicializados.
-        //    primaryColor [Color?]: Cor primária da possível peça adicionada.
-        //    secundaryColor [Color?]: Cor secundária da possível peça adicionada.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Inicializa os campos.
+        * \details Função responsável por inicializar os campos do tabuleiro, 
+        * adicionando as peças ou deixando-os vazios.
+        * \param fields Lista contendo os campos que serão inicializados.
+        * \param primaryColor Cor primária da possível peça adicionada.
+        * \param secundaryColor Cor secundária da possível peça adicionada.
+        ***************************************************************************/
         public void InitFields(Field[] fields, Color? primaryColor, Color? secundaryColor)
         {
             for (int i = 0; i < fields.Length; i++)
@@ -139,15 +138,13 @@ namespace JogoDasTacasRussas.Entities
             }
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por processar a interrupção do usuário ao clicar
-        //    em um determinado 'pictureBox'.
-        // Parâmetros:
-        //    pictureBox [PictureBox]: 'pictureBox' clicado pelo usuário.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Processa o envento de click sobre um \a pictureBox.
+        * \details Função responsável por processar a interrupção do usuário ao 
+        * clicar em um determinado \a pictureBox.
+        * \param pictureBox \a pictureBox clicado pelo usuário.
+        ***************************************************************************/
         public void Click(PictureBox pictureBox)
         {
             Field field = this.GetField(pictureBox);
@@ -166,16 +163,15 @@ namespace JogoDasTacasRussas.Entities
             }
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por converter um 'pictureBox' para um campo
-        //    conhecido.
-        // Parâmetros:
-        //    pictureBox [PictureBox]: 'pictureBox' que será convertido.
-        // Retorno:
-        //     Valor do tipo 'Field', que apresenta as informações do campo
-        //    referentes ao 'pictureBox' informado.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Identifica um campo.
+        * \details Função responsável por converter um \a pictureBox para um campo
+        * conhecido.
+        * \param pictureBox \a pictureBox clicado pelo usuário.
+        * \return Valor do tipo Field, que apresenta as informações do campo 
+        * referentes ao \a pictureBox informado.
+        ***************************************************************************/
         public Field GetField(PictureBox pictureBox)
         {
             foreach(Field[] listFields in this.AllFields)
@@ -191,28 +187,23 @@ namespace JogoDasTacasRussas.Entities
             return null;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por realizar a troca do jogador atual.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Nenhum.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Troca o jogador atual.
+        * \details Função responsável por realizar a troca do jogador atual.
+        ***************************************************************************/
         public void ChangeCurrentPlayer()
         {
             this.CurrentPlayer = (this.CurrentPlayer.Type == PlayerType.PlayerX) ? this.PlayerY : this.PlayerX;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por verificar se há um ganhador na partida.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Valor do tipo 'Player', indicando o ganhador da partida atual. Se
-        //    não ouver ganhador é retornado 'null'.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Verifica se há um ganhador.
+        * \details Função responsável por verificar se há um ganhador na partida.
+        * \return Valor do tipo Player, indicando o ganhador da partida atual. Se
+        * não houver ganhador é retornado \a null.
+        ***************************************************************************/
         public Player CheckWinner()
         {
             // Checar colunas
@@ -257,16 +248,15 @@ namespace JogoDasTacasRussas.Entities
             return null;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por checar de qual jogador é a peça que está
-        //    no campo informado.
-        // Parâmetros:
-        //    field [Field]: Campo que será analizado.
-        // Retorno:
-        //    Valor do tipo 'Player', indicando o jogador dono da peça presnete
-        //    no campo.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Verifica o jogador dono da peça.
+        * \details Função responsável por checar de qual jogador é a peça que se
+        * encontra no campo informado.
+        * \param field Campo que será analizado.
+        * \return Valor do tipo Player, indicando o jogador dono da peça presente
+        * no campo.
+        ***************************************************************************/
         public Player CheckPlayer(Field field)
         {
             // Pega a cor do círculo presnete no campo

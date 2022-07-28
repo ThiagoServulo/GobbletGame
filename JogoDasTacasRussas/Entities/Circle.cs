@@ -1,42 +1,46 @@
-﻿/*******************************************************************************
- * Arquivo: Circle.cs                                                          *
- * Autor: Thiago Sérvulo Guimarães                                             *
- * Data: 15/07/2022                                                            *
- *                                                                             *
- * Classe: Circle                                                              *
- * Descrição: A classe 'Circle' armazena as informações referentes as peças    *
- *   que podem ser movimentadas pelos jogadores. Estas peças tem formato de    *
- *   círculos e podem ter 4 tamanhos diferentes.                               *
- * Atributos:                                                                  *
- *   X [int]: Posição inicial no eixo X do quadrado que círculo será inscrito. *
- *   Y [int]: Posição inicial no eixo Y do quadrado que círculo será inscrito. *
- *   Width [int]: Largura do quadrado que círculo será inscrito.               *
- *   Height [int]: Altura do quadrado que círculo será inscrito.               *
- *   Color [ColorInfo]: Classe com as informações sobre as cores do círculo.   *
- *   Type [CircleType]: Tipo do círculo.                                       *
- *******************************************************************************/
-
-using System;
+﻿using System;
 using System.Drawing;
 using JogoDasTacasRussas.Entities.Enums;
 
 namespace JogoDasTacasRussas.Entities
 {
-    class Circle: IComparable
+    /** ************************************************************************
+    * \brief Informações sobre as peças dos jogadores.
+    * \details A classe Circle armazena as informações referentes as peças que 
+    * podem ser movimentadas pelos jogadores. Estas peças tem formato de círculos 
+    * e podem ter quatro tamanhos diferentes.
+    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+    * \date 15/07/2022
+    * \version v1.0
+    ***************************************************************************/
+    class Circle : IComparable
     {
-        //----------------------------------------------------------------------
-        // Atributos
-        //----------------------------------------------------------------------
+        /// \brief Posição inicial no eixo X do quadrado que círculo será inscrito.
         public int X { get; private set; }
+
+        /// \brief Posição inicial no eixo Y do quadrado que círculo será inscrito.
         public int Y { get; private set; }
+
+        /// \brief Largura do quadrado que círculo será inscrito.
         public int Width { get; private set; }
+
+        /// \brief Altura do quadrado que círculo será inscrito.
         public int Height { get; private set; }
+
+        /// \brief Classe com as informações sobre as cores do círculo.
         public ColorInfo Color { get; private set; }
+
+        /// \brief Tipo do círculo.
         public CircleType Type { get; private set; }
 
-        //----------------------------------------------------------------------
-        // Construtor da classe 'Circle'
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Construtor da classe Circle.
+        * \param primaryColor Cor primária do círculo instanciado.
+        * \param secundaryColor Cor secundária do círculo instanciado.
+        * \param type Tipo do círculo instanciado.
+        * \exception Exception Exceção caso o tipo de círculo seja inválido.
+        ***************************************************************************/
         public Circle(Color primaryColor, Color secundaryColor, CircleType type)
         {
             this.Color = new ColorInfo(primaryColor, secundaryColor);
@@ -68,18 +72,16 @@ namespace JogoDasTacasRussas.Entities
             this.Width = this.Height = 80 - (this.X * 2);
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função responsável por comparar dois objetos instanciados a partir
-        //    da classe 'Circle'.
-        // Parâmetros:
-        //    obj [object]: Círculo com o qual será realizado a comparação.
-        // Retorno:
-        //    Valor do tipo inteiro 'n', sendo:
-        //      n > 0 : Se o círculo atual for maior que o testado.
-        //      n = 0 : Se o círculo atual for igual que o testado.
-        //      n < 0 : Se o círculo atual for menor que o testado.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Compara dos círculos.
+        * \details Função responsável por comparar dois círculos.
+        * \param obj Círculo com o qual será realizado a comparação.
+        * \return  Valor do tipo inteiro n, sendo:\n
+        * n > 0 : Se o círculo atual for maior que o testado.\n
+        * n = 0 : Se o círculo atual for igual que o testado.\n
+        * n < 0 : Se o círculo atual for menor que o testado.
+        ***************************************************************************/
         public int CompareTo(object obj)
         {
             // Se o obj for null a comparação não precisa ser feita, pois o círculo testado é maior
@@ -88,20 +90,20 @@ namespace JogoDasTacasRussas.Entities
                 return 1;
             }
 
-            Circle other = obj as Circle;  // Downcasting
+            // Realizar downcasting
+            Circle other = obj as Circle;  
             return this.Type.CompareTo(other.Type);
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função sobrescrita responsável por comprar dois objetos do tipo
-        //    'Circle'.
-        // Parâmetros:
-        //    obj [object]: Objeto do tipo 'Circle' que será comparado.
-        // Retorno:
-        //    Um valor do tipo 'bool', inicando se os dois objetos comparados
-        //    são iguais ou não.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Verifica se dois círculos são iguais.
+        * \details Função sobrescrita responsável por verificar se dois círculos são 
+        * iguais.
+        * \param obj Círculo com o qual será realizado a comparação.
+        * \return Um valor do tipo booleano, inicando se os dois objetos comparados
+        * são iguais ou não.
+        ***************************************************************************/
         public override bool Equals(object obj)
         {
             if (!(obj is Circle) || (obj == null))
@@ -113,15 +115,14 @@ namespace JogoDasTacasRussas.Entities
             return this.Color.Primary == other.Color.Primary;
         }
 
-        //----------------------------------------------------------------------
-        // Descrição:
-        //    Função sobrescrita responsável por gerar uma hash referente a este
-        //    objeto.
-        // Parâmetros:
-        //    Nenhum.
-        // Retorno:
-        //    Um valor do tipo 'int', que consiste na chave referente ao objeto.
-        //----------------------------------------------------------------------
+
+        /** ************************************************************************
+        * \brief Retorna a hash referente ao círculo.
+        * \details Função sobrescrita responsável por gerar uma hash referente a um
+        * círculo.
+        * \return Um valor do tipo inteiro, que consiste na chave referente ao 
+        * objeto.
+        ***************************************************************************/
         public override int GetHashCode()
         {
             return this.Color.Primary.GetHashCode();
