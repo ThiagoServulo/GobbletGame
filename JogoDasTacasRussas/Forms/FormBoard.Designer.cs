@@ -351,7 +351,7 @@ namespace JogoDasTacasRussas
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "Começar";
             this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.button1_Click);
+            this.buttonStart.Click += new System.EventHandler(this.ButtonStartClick);
             // 
             // pictureBox4
             // 

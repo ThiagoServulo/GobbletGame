@@ -16,7 +16,7 @@ namespace JogoDasTacasRussas
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void StartGame()
         {
             this.board = new Board(new PictureBox[]{
                 this.pictureBoxX1,  this.pictureBoxX2,  this.pictureBoxX3,  this.pictureBoxX4,  this.pictureBoxX5,
@@ -28,6 +28,31 @@ namespace JogoDasTacasRussas
                 this.pictureBoxB3,  this.pictureBoxB4,  this.pictureBoxC1,  this.pictureBoxC2,  this.pictureBoxC3,
                 this.pictureBoxC4,  this.pictureBoxD1,  this.pictureBoxD2,  this.pictureBoxD3,  this.pictureBoxD4
             });
+
+            this.labelVitoriasJogadorX.Text = "Vitórias: 0";
+            this.labelVitoriasJogadorY.Text = "Vitórias: 0";
+        }
+
+        private void ButtonStartClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int roundQuantity = int.Parse(textBoxRoundQuantity.Text);
+
+                if (((roundQuantity % 2) == 0) || (roundQuantity < 0))
+                {
+                    throw new FormatException();
+                }
+
+                textBoxRoundQuantity.Enabled = false;
+                StartGame();
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Erro: A quantidade de rodadas deve ser um número impar maior que zero");
+                textBoxRoundQuantity.Text = "";
+                textBoxRoundQuantity.Enabled = true;
+            }
         }
 
         private void PictureBoxX1Click(object sender, EventArgs e)

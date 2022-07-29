@@ -41,14 +41,19 @@ namespace JogoDasTacasRussas.Entities
         /// \brief Lista contendo os \a pictureBoxes do tabuleiro.
         public PictureBox[] PictureBoxes { get; private set; }
 
+        /// \brief Lista contendo os \a pictureBoxes do tabuleiro.
+        public int RoundQuantity { get; private set; }
 
         /** ************************************************************************
         * \brief Construtor da classe Board.
         * \param pictureBoxes Lista contendo os \a pictureBoxes do tabuleiro.
         ***************************************************************************/
-        public Board(PictureBox[] pictureBoxes)
+        public Board(PictureBox[] pictureBoxes, int roundQuantity)
         {
-            // Guarda os pictureBoxes do tabuleiro.
+            // Salva a quantidade de rodadas
+            this.RoundQuantity = roundQuantity;
+
+            // Armazena os pictureBoxes do tabuleiro.
             this.PictureBoxes = pictureBoxes;
 
             // Inicialização do tabuleiro
