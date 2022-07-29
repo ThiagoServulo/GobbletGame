@@ -30,7 +30,7 @@ namespace JogoDasTacasRussas
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -180,6 +180,13 @@ namespace JogoDasTacasRussas
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBoxJogadorX = new System.Windows.Forms.GroupBox();
+            this.labelVitoriasJogadorX = new System.Windows.Forms.Label();
+            this.groupBoxJogadorY = new System.Windows.Forms.GroupBox();
+            this.labelVitoriasJogadorY = new System.Windows.Forms.Label();
+            this.labelGameTitle = new System.Windows.Forms.Label();
+            this.labelRoundQuantity = new System.Windows.Forms.Label();
+            this.textBoxRoundQuantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -322,31 +329,34 @@ namespace JogoDasTacasRussas
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox140)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox141)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox142)).BeginInit();
+            this.groupBoxJogadorX.SuspendLayout();
+            this.groupBoxJogadorY.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 177);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(6, 92);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // buttonStart
             // 
-            this.button1.Location = new System.Drawing.Point(442, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonStart.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonStart.Location = new System.Drawing.Point(636, 171);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(112, 33);
+            this.buttonStart.TabIndex = 1;
+            this.buttonStart.Text = "Começar";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 146);
+            this.pictureBox4.Location = new System.Drawing.Point(36, 263);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(92, 6);
             this.pictureBox4.TabIndex = 4;
@@ -355,7 +365,7 @@ namespace JogoDasTacasRussas
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 60);
+            this.pictureBox2.Location = new System.Drawing.Point(36, 177);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(92, 6);
             this.pictureBox2.TabIndex = 5;
@@ -364,7 +374,7 @@ namespace JogoDasTacasRussas
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox3.Location = new System.Drawing.Point(98, 60);
+            this.pictureBox3.Location = new System.Drawing.Point(122, 177);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(6, 92);
             this.pictureBox3.TabIndex = 6;
@@ -372,7 +382,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX1
             // 
-            this.pictureBoxX1.Location = new System.Drawing.Point(18, 66);
+            this.pictureBoxX1.Location = new System.Drawing.Point(42, 183);
             this.pictureBoxX1.Name = "pictureBoxX1";
             this.pictureBoxX1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX1.TabIndex = 7;
@@ -382,7 +392,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX4
             // 
-            this.pictureBoxX4.Location = new System.Drawing.Point(18, 175);
+            this.pictureBoxX4.Location = new System.Drawing.Point(42, 292);
             this.pictureBoxX4.Name = "pictureBoxX4";
             this.pictureBoxX4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX4.TabIndex = 12;
@@ -392,7 +402,7 @@ namespace JogoDasTacasRussas
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox7.Location = new System.Drawing.Point(98, 169);
+            this.pictureBox7.Location = new System.Drawing.Point(122, 286);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(6, 92);
             this.pictureBox7.TabIndex = 11;
@@ -401,7 +411,7 @@ namespace JogoDasTacasRussas
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox8.Location = new System.Drawing.Point(12, 169);
+            this.pictureBox8.Location = new System.Drawing.Point(36, 286);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(92, 6);
             this.pictureBox8.TabIndex = 10;
@@ -410,7 +420,7 @@ namespace JogoDasTacasRussas
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox9.Location = new System.Drawing.Point(12, 255);
+            this.pictureBox9.Location = new System.Drawing.Point(36, 372);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(92, 6);
             this.pictureBox9.TabIndex = 9;
@@ -419,7 +429,7 @@ namespace JogoDasTacasRussas
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 169);
+            this.pictureBox6.Location = new System.Drawing.Point(36, 286);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(6, 92);
             this.pictureBox6.TabIndex = 8;
@@ -427,7 +437,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX10
             // 
-            this.pictureBoxX10.Location = new System.Drawing.Point(18, 395);
+            this.pictureBoxX10.Location = new System.Drawing.Point(42, 512);
             this.pictureBoxX10.Name = "pictureBoxX10";
             this.pictureBoxX10.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX10.TabIndex = 22;
@@ -437,7 +447,7 @@ namespace JogoDasTacasRussas
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox12.Location = new System.Drawing.Point(98, 389);
+            this.pictureBox12.Location = new System.Drawing.Point(122, 506);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(6, 92);
             this.pictureBox12.TabIndex = 21;
@@ -446,7 +456,7 @@ namespace JogoDasTacasRussas
             // pictureBox13
             // 
             this.pictureBox13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox13.Location = new System.Drawing.Point(12, 389);
+            this.pictureBox13.Location = new System.Drawing.Point(36, 506);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(92, 6);
             this.pictureBox13.TabIndex = 20;
@@ -455,7 +465,7 @@ namespace JogoDasTacasRussas
             // pictureBox14
             // 
             this.pictureBox14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox14.Location = new System.Drawing.Point(12, 475);
+            this.pictureBox14.Location = new System.Drawing.Point(36, 592);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(92, 6);
             this.pictureBox14.TabIndex = 19;
@@ -464,7 +474,7 @@ namespace JogoDasTacasRussas
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox11.Location = new System.Drawing.Point(12, 389);
+            this.pictureBox11.Location = new System.Drawing.Point(36, 506);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(6, 92);
             this.pictureBox11.TabIndex = 18;
@@ -472,7 +482,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX7
             // 
-            this.pictureBoxX7.Location = new System.Drawing.Point(18, 286);
+            this.pictureBoxX7.Location = new System.Drawing.Point(42, 403);
             this.pictureBoxX7.Name = "pictureBoxX7";
             this.pictureBoxX7.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX7.TabIndex = 17;
@@ -482,7 +492,7 @@ namespace JogoDasTacasRussas
             // pictureBox17
             // 
             this.pictureBox17.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox17.Location = new System.Drawing.Point(98, 280);
+            this.pictureBox17.Location = new System.Drawing.Point(122, 397);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(6, 92);
             this.pictureBox17.TabIndex = 16;
@@ -491,7 +501,7 @@ namespace JogoDasTacasRussas
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox18.Location = new System.Drawing.Point(12, 280);
+            this.pictureBox18.Location = new System.Drawing.Point(36, 397);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(92, 6);
             this.pictureBox18.TabIndex = 15;
@@ -500,7 +510,7 @@ namespace JogoDasTacasRussas
             // pictureBox19
             // 
             this.pictureBox19.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox19.Location = new System.Drawing.Point(12, 366);
+            this.pictureBox19.Location = new System.Drawing.Point(36, 483);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(92, 6);
             this.pictureBox19.TabIndex = 14;
@@ -509,7 +519,7 @@ namespace JogoDasTacasRussas
             // pictureBox16
             // 
             this.pictureBox16.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox16.Location = new System.Drawing.Point(12, 280);
+            this.pictureBox16.Location = new System.Drawing.Point(36, 397);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(6, 92);
             this.pictureBox16.TabIndex = 13;
@@ -517,7 +527,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX11
             // 
-            this.pictureBoxX11.Location = new System.Drawing.Point(125, 395);
+            this.pictureBoxX11.Location = new System.Drawing.Point(149, 512);
             this.pictureBoxX11.Name = "pictureBoxX11";
             this.pictureBoxX11.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX11.TabIndex = 42;
@@ -527,7 +537,7 @@ namespace JogoDasTacasRussas
             // pictureBox22
             // 
             this.pictureBox22.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox22.Location = new System.Drawing.Point(205, 389);
+            this.pictureBox22.Location = new System.Drawing.Point(229, 506);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(6, 92);
             this.pictureBox22.TabIndex = 41;
@@ -536,7 +546,7 @@ namespace JogoDasTacasRussas
             // pictureBox23
             // 
             this.pictureBox23.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox23.Location = new System.Drawing.Point(119, 389);
+            this.pictureBox23.Location = new System.Drawing.Point(143, 506);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(92, 6);
             this.pictureBox23.TabIndex = 40;
@@ -545,7 +555,7 @@ namespace JogoDasTacasRussas
             // pictureBox24
             // 
             this.pictureBox24.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox24.Location = new System.Drawing.Point(119, 475);
+            this.pictureBox24.Location = new System.Drawing.Point(143, 592);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(92, 6);
             this.pictureBox24.TabIndex = 39;
@@ -554,7 +564,7 @@ namespace JogoDasTacasRussas
             // pictureBox21
             // 
             this.pictureBox21.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox21.Location = new System.Drawing.Point(119, 389);
+            this.pictureBox21.Location = new System.Drawing.Point(143, 506);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(6, 92);
             this.pictureBox21.TabIndex = 38;
@@ -562,7 +572,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX8
             // 
-            this.pictureBoxX8.Location = new System.Drawing.Point(125, 286);
+            this.pictureBoxX8.Location = new System.Drawing.Point(149, 403);
             this.pictureBoxX8.Name = "pictureBoxX8";
             this.pictureBoxX8.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX8.TabIndex = 37;
@@ -572,7 +582,7 @@ namespace JogoDasTacasRussas
             // pictureBox27
             // 
             this.pictureBox27.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox27.Location = new System.Drawing.Point(205, 280);
+            this.pictureBox27.Location = new System.Drawing.Point(229, 397);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(6, 92);
             this.pictureBox27.TabIndex = 36;
@@ -581,7 +591,7 @@ namespace JogoDasTacasRussas
             // pictureBox28
             // 
             this.pictureBox28.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox28.Location = new System.Drawing.Point(119, 280);
+            this.pictureBox28.Location = new System.Drawing.Point(143, 397);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(92, 6);
             this.pictureBox28.TabIndex = 35;
@@ -590,7 +600,7 @@ namespace JogoDasTacasRussas
             // pictureBox29
             // 
             this.pictureBox29.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox29.Location = new System.Drawing.Point(119, 366);
+            this.pictureBox29.Location = new System.Drawing.Point(143, 483);
             this.pictureBox29.Name = "pictureBox29";
             this.pictureBox29.Size = new System.Drawing.Size(92, 6);
             this.pictureBox29.TabIndex = 34;
@@ -599,7 +609,7 @@ namespace JogoDasTacasRussas
             // pictureBox26
             // 
             this.pictureBox26.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox26.Location = new System.Drawing.Point(119, 280);
+            this.pictureBox26.Location = new System.Drawing.Point(143, 397);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(6, 92);
             this.pictureBox26.TabIndex = 33;
@@ -607,7 +617,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX5
             // 
-            this.pictureBoxX5.Location = new System.Drawing.Point(125, 175);
+            this.pictureBoxX5.Location = new System.Drawing.Point(149, 292);
             this.pictureBoxX5.Name = "pictureBoxX5";
             this.pictureBoxX5.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX5.TabIndex = 32;
@@ -617,7 +627,7 @@ namespace JogoDasTacasRussas
             // pictureBox32
             // 
             this.pictureBox32.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox32.Location = new System.Drawing.Point(205, 169);
+            this.pictureBox32.Location = new System.Drawing.Point(229, 286);
             this.pictureBox32.Name = "pictureBox32";
             this.pictureBox32.Size = new System.Drawing.Size(6, 92);
             this.pictureBox32.TabIndex = 31;
@@ -626,7 +636,7 @@ namespace JogoDasTacasRussas
             // pictureBox33
             // 
             this.pictureBox33.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox33.Location = new System.Drawing.Point(119, 169);
+            this.pictureBox33.Location = new System.Drawing.Point(143, 286);
             this.pictureBox33.Name = "pictureBox33";
             this.pictureBox33.Size = new System.Drawing.Size(92, 6);
             this.pictureBox33.TabIndex = 30;
@@ -635,7 +645,7 @@ namespace JogoDasTacasRussas
             // pictureBox34
             // 
             this.pictureBox34.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox34.Location = new System.Drawing.Point(119, 255);
+            this.pictureBox34.Location = new System.Drawing.Point(143, 372);
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.Size = new System.Drawing.Size(92, 6);
             this.pictureBox34.TabIndex = 29;
@@ -644,7 +654,7 @@ namespace JogoDasTacasRussas
             // pictureBox31
             // 
             this.pictureBox31.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox31.Location = new System.Drawing.Point(119, 169);
+            this.pictureBox31.Location = new System.Drawing.Point(143, 286);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(6, 92);
             this.pictureBox31.TabIndex = 28;
@@ -652,7 +662,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX2
             // 
-            this.pictureBoxX2.Location = new System.Drawing.Point(125, 66);
+            this.pictureBoxX2.Location = new System.Drawing.Point(149, 183);
             this.pictureBoxX2.Name = "pictureBoxX2";
             this.pictureBoxX2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX2.TabIndex = 27;
@@ -662,7 +672,7 @@ namespace JogoDasTacasRussas
             // pictureBox37
             // 
             this.pictureBox37.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox37.Location = new System.Drawing.Point(205, 60);
+            this.pictureBox37.Location = new System.Drawing.Point(229, 177);
             this.pictureBox37.Name = "pictureBox37";
             this.pictureBox37.Size = new System.Drawing.Size(6, 92);
             this.pictureBox37.TabIndex = 26;
@@ -671,7 +681,7 @@ namespace JogoDasTacasRussas
             // pictureBox38
             // 
             this.pictureBox38.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox38.Location = new System.Drawing.Point(119, 60);
+            this.pictureBox38.Location = new System.Drawing.Point(143, 177);
             this.pictureBox38.Name = "pictureBox38";
             this.pictureBox38.Size = new System.Drawing.Size(92, 6);
             this.pictureBox38.TabIndex = 25;
@@ -680,7 +690,7 @@ namespace JogoDasTacasRussas
             // pictureBox39
             // 
             this.pictureBox39.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox39.Location = new System.Drawing.Point(119, 146);
+            this.pictureBox39.Location = new System.Drawing.Point(143, 263);
             this.pictureBox39.Name = "pictureBox39";
             this.pictureBox39.Size = new System.Drawing.Size(92, 6);
             this.pictureBox39.TabIndex = 24;
@@ -689,7 +699,7 @@ namespace JogoDasTacasRussas
             // pictureBox36
             // 
             this.pictureBox36.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox36.Location = new System.Drawing.Point(119, 60);
+            this.pictureBox36.Location = new System.Drawing.Point(143, 177);
             this.pictureBox36.Name = "pictureBox36";
             this.pictureBox36.Size = new System.Drawing.Size(6, 92);
             this.pictureBox36.TabIndex = 23;
@@ -697,7 +707,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX12
             // 
-            this.pictureBoxX12.Location = new System.Drawing.Point(231, 395);
+            this.pictureBoxX12.Location = new System.Drawing.Point(255, 512);
             this.pictureBoxX12.Name = "pictureBoxX12";
             this.pictureBoxX12.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX12.TabIndex = 62;
@@ -707,7 +717,7 @@ namespace JogoDasTacasRussas
             // pictureBox42
             // 
             this.pictureBox42.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox42.Location = new System.Drawing.Point(311, 389);
+            this.pictureBox42.Location = new System.Drawing.Point(335, 506);
             this.pictureBox42.Name = "pictureBox42";
             this.pictureBox42.Size = new System.Drawing.Size(6, 92);
             this.pictureBox42.TabIndex = 61;
@@ -716,7 +726,7 @@ namespace JogoDasTacasRussas
             // pictureBox43
             // 
             this.pictureBox43.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox43.Location = new System.Drawing.Point(225, 389);
+            this.pictureBox43.Location = new System.Drawing.Point(249, 506);
             this.pictureBox43.Name = "pictureBox43";
             this.pictureBox43.Size = new System.Drawing.Size(92, 6);
             this.pictureBox43.TabIndex = 60;
@@ -725,7 +735,7 @@ namespace JogoDasTacasRussas
             // pictureBox44
             // 
             this.pictureBox44.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox44.Location = new System.Drawing.Point(225, 475);
+            this.pictureBox44.Location = new System.Drawing.Point(249, 592);
             this.pictureBox44.Name = "pictureBox44";
             this.pictureBox44.Size = new System.Drawing.Size(92, 6);
             this.pictureBox44.TabIndex = 59;
@@ -734,7 +744,7 @@ namespace JogoDasTacasRussas
             // pictureBox41
             // 
             this.pictureBox41.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox41.Location = new System.Drawing.Point(225, 389);
+            this.pictureBox41.Location = new System.Drawing.Point(249, 506);
             this.pictureBox41.Name = "pictureBox41";
             this.pictureBox41.Size = new System.Drawing.Size(6, 92);
             this.pictureBox41.TabIndex = 58;
@@ -742,7 +752,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX9
             // 
-            this.pictureBoxX9.Location = new System.Drawing.Point(231, 286);
+            this.pictureBoxX9.Location = new System.Drawing.Point(255, 403);
             this.pictureBoxX9.Name = "pictureBoxX9";
             this.pictureBoxX9.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX9.TabIndex = 57;
@@ -752,7 +762,7 @@ namespace JogoDasTacasRussas
             // pictureBox47
             // 
             this.pictureBox47.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox47.Location = new System.Drawing.Point(311, 280);
+            this.pictureBox47.Location = new System.Drawing.Point(335, 397);
             this.pictureBox47.Name = "pictureBox47";
             this.pictureBox47.Size = new System.Drawing.Size(6, 92);
             this.pictureBox47.TabIndex = 56;
@@ -761,7 +771,7 @@ namespace JogoDasTacasRussas
             // pictureBox48
             // 
             this.pictureBox48.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox48.Location = new System.Drawing.Point(225, 280);
+            this.pictureBox48.Location = new System.Drawing.Point(249, 397);
             this.pictureBox48.Name = "pictureBox48";
             this.pictureBox48.Size = new System.Drawing.Size(92, 6);
             this.pictureBox48.TabIndex = 55;
@@ -770,7 +780,7 @@ namespace JogoDasTacasRussas
             // pictureBox49
             // 
             this.pictureBox49.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox49.Location = new System.Drawing.Point(225, 366);
+            this.pictureBox49.Location = new System.Drawing.Point(249, 483);
             this.pictureBox49.Name = "pictureBox49";
             this.pictureBox49.Size = new System.Drawing.Size(92, 6);
             this.pictureBox49.TabIndex = 54;
@@ -779,7 +789,7 @@ namespace JogoDasTacasRussas
             // pictureBox46
             // 
             this.pictureBox46.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox46.Location = new System.Drawing.Point(225, 280);
+            this.pictureBox46.Location = new System.Drawing.Point(249, 397);
             this.pictureBox46.Name = "pictureBox46";
             this.pictureBox46.Size = new System.Drawing.Size(6, 92);
             this.pictureBox46.TabIndex = 53;
@@ -787,7 +797,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX6
             // 
-            this.pictureBoxX6.Location = new System.Drawing.Point(231, 175);
+            this.pictureBoxX6.Location = new System.Drawing.Point(255, 292);
             this.pictureBoxX6.Name = "pictureBoxX6";
             this.pictureBoxX6.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX6.TabIndex = 52;
@@ -797,7 +807,7 @@ namespace JogoDasTacasRussas
             // pictureBox52
             // 
             this.pictureBox52.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox52.Location = new System.Drawing.Point(311, 169);
+            this.pictureBox52.Location = new System.Drawing.Point(335, 286);
             this.pictureBox52.Name = "pictureBox52";
             this.pictureBox52.Size = new System.Drawing.Size(6, 92);
             this.pictureBox52.TabIndex = 51;
@@ -806,7 +816,7 @@ namespace JogoDasTacasRussas
             // pictureBox53
             // 
             this.pictureBox53.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox53.Location = new System.Drawing.Point(225, 169);
+            this.pictureBox53.Location = new System.Drawing.Point(249, 286);
             this.pictureBox53.Name = "pictureBox53";
             this.pictureBox53.Size = new System.Drawing.Size(92, 6);
             this.pictureBox53.TabIndex = 50;
@@ -815,7 +825,7 @@ namespace JogoDasTacasRussas
             // pictureBox54
             // 
             this.pictureBox54.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox54.Location = new System.Drawing.Point(225, 255);
+            this.pictureBox54.Location = new System.Drawing.Point(249, 372);
             this.pictureBox54.Name = "pictureBox54";
             this.pictureBox54.Size = new System.Drawing.Size(92, 6);
             this.pictureBox54.TabIndex = 49;
@@ -824,7 +834,7 @@ namespace JogoDasTacasRussas
             // pictureBox51
             // 
             this.pictureBox51.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox51.Location = new System.Drawing.Point(225, 169);
+            this.pictureBox51.Location = new System.Drawing.Point(249, 286);
             this.pictureBox51.Name = "pictureBox51";
             this.pictureBox51.Size = new System.Drawing.Size(6, 92);
             this.pictureBox51.TabIndex = 48;
@@ -832,7 +842,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxX3
             // 
-            this.pictureBoxX3.Location = new System.Drawing.Point(231, 66);
+            this.pictureBoxX3.Location = new System.Drawing.Point(255, 183);
             this.pictureBoxX3.Name = "pictureBoxX3";
             this.pictureBoxX3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxX3.TabIndex = 47;
@@ -842,7 +852,7 @@ namespace JogoDasTacasRussas
             // pictureBox57
             // 
             this.pictureBox57.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox57.Location = new System.Drawing.Point(311, 60);
+            this.pictureBox57.Location = new System.Drawing.Point(335, 177);
             this.pictureBox57.Name = "pictureBox57";
             this.pictureBox57.Size = new System.Drawing.Size(6, 92);
             this.pictureBox57.TabIndex = 46;
@@ -851,7 +861,7 @@ namespace JogoDasTacasRussas
             // pictureBox58
             // 
             this.pictureBox58.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox58.Location = new System.Drawing.Point(225, 60);
+            this.pictureBox58.Location = new System.Drawing.Point(249, 177);
             this.pictureBox58.Name = "pictureBox58";
             this.pictureBox58.Size = new System.Drawing.Size(92, 6);
             this.pictureBox58.TabIndex = 45;
@@ -860,7 +870,7 @@ namespace JogoDasTacasRussas
             // pictureBox59
             // 
             this.pictureBox59.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox59.Location = new System.Drawing.Point(225, 146);
+            this.pictureBox59.Location = new System.Drawing.Point(249, 263);
             this.pictureBox59.Name = "pictureBox59";
             this.pictureBox59.Size = new System.Drawing.Size(92, 6);
             this.pictureBox59.TabIndex = 44;
@@ -869,7 +879,7 @@ namespace JogoDasTacasRussas
             // pictureBox56
             // 
             this.pictureBox56.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox56.Location = new System.Drawing.Point(225, 60);
+            this.pictureBox56.Location = new System.Drawing.Point(249, 177);
             this.pictureBox56.Name = "pictureBox56";
             this.pictureBox56.Size = new System.Drawing.Size(6, 92);
             this.pictureBox56.TabIndex = 43;
@@ -877,7 +887,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY12
             // 
-            this.pictureBoxY12.Location = new System.Drawing.Point(1041, 395);
+            this.pictureBoxY12.Location = new System.Drawing.Point(1082, 508);
             this.pictureBoxY12.Name = "pictureBoxY12";
             this.pictureBoxY12.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY12.TabIndex = 122;
@@ -887,7 +897,7 @@ namespace JogoDasTacasRussas
             // pictureBox62
             // 
             this.pictureBox62.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox62.Location = new System.Drawing.Point(1121, 389);
+            this.pictureBox62.Location = new System.Drawing.Point(1162, 502);
             this.pictureBox62.Name = "pictureBox62";
             this.pictureBox62.Size = new System.Drawing.Size(6, 92);
             this.pictureBox62.TabIndex = 121;
@@ -896,7 +906,7 @@ namespace JogoDasTacasRussas
             // pictureBox63
             // 
             this.pictureBox63.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox63.Location = new System.Drawing.Point(1035, 389);
+            this.pictureBox63.Location = new System.Drawing.Point(1076, 502);
             this.pictureBox63.Name = "pictureBox63";
             this.pictureBox63.Size = new System.Drawing.Size(92, 6);
             this.pictureBox63.TabIndex = 120;
@@ -905,7 +915,7 @@ namespace JogoDasTacasRussas
             // pictureBox64
             // 
             this.pictureBox64.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox64.Location = new System.Drawing.Point(1035, 475);
+            this.pictureBox64.Location = new System.Drawing.Point(1076, 588);
             this.pictureBox64.Name = "pictureBox64";
             this.pictureBox64.Size = new System.Drawing.Size(92, 6);
             this.pictureBox64.TabIndex = 119;
@@ -914,7 +924,7 @@ namespace JogoDasTacasRussas
             // pictureBox61
             // 
             this.pictureBox61.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox61.Location = new System.Drawing.Point(1035, 389);
+            this.pictureBox61.Location = new System.Drawing.Point(1076, 502);
             this.pictureBox61.Name = "pictureBox61";
             this.pictureBox61.Size = new System.Drawing.Size(6, 92);
             this.pictureBox61.TabIndex = 118;
@@ -922,7 +932,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY9
             // 
-            this.pictureBoxY9.Location = new System.Drawing.Point(1041, 286);
+            this.pictureBoxY9.Location = new System.Drawing.Point(1082, 399);
             this.pictureBoxY9.Name = "pictureBoxY9";
             this.pictureBoxY9.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY9.TabIndex = 117;
@@ -932,7 +942,7 @@ namespace JogoDasTacasRussas
             // pictureBox67
             // 
             this.pictureBox67.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox67.Location = new System.Drawing.Point(1121, 280);
+            this.pictureBox67.Location = new System.Drawing.Point(1162, 393);
             this.pictureBox67.Name = "pictureBox67";
             this.pictureBox67.Size = new System.Drawing.Size(6, 92);
             this.pictureBox67.TabIndex = 116;
@@ -941,7 +951,7 @@ namespace JogoDasTacasRussas
             // pictureBox68
             // 
             this.pictureBox68.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox68.Location = new System.Drawing.Point(1035, 280);
+            this.pictureBox68.Location = new System.Drawing.Point(1076, 393);
             this.pictureBox68.Name = "pictureBox68";
             this.pictureBox68.Size = new System.Drawing.Size(91, 6);
             this.pictureBox68.TabIndex = 115;
@@ -950,7 +960,7 @@ namespace JogoDasTacasRussas
             // pictureBox69
             // 
             this.pictureBox69.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox69.Location = new System.Drawing.Point(1035, 366);
+            this.pictureBox69.Location = new System.Drawing.Point(1076, 479);
             this.pictureBox69.Name = "pictureBox69";
             this.pictureBox69.Size = new System.Drawing.Size(91, 6);
             this.pictureBox69.TabIndex = 114;
@@ -959,7 +969,7 @@ namespace JogoDasTacasRussas
             // pictureBox66
             // 
             this.pictureBox66.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox66.Location = new System.Drawing.Point(1035, 280);
+            this.pictureBox66.Location = new System.Drawing.Point(1076, 393);
             this.pictureBox66.Name = "pictureBox66";
             this.pictureBox66.Size = new System.Drawing.Size(6, 92);
             this.pictureBox66.TabIndex = 113;
@@ -967,7 +977,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY6
             // 
-            this.pictureBoxY6.Location = new System.Drawing.Point(1041, 175);
+            this.pictureBoxY6.Location = new System.Drawing.Point(1082, 288);
             this.pictureBoxY6.Name = "pictureBoxY6";
             this.pictureBoxY6.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY6.TabIndex = 112;
@@ -977,7 +987,7 @@ namespace JogoDasTacasRussas
             // pictureBox72
             // 
             this.pictureBox72.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox72.Location = new System.Drawing.Point(1121, 169);
+            this.pictureBox72.Location = new System.Drawing.Point(1162, 282);
             this.pictureBox72.Name = "pictureBox72";
             this.pictureBox72.Size = new System.Drawing.Size(6, 92);
             this.pictureBox72.TabIndex = 111;
@@ -986,7 +996,7 @@ namespace JogoDasTacasRussas
             // pictureBox73
             // 
             this.pictureBox73.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox73.Location = new System.Drawing.Point(1035, 169);
+            this.pictureBox73.Location = new System.Drawing.Point(1076, 282);
             this.pictureBox73.Name = "pictureBox73";
             this.pictureBox73.Size = new System.Drawing.Size(92, 6);
             this.pictureBox73.TabIndex = 110;
@@ -995,7 +1005,7 @@ namespace JogoDasTacasRussas
             // pictureBox74
             // 
             this.pictureBox74.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox74.Location = new System.Drawing.Point(1035, 255);
+            this.pictureBox74.Location = new System.Drawing.Point(1076, 368);
             this.pictureBox74.Name = "pictureBox74";
             this.pictureBox74.Size = new System.Drawing.Size(92, 6);
             this.pictureBox74.TabIndex = 109;
@@ -1004,7 +1014,7 @@ namespace JogoDasTacasRussas
             // pictureBox71
             // 
             this.pictureBox71.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox71.Location = new System.Drawing.Point(1035, 169);
+            this.pictureBox71.Location = new System.Drawing.Point(1076, 282);
             this.pictureBox71.Name = "pictureBox71";
             this.pictureBox71.Size = new System.Drawing.Size(6, 92);
             this.pictureBox71.TabIndex = 108;
@@ -1013,7 +1023,7 @@ namespace JogoDasTacasRussas
             // pictureBoxY3
             // 
             this.pictureBoxY3.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxY3.Location = new System.Drawing.Point(1041, 66);
+            this.pictureBoxY3.Location = new System.Drawing.Point(1082, 179);
             this.pictureBoxY3.Name = "pictureBoxY3";
             this.pictureBoxY3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY3.TabIndex = 107;
@@ -1023,7 +1033,7 @@ namespace JogoDasTacasRussas
             // pictureBox77
             // 
             this.pictureBox77.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox77.Location = new System.Drawing.Point(1121, 60);
+            this.pictureBox77.Location = new System.Drawing.Point(1162, 173);
             this.pictureBox77.Name = "pictureBox77";
             this.pictureBox77.Size = new System.Drawing.Size(6, 92);
             this.pictureBox77.TabIndex = 106;
@@ -1032,7 +1042,7 @@ namespace JogoDasTacasRussas
             // pictureBox78
             // 
             this.pictureBox78.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox78.Location = new System.Drawing.Point(1035, 60);
+            this.pictureBox78.Location = new System.Drawing.Point(1076, 173);
             this.pictureBox78.Name = "pictureBox78";
             this.pictureBox78.Size = new System.Drawing.Size(92, 6);
             this.pictureBox78.TabIndex = 105;
@@ -1041,7 +1051,7 @@ namespace JogoDasTacasRussas
             // pictureBox79
             // 
             this.pictureBox79.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox79.Location = new System.Drawing.Point(1035, 146);
+            this.pictureBox79.Location = new System.Drawing.Point(1076, 259);
             this.pictureBox79.Name = "pictureBox79";
             this.pictureBox79.Size = new System.Drawing.Size(92, 6);
             this.pictureBox79.TabIndex = 104;
@@ -1050,7 +1060,7 @@ namespace JogoDasTacasRussas
             // pictureBox76
             // 
             this.pictureBox76.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox76.Location = new System.Drawing.Point(1035, 60);
+            this.pictureBox76.Location = new System.Drawing.Point(1076, 173);
             this.pictureBox76.Name = "pictureBox76";
             this.pictureBox76.Size = new System.Drawing.Size(6, 92);
             this.pictureBox76.TabIndex = 103;
@@ -1058,7 +1068,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY11
             // 
-            this.pictureBoxY11.Location = new System.Drawing.Point(935, 395);
+            this.pictureBoxY11.Location = new System.Drawing.Point(976, 508);
             this.pictureBoxY11.Name = "pictureBoxY11";
             this.pictureBoxY11.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY11.TabIndex = 102;
@@ -1068,7 +1078,7 @@ namespace JogoDasTacasRussas
             // pictureBox82
             // 
             this.pictureBox82.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox82.Location = new System.Drawing.Point(1015, 389);
+            this.pictureBox82.Location = new System.Drawing.Point(1056, 502);
             this.pictureBox82.Name = "pictureBox82";
             this.pictureBox82.Size = new System.Drawing.Size(6, 92);
             this.pictureBox82.TabIndex = 101;
@@ -1077,7 +1087,7 @@ namespace JogoDasTacasRussas
             // pictureBox83
             // 
             this.pictureBox83.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox83.Location = new System.Drawing.Point(929, 389);
+            this.pictureBox83.Location = new System.Drawing.Point(970, 502);
             this.pictureBox83.Name = "pictureBox83";
             this.pictureBox83.Size = new System.Drawing.Size(92, 6);
             this.pictureBox83.TabIndex = 100;
@@ -1086,7 +1096,7 @@ namespace JogoDasTacasRussas
             // pictureBox84
             // 
             this.pictureBox84.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox84.Location = new System.Drawing.Point(929, 475);
+            this.pictureBox84.Location = new System.Drawing.Point(970, 588);
             this.pictureBox84.Name = "pictureBox84";
             this.pictureBox84.Size = new System.Drawing.Size(92, 6);
             this.pictureBox84.TabIndex = 99;
@@ -1095,7 +1105,7 @@ namespace JogoDasTacasRussas
             // pictureBox81
             // 
             this.pictureBox81.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox81.Location = new System.Drawing.Point(929, 389);
+            this.pictureBox81.Location = new System.Drawing.Point(970, 502);
             this.pictureBox81.Name = "pictureBox81";
             this.pictureBox81.Size = new System.Drawing.Size(6, 92);
             this.pictureBox81.TabIndex = 98;
@@ -1104,7 +1114,7 @@ namespace JogoDasTacasRussas
             // pictureBoxY8
             // 
             this.pictureBoxY8.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxY8.Location = new System.Drawing.Point(935, 286);
+            this.pictureBoxY8.Location = new System.Drawing.Point(976, 399);
             this.pictureBoxY8.Name = "pictureBoxY8";
             this.pictureBoxY8.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY8.TabIndex = 97;
@@ -1114,7 +1124,7 @@ namespace JogoDasTacasRussas
             // pictureBox87
             // 
             this.pictureBox87.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox87.Location = new System.Drawing.Point(1015, 280);
+            this.pictureBox87.Location = new System.Drawing.Point(1056, 393);
             this.pictureBox87.Name = "pictureBox87";
             this.pictureBox87.Size = new System.Drawing.Size(6, 92);
             this.pictureBox87.TabIndex = 96;
@@ -1123,7 +1133,7 @@ namespace JogoDasTacasRussas
             // pictureBox88
             // 
             this.pictureBox88.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox88.Location = new System.Drawing.Point(929, 280);
+            this.pictureBox88.Location = new System.Drawing.Point(970, 393);
             this.pictureBox88.Name = "pictureBox88";
             this.pictureBox88.Size = new System.Drawing.Size(91, 6);
             this.pictureBox88.TabIndex = 95;
@@ -1132,7 +1142,7 @@ namespace JogoDasTacasRussas
             // pictureBox89
             // 
             this.pictureBox89.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox89.Location = new System.Drawing.Point(929, 366);
+            this.pictureBox89.Location = new System.Drawing.Point(970, 479);
             this.pictureBox89.Name = "pictureBox89";
             this.pictureBox89.Size = new System.Drawing.Size(91, 7);
             this.pictureBox89.TabIndex = 94;
@@ -1141,7 +1151,7 @@ namespace JogoDasTacasRussas
             // pictureBox86
             // 
             this.pictureBox86.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox86.Location = new System.Drawing.Point(929, 280);
+            this.pictureBox86.Location = new System.Drawing.Point(970, 393);
             this.pictureBox86.Name = "pictureBox86";
             this.pictureBox86.Size = new System.Drawing.Size(6, 92);
             this.pictureBox86.TabIndex = 93;
@@ -1149,7 +1159,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY5
             // 
-            this.pictureBoxY5.Location = new System.Drawing.Point(935, 175);
+            this.pictureBoxY5.Location = new System.Drawing.Point(976, 288);
             this.pictureBoxY5.Name = "pictureBoxY5";
             this.pictureBoxY5.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY5.TabIndex = 92;
@@ -1159,7 +1169,7 @@ namespace JogoDasTacasRussas
             // pictureBox92
             // 
             this.pictureBox92.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox92.Location = new System.Drawing.Point(1015, 169);
+            this.pictureBox92.Location = new System.Drawing.Point(1056, 282);
             this.pictureBox92.Name = "pictureBox92";
             this.pictureBox92.Size = new System.Drawing.Size(6, 92);
             this.pictureBox92.TabIndex = 91;
@@ -1168,7 +1178,7 @@ namespace JogoDasTacasRussas
             // pictureBox93
             // 
             this.pictureBox93.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox93.Location = new System.Drawing.Point(929, 169);
+            this.pictureBox93.Location = new System.Drawing.Point(970, 282);
             this.pictureBox93.Name = "pictureBox93";
             this.pictureBox93.Size = new System.Drawing.Size(92, 6);
             this.pictureBox93.TabIndex = 90;
@@ -1177,7 +1187,7 @@ namespace JogoDasTacasRussas
             // pictureBox94
             // 
             this.pictureBox94.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox94.Location = new System.Drawing.Point(929, 255);
+            this.pictureBox94.Location = new System.Drawing.Point(970, 368);
             this.pictureBox94.Name = "pictureBox94";
             this.pictureBox94.Size = new System.Drawing.Size(92, 6);
             this.pictureBox94.TabIndex = 89;
@@ -1186,7 +1196,7 @@ namespace JogoDasTacasRussas
             // pictureBox91
             // 
             this.pictureBox91.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox91.Location = new System.Drawing.Point(929, 169);
+            this.pictureBox91.Location = new System.Drawing.Point(970, 282);
             this.pictureBox91.Name = "pictureBox91";
             this.pictureBox91.Size = new System.Drawing.Size(6, 92);
             this.pictureBox91.TabIndex = 88;
@@ -1195,7 +1205,7 @@ namespace JogoDasTacasRussas
             // pictureBoxY2
             // 
             this.pictureBoxY2.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxY2.Location = new System.Drawing.Point(935, 66);
+            this.pictureBoxY2.Location = new System.Drawing.Point(976, 179);
             this.pictureBoxY2.Name = "pictureBoxY2";
             this.pictureBoxY2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY2.TabIndex = 87;
@@ -1205,7 +1215,7 @@ namespace JogoDasTacasRussas
             // pictureBox97
             // 
             this.pictureBox97.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox97.Location = new System.Drawing.Point(1015, 60);
+            this.pictureBox97.Location = new System.Drawing.Point(1056, 173);
             this.pictureBox97.Name = "pictureBox97";
             this.pictureBox97.Size = new System.Drawing.Size(6, 92);
             this.pictureBox97.TabIndex = 86;
@@ -1214,7 +1224,7 @@ namespace JogoDasTacasRussas
             // pictureBox98
             // 
             this.pictureBox98.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox98.Location = new System.Drawing.Point(929, 60);
+            this.pictureBox98.Location = new System.Drawing.Point(970, 173);
             this.pictureBox98.Name = "pictureBox98";
             this.pictureBox98.Size = new System.Drawing.Size(92, 6);
             this.pictureBox98.TabIndex = 85;
@@ -1223,7 +1233,7 @@ namespace JogoDasTacasRussas
             // pictureBox99
             // 
             this.pictureBox99.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox99.Location = new System.Drawing.Point(929, 146);
+            this.pictureBox99.Location = new System.Drawing.Point(970, 259);
             this.pictureBox99.Name = "pictureBox99";
             this.pictureBox99.Size = new System.Drawing.Size(92, 6);
             this.pictureBox99.TabIndex = 84;
@@ -1232,7 +1242,7 @@ namespace JogoDasTacasRussas
             // pictureBox96
             // 
             this.pictureBox96.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox96.Location = new System.Drawing.Point(929, 60);
+            this.pictureBox96.Location = new System.Drawing.Point(970, 173);
             this.pictureBox96.Name = "pictureBox96";
             this.pictureBox96.Size = new System.Drawing.Size(6, 92);
             this.pictureBox96.TabIndex = 83;
@@ -1240,7 +1250,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY10
             // 
-            this.pictureBoxY10.Location = new System.Drawing.Point(828, 395);
+            this.pictureBoxY10.Location = new System.Drawing.Point(869, 508);
             this.pictureBoxY10.Name = "pictureBoxY10";
             this.pictureBoxY10.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY10.TabIndex = 82;
@@ -1250,7 +1260,7 @@ namespace JogoDasTacasRussas
             // pictureBox102
             // 
             this.pictureBox102.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox102.Location = new System.Drawing.Point(908, 389);
+            this.pictureBox102.Location = new System.Drawing.Point(949, 502);
             this.pictureBox102.Name = "pictureBox102";
             this.pictureBox102.Size = new System.Drawing.Size(6, 92);
             this.pictureBox102.TabIndex = 81;
@@ -1259,7 +1269,7 @@ namespace JogoDasTacasRussas
             // pictureBox103
             // 
             this.pictureBox103.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox103.Location = new System.Drawing.Point(822, 389);
+            this.pictureBox103.Location = new System.Drawing.Point(863, 502);
             this.pictureBox103.Name = "pictureBox103";
             this.pictureBox103.Size = new System.Drawing.Size(92, 6);
             this.pictureBox103.TabIndex = 80;
@@ -1268,7 +1278,7 @@ namespace JogoDasTacasRussas
             // pictureBox104
             // 
             this.pictureBox104.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox104.Location = new System.Drawing.Point(822, 475);
+            this.pictureBox104.Location = new System.Drawing.Point(863, 588);
             this.pictureBox104.Name = "pictureBox104";
             this.pictureBox104.Size = new System.Drawing.Size(92, 6);
             this.pictureBox104.TabIndex = 79;
@@ -1277,7 +1287,7 @@ namespace JogoDasTacasRussas
             // pictureBox101
             // 
             this.pictureBox101.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox101.Location = new System.Drawing.Point(822, 389);
+            this.pictureBox101.Location = new System.Drawing.Point(863, 502);
             this.pictureBox101.Name = "pictureBox101";
             this.pictureBox101.Size = new System.Drawing.Size(6, 92);
             this.pictureBox101.TabIndex = 78;
@@ -1285,7 +1295,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY7
             // 
-            this.pictureBoxY7.Location = new System.Drawing.Point(828, 286);
+            this.pictureBoxY7.Location = new System.Drawing.Point(869, 399);
             this.pictureBoxY7.Name = "pictureBoxY7";
             this.pictureBoxY7.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY7.TabIndex = 77;
@@ -1295,7 +1305,7 @@ namespace JogoDasTacasRussas
             // pictureBox107
             // 
             this.pictureBox107.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox107.Location = new System.Drawing.Point(908, 280);
+            this.pictureBox107.Location = new System.Drawing.Point(949, 393);
             this.pictureBox107.Name = "pictureBox107";
             this.pictureBox107.Size = new System.Drawing.Size(6, 92);
             this.pictureBox107.TabIndex = 76;
@@ -1304,7 +1314,7 @@ namespace JogoDasTacasRussas
             // pictureBox108
             // 
             this.pictureBox108.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox108.Location = new System.Drawing.Point(822, 280);
+            this.pictureBox108.Location = new System.Drawing.Point(863, 393);
             this.pictureBox108.Name = "pictureBox108";
             this.pictureBox108.Size = new System.Drawing.Size(92, 6);
             this.pictureBox108.TabIndex = 75;
@@ -1313,7 +1323,7 @@ namespace JogoDasTacasRussas
             // pictureBox109
             // 
             this.pictureBox109.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox109.Location = new System.Drawing.Point(822, 366);
+            this.pictureBox109.Location = new System.Drawing.Point(863, 479);
             this.pictureBox109.Name = "pictureBox109";
             this.pictureBox109.Size = new System.Drawing.Size(92, 6);
             this.pictureBox109.TabIndex = 74;
@@ -1322,7 +1332,7 @@ namespace JogoDasTacasRussas
             // pictureBox106
             // 
             this.pictureBox106.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox106.Location = new System.Drawing.Point(822, 280);
+            this.pictureBox106.Location = new System.Drawing.Point(863, 393);
             this.pictureBox106.Name = "pictureBox106";
             this.pictureBox106.Size = new System.Drawing.Size(6, 92);
             this.pictureBox106.TabIndex = 73;
@@ -1330,7 +1340,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY4
             // 
-            this.pictureBoxY4.Location = new System.Drawing.Point(828, 175);
+            this.pictureBoxY4.Location = new System.Drawing.Point(869, 288);
             this.pictureBoxY4.Name = "pictureBoxY4";
             this.pictureBoxY4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY4.TabIndex = 72;
@@ -1340,7 +1350,7 @@ namespace JogoDasTacasRussas
             // pictureBox112
             // 
             this.pictureBox112.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox112.Location = new System.Drawing.Point(908, 169);
+            this.pictureBox112.Location = new System.Drawing.Point(949, 282);
             this.pictureBox112.Name = "pictureBox112";
             this.pictureBox112.Size = new System.Drawing.Size(6, 92);
             this.pictureBox112.TabIndex = 71;
@@ -1349,7 +1359,7 @@ namespace JogoDasTacasRussas
             // pictureBox113
             // 
             this.pictureBox113.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox113.Location = new System.Drawing.Point(822, 169);
+            this.pictureBox113.Location = new System.Drawing.Point(863, 282);
             this.pictureBox113.Name = "pictureBox113";
             this.pictureBox113.Size = new System.Drawing.Size(92, 6);
             this.pictureBox113.TabIndex = 70;
@@ -1358,7 +1368,7 @@ namespace JogoDasTacasRussas
             // pictureBox114
             // 
             this.pictureBox114.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox114.Location = new System.Drawing.Point(822, 255);
+            this.pictureBox114.Location = new System.Drawing.Point(863, 368);
             this.pictureBox114.Name = "pictureBox114";
             this.pictureBox114.Size = new System.Drawing.Size(92, 6);
             this.pictureBox114.TabIndex = 69;
@@ -1367,7 +1377,7 @@ namespace JogoDasTacasRussas
             // pictureBox111
             // 
             this.pictureBox111.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox111.Location = new System.Drawing.Point(822, 169);
+            this.pictureBox111.Location = new System.Drawing.Point(863, 282);
             this.pictureBox111.Name = "pictureBox111";
             this.pictureBox111.Size = new System.Drawing.Size(6, 92);
             this.pictureBox111.TabIndex = 68;
@@ -1375,7 +1385,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxY1
             // 
-            this.pictureBoxY1.Location = new System.Drawing.Point(828, 66);
+            this.pictureBoxY1.Location = new System.Drawing.Point(869, 179);
             this.pictureBoxY1.Name = "pictureBoxY1";
             this.pictureBoxY1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxY1.TabIndex = 67;
@@ -1385,7 +1395,7 @@ namespace JogoDasTacasRussas
             // pictureBox117
             // 
             this.pictureBox117.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox117.Location = new System.Drawing.Point(908, 60);
+            this.pictureBox117.Location = new System.Drawing.Point(949, 173);
             this.pictureBox117.Name = "pictureBox117";
             this.pictureBox117.Size = new System.Drawing.Size(6, 92);
             this.pictureBox117.TabIndex = 66;
@@ -1394,7 +1404,7 @@ namespace JogoDasTacasRussas
             // pictureBox118
             // 
             this.pictureBox118.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox118.Location = new System.Drawing.Point(822, 60);
+            this.pictureBox118.Location = new System.Drawing.Point(863, 173);
             this.pictureBox118.Name = "pictureBox118";
             this.pictureBox118.Size = new System.Drawing.Size(92, 6);
             this.pictureBox118.TabIndex = 65;
@@ -1403,7 +1413,7 @@ namespace JogoDasTacasRussas
             // pictureBox119
             // 
             this.pictureBox119.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox119.Location = new System.Drawing.Point(822, 146);
+            this.pictureBox119.Location = new System.Drawing.Point(863, 259);
             this.pictureBox119.Name = "pictureBox119";
             this.pictureBox119.Size = new System.Drawing.Size(92, 6);
             this.pictureBox119.TabIndex = 64;
@@ -1412,7 +1422,7 @@ namespace JogoDasTacasRussas
             // pictureBox116
             // 
             this.pictureBox116.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox116.Location = new System.Drawing.Point(822, 60);
+            this.pictureBox116.Location = new System.Drawing.Point(863, 173);
             this.pictureBox116.Name = "pictureBox116";
             this.pictureBox116.Size = new System.Drawing.Size(6, 92);
             this.pictureBox116.TabIndex = 63;
@@ -1420,7 +1430,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxA1
             // 
-            this.pictureBoxA1.Location = new System.Drawing.Point(424, 100);
+            this.pictureBoxA1.Location = new System.Drawing.Point(434, 254);
             this.pictureBoxA1.Name = "pictureBoxA1";
             this.pictureBoxA1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA1.TabIndex = 123;
@@ -1429,7 +1439,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxA2
             // 
-            this.pictureBoxA2.Location = new System.Drawing.Point(424, 186);
+            this.pictureBoxA2.Location = new System.Drawing.Point(434, 340);
             this.pictureBoxA2.Name = "pictureBoxA2";
             this.pictureBoxA2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA2.TabIndex = 124;
@@ -1438,7 +1448,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxA3
             // 
-            this.pictureBoxA3.Location = new System.Drawing.Point(424, 272);
+            this.pictureBoxA3.Location = new System.Drawing.Point(434, 426);
             this.pictureBoxA3.Name = "pictureBoxA3";
             this.pictureBoxA3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA3.TabIndex = 125;
@@ -1447,7 +1457,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxA4
             // 
-            this.pictureBoxA4.Location = new System.Drawing.Point(424, 358);
+            this.pictureBoxA4.Location = new System.Drawing.Point(434, 512);
             this.pictureBoxA4.Name = "pictureBoxA4";
             this.pictureBoxA4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxA4.TabIndex = 126;
@@ -1456,7 +1466,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxB4
             // 
-            this.pictureBoxB4.Location = new System.Drawing.Point(510, 358);
+            this.pictureBoxB4.Location = new System.Drawing.Point(520, 512);
             this.pictureBoxB4.Name = "pictureBoxB4";
             this.pictureBoxB4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB4.TabIndex = 130;
@@ -1465,7 +1475,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxB3
             // 
-            this.pictureBoxB3.Location = new System.Drawing.Point(510, 272);
+            this.pictureBoxB3.Location = new System.Drawing.Point(520, 426);
             this.pictureBoxB3.Name = "pictureBoxB3";
             this.pictureBoxB3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB3.TabIndex = 129;
@@ -1474,7 +1484,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxB2
             // 
-            this.pictureBoxB2.Location = new System.Drawing.Point(510, 186);
+            this.pictureBoxB2.Location = new System.Drawing.Point(520, 340);
             this.pictureBoxB2.Name = "pictureBoxB2";
             this.pictureBoxB2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB2.TabIndex = 128;
@@ -1483,7 +1493,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxB1
             // 
-            this.pictureBoxB1.Location = new System.Drawing.Point(510, 100);
+            this.pictureBoxB1.Location = new System.Drawing.Point(520, 254);
             this.pictureBoxB1.Name = "pictureBoxB1";
             this.pictureBoxB1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxB1.TabIndex = 127;
@@ -1492,7 +1502,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxD4
             // 
-            this.pictureBoxD4.Location = new System.Drawing.Point(682, 358);
+            this.pictureBoxD4.Location = new System.Drawing.Point(692, 512);
             this.pictureBoxD4.Name = "pictureBoxD4";
             this.pictureBoxD4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD4.TabIndex = 138;
@@ -1501,7 +1511,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxD3
             // 
-            this.pictureBoxD3.Location = new System.Drawing.Point(682, 272);
+            this.pictureBoxD3.Location = new System.Drawing.Point(692, 426);
             this.pictureBoxD3.Name = "pictureBoxD3";
             this.pictureBoxD3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD3.TabIndex = 137;
@@ -1510,7 +1520,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxD2
             // 
-            this.pictureBoxD2.Location = new System.Drawing.Point(682, 186);
+            this.pictureBoxD2.Location = new System.Drawing.Point(692, 340);
             this.pictureBoxD2.Name = "pictureBoxD2";
             this.pictureBoxD2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD2.TabIndex = 136;
@@ -1519,7 +1529,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxD1
             // 
-            this.pictureBoxD1.Location = new System.Drawing.Point(682, 100);
+            this.pictureBoxD1.Location = new System.Drawing.Point(692, 254);
             this.pictureBoxD1.Name = "pictureBoxD1";
             this.pictureBoxD1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxD1.TabIndex = 135;
@@ -1528,7 +1538,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxC4
             // 
-            this.pictureBoxC4.Location = new System.Drawing.Point(596, 358);
+            this.pictureBoxC4.Location = new System.Drawing.Point(606, 512);
             this.pictureBoxC4.Name = "pictureBoxC4";
             this.pictureBoxC4.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC4.TabIndex = 134;
@@ -1537,7 +1547,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxC3
             // 
-            this.pictureBoxC3.Location = new System.Drawing.Point(596, 272);
+            this.pictureBoxC3.Location = new System.Drawing.Point(606, 426);
             this.pictureBoxC3.Name = "pictureBoxC3";
             this.pictureBoxC3.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC3.TabIndex = 133;
@@ -1546,7 +1556,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxC2
             // 
-            this.pictureBoxC2.Location = new System.Drawing.Point(596, 186);
+            this.pictureBoxC2.Location = new System.Drawing.Point(606, 340);
             this.pictureBoxC2.Name = "pictureBoxC2";
             this.pictureBoxC2.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC2.TabIndex = 132;
@@ -1555,7 +1565,7 @@ namespace JogoDasTacasRussas
             // 
             // pictureBoxC1
             // 
-            this.pictureBoxC1.Location = new System.Drawing.Point(596, 100);
+            this.pictureBoxC1.Location = new System.Drawing.Point(606, 254);
             this.pictureBoxC1.Name = "pictureBoxC1";
             this.pictureBoxC1.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxC1.TabIndex = 131;
@@ -1565,7 +1575,7 @@ namespace JogoDasTacasRussas
             // pictureBox137
             // 
             this.pictureBox137.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox137.Location = new System.Drawing.Point(504, 100);
+            this.pictureBox137.Location = new System.Drawing.Point(514, 254);
             this.pictureBox137.Name = "pictureBox137";
             this.pictureBox137.Size = new System.Drawing.Size(6, 338);
             this.pictureBox137.TabIndex = 139;
@@ -1574,7 +1584,7 @@ namespace JogoDasTacasRussas
             // pictureBox138
             // 
             this.pictureBox138.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox138.Location = new System.Drawing.Point(590, 100);
+            this.pictureBox138.Location = new System.Drawing.Point(600, 254);
             this.pictureBox138.Name = "pictureBox138";
             this.pictureBox138.Size = new System.Drawing.Size(6, 338);
             this.pictureBox138.TabIndex = 140;
@@ -1583,7 +1593,7 @@ namespace JogoDasTacasRussas
             // pictureBox139
             // 
             this.pictureBox139.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox139.Location = new System.Drawing.Point(676, 100);
+            this.pictureBox139.Location = new System.Drawing.Point(686, 254);
             this.pictureBox139.Name = "pictureBox139";
             this.pictureBox139.Size = new System.Drawing.Size(6, 338);
             this.pictureBox139.TabIndex = 141;
@@ -1592,7 +1602,7 @@ namespace JogoDasTacasRussas
             // pictureBox140
             // 
             this.pictureBox140.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox140.Location = new System.Drawing.Point(424, 180);
+            this.pictureBox140.Location = new System.Drawing.Point(434, 334);
             this.pictureBox140.Name = "pictureBox140";
             this.pictureBox140.Size = new System.Drawing.Size(338, 6);
             this.pictureBox140.TabIndex = 142;
@@ -1601,7 +1611,7 @@ namespace JogoDasTacasRussas
             // pictureBox141
             // 
             this.pictureBox141.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox141.Location = new System.Drawing.Point(424, 266);
+            this.pictureBox141.Location = new System.Drawing.Point(434, 420);
             this.pictureBox141.Name = "pictureBox141";
             this.pictureBox141.Size = new System.Drawing.Size(338, 6);
             this.pictureBox141.TabIndex = 143;
@@ -1610,7 +1620,7 @@ namespace JogoDasTacasRussas
             // pictureBox142
             // 
             this.pictureBox142.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox142.Location = new System.Drawing.Point(424, 352);
+            this.pictureBox142.Location = new System.Drawing.Point(434, 506);
             this.pictureBox142.Name = "pictureBox142";
             this.pictureBox142.Size = new System.Drawing.Size(338, 6);
             this.pictureBox142.TabIndex = 144;
@@ -1619,81 +1629,162 @@ namespace JogoDasTacasRussas
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(456, 71);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(466, 225);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 15);
+            this.label1.Size = new System.Drawing.Size(25, 25);
             this.label1.TabIndex = 145;
             this.label1.Text = "A";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(542, 71);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(552, 225);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 15);
+            this.label2.Size = new System.Drawing.Size(24, 25);
             this.label2.TabIndex = 146;
             this.label2.Text = "B";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(712, 71);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(722, 225);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 15);
+            this.label3.Size = new System.Drawing.Size(26, 25);
             this.label3.TabIndex = 148;
             this.label3.Text = "D";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(626, 71);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(636, 225);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(15, 15);
+            this.label4.Size = new System.Drawing.Size(24, 25);
             this.label4.TabIndex = 147;
             this.label4.Text = "C";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(396, 131);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(406, 285);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 15);
+            this.label5.Size = new System.Drawing.Size(23, 25);
             this.label5.TabIndex = 149;
             this.label5.Text = "1";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(396, 214);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(406, 368);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 15);
+            this.label6.Size = new System.Drawing.Size(23, 25);
             this.label6.TabIndex = 150;
             this.label6.Text = "2";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(396, 386);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(406, 540);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 15);
+            this.label7.Size = new System.Drawing.Size(23, 25);
             this.label7.TabIndex = 152;
             this.label7.Text = "4";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(396, 303);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(406, 457);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 15);
+            this.label8.Size = new System.Drawing.Size(23, 25);
             this.label8.TabIndex = 151;
             this.label8.Text = "3";
+            // 
+            // groupBoxJogadorX
+            // 
+            this.groupBoxJogadorX.Controls.Add(this.labelVitoriasJogadorX);
+            this.groupBoxJogadorX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxJogadorX.Location = new System.Drawing.Point(67, 59);
+            this.groupBoxJogadorX.Name = "groupBoxJogadorX";
+            this.groupBoxJogadorX.Size = new System.Drawing.Size(231, 74);
+            this.groupBoxJogadorX.TabIndex = 153;
+            this.groupBoxJogadorX.TabStop = false;
+            this.groupBoxJogadorX.Text = "Jogador 1";
+            // 
+            // labelVitoriasJogadorX
+            // 
+            this.labelVitoriasJogadorX.AutoSize = true;
+            this.labelVitoriasJogadorX.Location = new System.Drawing.Point(64, 32);
+            this.labelVitoriasJogadorX.Name = "labelVitoriasJogadorX";
+            this.labelVitoriasJogadorX.Size = new System.Drawing.Size(95, 25);
+            this.labelVitoriasJogadorX.TabIndex = 0;
+            this.labelVitoriasJogadorX.Text = "Vitórias: 0";
+            // 
+            // groupBoxJogadorY
+            // 
+            this.groupBoxJogadorY.Controls.Add(this.labelVitoriasJogadorY);
+            this.groupBoxJogadorY.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxJogadorY.Location = new System.Drawing.Point(905, 59);
+            this.groupBoxJogadorY.Name = "groupBoxJogadorY";
+            this.groupBoxJogadorY.Size = new System.Drawing.Size(231, 74);
+            this.groupBoxJogadorY.TabIndex = 154;
+            this.groupBoxJogadorY.TabStop = false;
+            this.groupBoxJogadorY.Text = "Jogador 2";
+            // 
+            // labelVitoriasJogadorY
+            // 
+            this.labelVitoriasJogadorY.AutoSize = true;
+            this.labelVitoriasJogadorY.Location = new System.Drawing.Point(64, 32);
+            this.labelVitoriasJogadorY.Name = "labelVitoriasJogadorY";
+            this.labelVitoriasJogadorY.Size = new System.Drawing.Size(95, 25);
+            this.labelVitoriasJogadorY.TabIndex = 0;
+            this.labelVitoriasJogadorY.Text = "Vitórias: 0";
+            // 
+            // labelGameTitle
+            // 
+            this.labelGameTitle.AutoSize = true;
+            this.labelGameTitle.Font = new System.Drawing.Font("Segoe Script", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelGameTitle.Location = new System.Drawing.Point(366, 12);
+            this.labelGameTitle.Name = "labelGameTitle";
+            this.labelGameTitle.Size = new System.Drawing.Size(484, 106);
+            this.labelGameTitle.TabIndex = 155;
+            this.labelGameTitle.Text = "Taças Russas";
+            // 
+            // labelRoundQuantity
+            // 
+            this.labelRoundQuantity.AutoSize = true;
+            this.labelRoundQuantity.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRoundQuantity.Location = new System.Drawing.Point(406, 127);
+            this.labelRoundQuantity.Name = "labelRoundQuantity";
+            this.labelRoundQuantity.Size = new System.Drawing.Size(375, 32);
+            this.labelRoundQuantity.TabIndex = 156;
+            this.labelRoundQuantity.Text = "Informe a quantidade de rodadas:";
+            // 
+            // textBoxRoundQuantity
+            // 
+            this.textBoxRoundQuantity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxRoundQuantity.Location = new System.Drawing.Point(466, 171);
+            this.textBoxRoundQuantity.Name = "textBoxRoundQuantity";
+            this.textBoxRoundQuantity.Size = new System.Drawing.Size(110, 33);
+            this.textBoxRoundQuantity.TabIndex = 157;
             // 
             // FormBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1276, 627);
+            this.ClientSize = new System.Drawing.Size(1199, 627);
+            this.Controls.Add(this.textBoxRoundQuantity);
+            this.Controls.Add(this.labelRoundQuantity);
+            this.Controls.Add(this.labelGameTitle);
+            this.Controls.Add(this.groupBoxJogadorY);
+            this.Controls.Add(this.groupBoxJogadorX);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -1843,7 +1934,7 @@ namespace JogoDasTacasRussas
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -1994,6 +2085,10 @@ namespace JogoDasTacasRussas
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox140)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox141)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox142)).EndInit();
+            this.groupBoxJogadorX.ResumeLayout(false);
+            this.groupBoxJogadorX.PerformLayout();
+            this.groupBoxJogadorY.ResumeLayout(false);
+            this.groupBoxJogadorY.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2001,7 +2096,7 @@ namespace JogoDasTacasRussas
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonStart;
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.PictureBox pictureBox3;
@@ -2152,6 +2247,13 @@ namespace JogoDasTacasRussas
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBoxJogadorX;
+        private System.Windows.Forms.Label labelVitoriasJogadorX;
+        private System.Windows.Forms.GroupBox groupBoxJogadorY;
+        private System.Windows.Forms.Label labelVitoriasJogadorY;
+        private System.Windows.Forms.Label labelGameTitle;
+        private System.Windows.Forms.Label labelRoundQuantity;
+        private System.Windows.Forms.TextBox textBoxRoundQuantity;
     }
 }
 
