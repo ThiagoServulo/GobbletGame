@@ -41,15 +41,26 @@ namespace JogoDasTacasRussas.Entities
         /// \brief Lista contendo os \a pictureBoxes do tabuleiro.
         public PictureBox[] PictureBoxes { get; private set; }
 
-        /// \brief Lista contendo os \a pictureBoxes do tabuleiro.
+        /// \brief Quantidade de rodadas que o jogo terá.
         public int RoundQuantity { get; private set; }
+
+        /// \brief Número da rodada atual.
+        public int CurrentRound { get; private set; }
+
 
         /** ************************************************************************
         * \brief Construtor da classe Board.
         * \param pictureBoxes Lista contendo os \a pictureBoxes do tabuleiro.
+        * \param labelPlayerX \a label que apresenta a quantidade de vitórias do
+        * jogador X.
+        * \param labelPlayerY \a label que apresenta a quantidade de vitórias do
+        * jogador Y.
         ***************************************************************************/
-        public Board(PictureBox[] pictureBoxes, int roundQuantity)
+        public Board(PictureBox[] pictureBoxes, int roundQuantity, Label labelPlayerX, Label labelPlayerY)
         {
+            // Inicializa a primeira rodada
+            this.CurrentRound = 1;
+
             // Salva a quantidade de rodadas
             this.RoundQuantity = roundQuantity;
 
@@ -60,8 +71,8 @@ namespace JogoDasTacasRussas.Entities
             this.InitBoard();
 
             // Inicialização dos jogadores
-            this.PlayerX = new Player(PlayerType.PlayerX);
-            this.PlayerY = new Player(PlayerType.PlayerY);
+            this.PlayerX = new Player(PlayerType.PlayerX, labelPlayerX);
+            this.PlayerY = new Player(PlayerType.PlayerY, labelPlayerY);
             this.CurrentPlayer = this.PlayerX;
         }
 
@@ -159,8 +170,9 @@ namespace JogoDasTacasRussas.Entities
         * \details Função responsável por processar a interrupção do usuário ao 
         * clicar em um determinado \a pictureBox.
         * \param pictureBox \a pictureBox clicado pelo usuário.
+        * \return Valor do tipo booleano indicando se a partida terminou ou não.
         ***************************************************************************/
-        public void Click(PictureBox pictureBox)
+        public bool Click(PictureBox pictureBox)
         {
             Field field = this.GetField(pictureBox);
 
@@ -171,14 +183,33 @@ namespace JogoDasTacasRussas.Entities
                 if (playerWinner != null)
                 {
                     playerWinner.AddVictory();
+                    this.UpdateLabelPlayer(playerWinner);
                     MessageBox.Show($"{PlayerX.Victories} - {PlayerY.Victories}");
                     this.InitBoard();
+                    this.CurrentRound += 1;
+                    if (this.CurrentRound > this.RoundQuantity)
+                    {
+                        MessageBox.Show($"Fim de jogo");
+                        return true;
+                    }
                 }
                 this.ChangeCurrentPlayer();
             }
+
+            return false;
         }
 
-
+        public void UpdateLabelPlayer(Player playerWinner)
+        {
+            if(playerWinner == PlayerX)
+            {
+                this.PlayerX.LabelVictories.Text = $"Vitórias: {this.PlayerX.Victories}";
+            }
+            else
+            {
+                this.PlayerY.LabelVictories.Text = $"Vitórias: {this.PlayerY.Victories}";
+            }
+        }
         /** ************************************************************************
         * \brief Identifica um campo.
         * \details Função responsável por converter um \a pictureBox para um campo

@@ -1,4 +1,5 @@
 ﻿using JogoDasTacasRussas.Entities.Enums;
+using System.Windows.Forms;
 
 namespace JogoDasTacasRussas.Entities
 {
@@ -20,15 +21,19 @@ namespace JogoDasTacasRussas.Entities
         /// \brief Tipo do jogador (Jogador X ou Y).
         public PlayerType Type { get; private set; }
 
+        /// \brief \a label que apresenta a quantidade de vitórias do jogador.
+        public Label LabelVictories { get; private set; }
+
 
         /** ************************************************************************
         * \brief Construtor da classe Player.
         * \param type Tipo de jogador (Jogador X ou Y).
         ***************************************************************************/
-        public Player(PlayerType type)
+        public Player(PlayerType type, Label label)
         {
             this.Type = type;
             this.Victories = 0;
+            this.LabelVictories = label;
         }
 
 
