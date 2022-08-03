@@ -183,13 +183,18 @@ namespace JogoDasTacasRussas.Entities
                 if (playerWinner != null)
                 {
                     playerWinner.AddVictory();
-                    this.UpdateLabelPlayer(playerWinner);
-                    MessageBox.Show($"{PlayerX.Victories} - {PlayerY.Victories}");
+                    string namePlayer = this.UpdateLabelPlayer(playerWinner);
+                    this.ShowMessageBoxWinner(namePlayer);
                     this.InitBoard();
                     this.CurrentRound += 1;
                     if (this.CurrentRound > this.RoundQuantity)
                     {
-                        MessageBox.Show($"Fim de jogo");
+                        if (MessageBox.Show($"Vitória do {namePlayer}!\nDeseja jogar outra partida?", 
+                            "Fim de jogo!", MessageBoxButtons.YesNo) == DialogResult.No)
+                        {
+                            // Terminar a aplicação
+                            Application.Exit();
+                        }
                         return true;
                     }
                 }
@@ -199,17 +204,41 @@ namespace JogoDasTacasRussas.Entities
             return false;
         }
 
-        public void UpdateLabelPlayer(Player playerWinner)
+
+        /** ************************************************************************
+        * \brief Atualiza o \a label de vitórias de um jogador.
+        * \details Função responsável por atualizar o \a label de vitórias de um 
+        * jogador.
+        * \param playerWinner Jogador que venceu a rodada.
+        * \return Valor do tipo \a string contendo o nome do vencedor.
+        ***************************************************************************/
+        public string UpdateLabelPlayer(Player playerWinner)
         {
             if(playerWinner == PlayerX)
             {
                 this.PlayerX.LabelVictories.Text = $"Vitórias: {this.PlayerX.Victories}";
+                return "Jogador 1";
             }
             else
             {
                 this.PlayerY.LabelVictories.Text = $"Vitórias: {this.PlayerY.Victories}";
+                return "Jogador 2";
             }
         }
+
+
+        /** ************************************************************************
+        * \brief Exibe o ganhador da rodada.
+        * \details Função responsável por mostrar o jogador que venceu a rodada atual
+        * em um \a MessageBox.
+        * \param namePlayer Nome do jogador que venceu a rodada.
+        ***************************************************************************/
+        public void ShowMessageBoxWinner(string namePlayer)
+        {
+            MessageBox.Show($"Vitória do {namePlayer}");
+        }
+
+
         /** ************************************************************************
         * \brief Identifica um campo.
         * \details Função responsável por converter um \a pictureBox para um campo
