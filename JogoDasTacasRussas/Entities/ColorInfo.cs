@@ -9,7 +9,7 @@ namespace JogoDasTacasRussas.Entities
     * que uma determinada peça pode ter, bem como a sua cor atual.
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 17/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     class ColorInfo
     {

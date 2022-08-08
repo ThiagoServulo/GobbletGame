@@ -7,7 +7,7 @@
     * diferentes dimensões que a peça pode apresentar. 
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 16/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     enum CircleType : int
     {

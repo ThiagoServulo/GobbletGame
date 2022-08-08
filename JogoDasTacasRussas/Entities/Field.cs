@@ -11,7 +11,7 @@ namespace JogoDasTacasRussas.Entities
     * que o tabuleiro irá conter.  
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 20/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     class Field
     {

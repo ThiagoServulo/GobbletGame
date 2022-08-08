@@ -11,7 +11,7 @@ namespace JogoDasTacasRussas.Entities
     * ou Y) que ele é.
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 13/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     class Player
     {

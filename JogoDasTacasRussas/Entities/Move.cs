@@ -10,7 +10,7 @@ namespace JogoDasTacasRussas.Entities
     * do movimento que será realizado.
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 14/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     class Move
     {

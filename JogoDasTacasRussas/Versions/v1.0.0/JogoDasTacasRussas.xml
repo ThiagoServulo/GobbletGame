@@ -1,0 +1,987 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JogoDasTacasRussas</name>
+    </assembly>
+    <members>
+        <member name="T:JogoDasTacasRussas.Entities.Board">
+            ************************************************************************
+             \brief Informações sobre o tabuleiro.
+             \details A classe Board armazena as informações referentes ao tabuleiro 
+             do jogo, ou seja, onde as peças serão colocadas.
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 19/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.PlayerMove">
+            \brief Informações da jogada atual.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.InitFieldsPlayerX">
+            \brief Lista contendo os campos iniciais do jogador X.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.InitFieldsPlayerY">
+            \brief Lista contendo os campos iniciais do jogador Y.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.FieldsBoard">
+            \brief Lista contendo os campos do tabuleiro comum para os jogadores.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.AllFields">
+            \brief Lista contendo todos os campos do tabuleiro.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.PlayerX">
+            \brief Informações relativas ao jogador X.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.PlayerY">
+            \brief Informações relativas ao jogador Y.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.CurrentPlayer">
+            \brief Informações relativas ao jogador atual.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.PictureBoxes">
+            \brief Lista contendo os \a pictureBoxes do tabuleiro.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.RoundQuantity">
+            \brief Quantidade de rodadas que o jogo terá.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Board.CurrentRound">
+            \brief Número da rodada atual.
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.#ctor(System.Windows.Forms.PictureBox[],System.Int32,System.Windows.Forms.Label,System.Windows.Forms.Label)">
+            ************************************************************************
+             \brief Construtor da classe Board.
+             \param pictureBoxes Lista contendo os \a pictureBoxes do tabuleiro.
+             \param labelPlayerX \a label que apresenta a quantidade de vitórias do
+             jogador X.
+             \param labelPlayerY \a label que apresenta a quantidade de vitórias do
+             jogador Y.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.InitBoard">
+            ************************************************************************
+             \brief Inicializa o tabuleiro.
+             \details Função responsável por inicializar o tabuleiro do jogo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.InitFields(JogoDasTacasRussas.Entities.Field[],System.Nullable{System.Drawing.Color},System.Nullable{System.Drawing.Color})">
+            ************************************************************************
+             \brief Inicializa os campos.
+             \details Função responsável por inicializar os campos do tabuleiro, 
+             adicionando as peças ou deixando-os vazios.
+             \param fields Lista contendo os campos que serão inicializados.
+             \param primaryColor Cor primária da possível peça adicionada.
+             \param secundaryColor Cor secundária da possível peça adicionada.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.Click(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Processa o envento de click sobre um \a pictureBox.
+             \details Função responsável por processar a interrupção do usuário ao 
+             clicar em um determinado \a pictureBox.
+             \param pictureBox \a pictureBox clicado pelo usuário.
+             \return Valor do tipo booleano indicando se a partida terminou ou não.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.UpdateLabelPlayer(JogoDasTacasRussas.Entities.Player)">
+            ************************************************************************
+             \brief Atualiza o \a label de vitórias de um jogador.
+             \details Função responsável por atualizar o \a label de vitórias de um 
+             jogador.
+             \param playerWinner Jogador que venceu a rodada.
+             \return Valor do tipo \a string contendo o nome do vencedor.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.ShowMessageBoxWinner(System.String)">
+            ************************************************************************
+             \brief Exibe o ganhador da rodada.
+             \details Função responsável por mostrar o jogador que venceu a rodada atual
+             em um \a MessageBox.
+             \param namePlayer Nome do jogador que venceu a rodada.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.GetField(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Identifica um campo.
+             \details Função responsável por converter um \a pictureBox para um campo
+             conhecido.
+             \param pictureBox \a pictureBox clicado pelo usuário.
+             \return Valor do tipo Field, que apresenta as informações do campo 
+             referentes ao \a pictureBox informado.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.ChangeCurrentPlayer">
+            ************************************************************************
+             \brief Troca o jogador atual.
+             \details Função responsável por realizar a troca do jogador atual.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.CheckWinner">
+            ************************************************************************
+             \brief Verifica se há um ganhador.
+             \details Função responsável por verificar se há um ganhador na partida.
+             \return Valor do tipo Player, indicando o ganhador da partida atual. Se
+             não houver ganhador é retornado \a null.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.CheckPlayer(JogoDasTacasRussas.Entities.Field)">
+            ************************************************************************
+             \brief Verifica o jogador dono da peça.
+             \details Função responsável por checar de qual jogador é a peça que se
+             encontra no campo informado.
+             \param field Campo que será analizado.
+             \return Valor do tipo Player, indicando o jogador dono da peça presente
+             no campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Board.UpdateBoard">
+            ************************************************************************
+             \brief Atualiza o tabuleiro.
+             \details Função responsável por atualizar o tabuleiro, recolocando as
+             peças nos lugares que elas estavam.
+            *************************************************************************
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Circle">
+            ************************************************************************
+             \brief Informações sobre as peças dos jogadores.
+             \details A classe Circle armazena as informações referentes as peças que 
+             podem ser movimentadas pelos jogadores. Estas peças tem formato de círculos 
+             e podem ter quatro tamanhos diferentes.
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 15/07/2022
+             \version v1.0
+            *************************************************************************
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Circle.X">
+            \brief Posição inicial no eixo X do quadrado que círculo será inscrito.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Circle.Y">
+            \brief Posição inicial no eixo Y do quadrado que círculo será inscrito.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Circle.Width">
+            \brief Largura do quadrado que círculo será inscrito.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Circle.Height">
+            \brief Altura do quadrado que círculo será inscrito.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Circle.Color">
+            \brief Classe com as informações sobre as cores do círculo.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Circle.Type">
+            \brief Tipo do círculo.
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Circle.#ctor(System.Drawing.Color,System.Drawing.Color,JogoDasTacasRussas.Entities.Enums.CircleType)">
+            ************************************************************************
+             \brief Construtor da classe Circle.
+             \param primaryColor Cor primária do círculo instanciado.
+             \param secundaryColor Cor secundária do círculo instanciado.
+             \param type Tipo do círculo instanciado.
+             \exception Exception Exceção caso o tipo de círculo seja inválido.
+            *************************************************************************
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:JogoDasTacasRussas.Entities.Circle.CompareTo(System.Object)" -->
+        <member name="M:JogoDasTacasRussas.Entities.Circle.Equals(System.Object)">
+            ************************************************************************
+             \brief Verifica se dois círculos são iguais.
+             \details Função sobrescrita responsável por verificar se dois círculos são 
+             iguais.
+             \param obj Círculo com o qual será realizado a comparação.
+             \return Um valor do tipo booleano, inicando se os dois objetos comparados
+             são iguais ou não.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Circle.GetHashCode">
+            ************************************************************************
+             \brief Retorna a hash referente ao círculo.
+             \details Função sobrescrita responsável por gerar uma hash referente a um
+             círculo.
+             \return Um valor do tipo inteiro, que consiste na chave referente ao 
+             objeto.
+            *************************************************************************
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.ColorInfo">
+            ************************************************************************
+             \brief Informações sobre as cores da peça.
+             \details A classe ColorInfo armazena as informações referentes as cores 
+             que uma determinada peça pode ter, bem como a sua cor atual.
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 17/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.ColorInfo.Primary">
+            \brief Cor primária da peça. 
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.ColorInfo.Secundary">
+            \brief Cor secundária da peça.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.ColorInfo.TypeCurrent">
+            \brief Tipo atual da cor (primário ou secundário).
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.ColorInfo.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            ************************************************************************
+             \brief Construtor da classe ColorInfo.
+             \param primary Cor primária da peça. 
+             \param secundary Cor secundária da peça. 
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.ColorInfo.ChangeColor">
+            ************************************************************************
+             \brief Muda cor da peça.
+             \details Função responsável por realizar a troca do tipo de cor atual da 
+             peça.
+            *************************************************************************
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Enums.CircleType">
+            ************************************************************************
+             \brief Agrupa os tipos de círculos.
+             \details A enumeração CircleType agrupa os tipos de círculo que irão 
+             representar as peças. Cada tipo será responsável por determinar as
+             diferentes dimensões que a peça pode apresentar. 
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 16/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type1">
+            \brief Menor peça do tabuleiro.
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type2">
+            \brief Segunda menor peça do tabuleiro.
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type3">
+            \brief Segunda maior peça do tabuleiro.
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type4">
+            \brief Maior peça do tabuleiro.
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Enums.ColorType">
+            ************************************************************************
+             \brief Agrupa os tipos de cores.
+             \details A enumeração ColorType agrupa os tipos de cores que a peça pode 
+             apresentar. 
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 16/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.ColorType.Primary">
+            \brief Cor primária da peça.
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.ColorType.Secundary">
+            \brief Cor secundária da peça.
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Enums.PlayerType">
+            ************************************************************************
+             \brief Agrupa os tipos de jogadores.
+             \details A enumeração PlayerType agrupa os tipos de jogadores. 
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 13/07/2022
+             \version v1.0
+            *************************************************************************
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayerType.PlayerX">
+            \brief Refere-se ao jogador 1.
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayerType.PlayerY">
+            \brief Refere-se ao jogador 2.
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Enums.PlayStatus">
+            ************************************************************************
+             \brief Agrupa os tipos de status de uma jogada.
+             \details A enumeração PlayStatus agrupa os possíveis status que uma
+             jogada pode apresentar. 
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 13/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayStatus.WaitOriginField">
+            \brief Jogada ainda não iniciada, aguardando o campo de origem.
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayStatus.WaitDestinyField">
+            \brief Campo de origem marcado, aguardando o campo de destino.
+        </member>
+        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayStatus.Finish">
+            \brief Jogada finalizada, os campos de origem e destino foram marcados.
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Field">
+            ************************************************************************
+             \brief Informações sobre o campo.
+             \details A classe Field armazena as informações referentes aos campos
+             que o tabuleiro irá conter.  
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 20/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Field.FieldPictureBox">
+            \brief \a pictureBox referente a este campo.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Field.StackCircles">
+            \brief Pilha que recebe os círculos adicionados neste campo.
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.#ctor(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Construtor da classe Field.
+             \param pictureBox \a pictureBox referente a este campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.AddCircle(JogoDasTacasRussas.Entities.Circle)">
+            ************************************************************************
+             \brief Adiciona um círculo no campo.
+             \details Função responsável por adicionar um círculo ao topo da pilha 
+             referente a este campo.
+             \param circle Círculo que será adicionado neste campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.PopCircle">
+            ************************************************************************
+             \brief Remove um círculo do campo.
+             \details Função responsável por remover o círculo que está no topo da
+             pilha deste campo e retorná-lo.
+             \return Valor do tipo Circle, que corresponde ao círculo que estava no
+             topo da pilha deste campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.ChangeCircleColor">
+            ************************************************************************
+             \brief Troca a cor do círculo.
+             \details Função responsável por trocar a cor do círculo que se encontra
+             neste campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.GetLast">
+            ************************************************************************
+             \brief Pega as informações do círculo atual de um campo.
+             \details Função responsável por pegar o círculo que se encontra no topo 
+             da pilha deste campo e retornar suas informações.
+             \return Valor do tipo Circle, que corresponde ao círculo que estava no
+             topo da pilha deste campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.Clear">
+            ************************************************************************
+             \brief Limpa a pilha de círculos.
+             \details Função responsável por limpar a pilha de círculos deste campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.DrawCircle(JogoDasTacasRussas.Entities.Circle)">
+            ************************************************************************
+             \brief Desenha um círculo.
+             \details Função responsável por desenhar um círculo neste campo.
+             \param circle Círculo que será desenhado.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.EraseField">
+            ************************************************************************
+             \brief Limpa o campo.
+             \details Função responsável por limpar o campo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.Equals(System.Object)">
+            ************************************************************************
+             \brief Compara dois campos.
+             \details Função sobrescrita responsável por comprar dois objetos do tipo 
+             Field.
+             \param obj Campo que será comparado.
+             \return Um valor do tipo booleano, inicando se os dois campos comparados
+             são iguais ou não.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Field.GetHashCode">
+            ************************************************************************
+             \brief Gera a chave hash referente ao campo.
+             \details Função sobrescrita responsável por gerar uma chave hash referente 
+             a este campo.
+             \return Um valor do tipo inteiro, que consiste na chave hash referente 
+             ao campo.
+            *************************************************************************
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Move">
+            ************************************************************************
+             \brief Informações sobre a movimentação das peças.
+             \details A classe Move armazena as informações referentes a jogada que 
+             está sendo realizada. Logo, ela contém o campo de origem e de destino 
+             do movimento que será realizado.
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 14/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Move.Origin">
+            \brief Campo de origem da jogada.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Move.Destiny">
+            \brief Campo de destino da jogada.
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Move.#ctor">
+            ************************************************************************
+             \brief Construtor da classe Move.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Move.Play(JogoDasTacasRussas.Entities.Field,JogoDasTacasRussas.Entities.Player)">
+            ************************************************************************
+             \brief Processa a jogada atual.
+             \details Função responsável por processar a jogada realizada, atribuindo
+             o campo selecionado a posição de origem ou destino da jogada.
+             \param field Campo selecionado pelo jogador.
+             \param player Jogador que está realizando a jogada.
+             \return Valor do tipo \link JogoDasTacasRussas.Entities.Enums PlayStatus
+             \endlink, indicando o status atual da jogada que está sendo realizada.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Move.MovePiece">
+            ************************************************************************
+             \brief Processa a movimentação da peça.
+             \details Função responsável por realizar a movimentação da peça, ou 
+             seja, transferir a peça da posição de origem para a posição de destino.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Move.IsValidOrigin(JogoDasTacasRussas.Entities.Field,JogoDasTacasRussas.Entities.Player)">
+            ************************************************************************
+             \brief Valida o campo de origem da jogada.
+             \details Função que valida se o campo de origem selecionado é válido 
+             para um determinado jogador.
+             \param field Campo selecionado pelo jogador.
+             \param player Jogador que está realizando a jogada.
+             \return Valor do tipo booleano, inicando se o campo de origem é válida 
+             ou não
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Move.IsValidDestiny(JogoDasTacasRussas.Entities.Field)">
+            ************************************************************************
+             \brief Valida o campo de destino da jogada.
+             \details Função que valida se o campo de destino selecionado é válido.
+             \param field Campo selecionado pelo jogador.
+             \return Valor do tipo booleano, inicando se o campo de destino é válida
+             ou não
+            *************************************************************************
+        </member>
+        <member name="T:JogoDasTacasRussas.Entities.Player">
+            ************************************************************************
+             \brief Informações sobre um jogador.
+             \details  A classe Player armazena as informações referentes ao jogador 
+             que está realizando uma movimentação de uma peça. Logo, ela contém a 
+             quantidade de vitórias que o jogador possui e o tipo de jogador (Jogador X 
+             ou Y) que ele é.
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 13/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Player.Victories">
+            \brief Quantidade de vitórias do jogador.
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Player.Type">
+            \brief Tipo do jogador (Jogador X ou Y).
+        </member>
+        <member name="P:JogoDasTacasRussas.Entities.Player.LabelVictories">
+            \brief \a label que apresenta a quantidade de vitórias do jogador.
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Player.#ctor(JogoDasTacasRussas.Entities.Enums.PlayerType,System.Windows.Forms.Label)">
+            ************************************************************************
+             \brief Construtor da classe Player.
+             \param type Tipo de jogador (Jogador X ou Y).
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Entities.Player.AddVictory">
+            ************************************************************************
+             \brief Adiciona uma vitória para o joador.
+             \details Função responsável por adicionar uma vitória para o jogador.
+            *************************************************************************
+        </member>
+        <member name="T:JogoDasTacasRussas.FormBoard">
+            ************************************************************************
+             \brief Informações a tela onde o tabuleiro será apresentada.
+             \details A classe FormBoard armazena as informações referentes a tela onde
+             o tabuleiro do jogo será apresentado.
+             \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
+             \date 31/07/2022
+             \version v1.0.0
+            *************************************************************************
+        </member>
+        <member name="F:JogoDasTacasRussas.FormBoard.BoardGame">
+            \brief Tabuleiro do jogo.
+        </member>
+        <member name="F:JogoDasTacasRussas.FormBoard.PictureBoxes">
+            \brief Campos que o tabuleiro apresenta.
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.#ctor">
+            ************************************************************************
+             \brief Construtor da classe FormBoard.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.InitFormBoard">
+            ************************************************************************
+             \brief Inicializa a tela do tabuleiro.
+             \details Função responsável por inicializar a tela onde o tabuleiro será
+             apresentada, resetando os \a labels e colocando as devidas permissões 
+             iniciais.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.StartGame(System.Int32)">
+            ************************************************************************
+             \brief Inicia o jogo.
+             \details Função responsável por inicializar o jogo, habilitando os campos
+             e inicializando o tabuleiro.
+             \param roundQuantity Quantidade de rodadas que o jogo irá conter.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.ButtonStartClick(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no botão \a start.
+             \details Função responsável por processar a interrupção de \a click no 
+             botão \a start.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+             \exception FormatException Excessão lançada quando a quantidade de rodadas
+             informada pelo usuário não é um número inteiro ímpar maior que zero.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.ClickField(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click em um \a pictureBox.
+             \details Função responsável por processar a interrupção de \a click em um 
+             \a pictureBox.
+             \param pictureBox Campo que foi clicado pelo usuário
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X1.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X1.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X2.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X2.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X3.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X3.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X4.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X4.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX5Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X5.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X5.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX6Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X6.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X6.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX7Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X7.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X7.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX8Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X8.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X8.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX9Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X9.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X9.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX10Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X10.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X10.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX11Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X11.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X11.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX12Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo X12.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo X12.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y1.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y1.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y2.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y2.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y3.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y3.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y4.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y4.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY5Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y5.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y5.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY6Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y6.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y6.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY7Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y7.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y7.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY8Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y8.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y8.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY9Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y9.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y9.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY10Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y10.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y10.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY11Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y11.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y11.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY12Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo Y12.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo Y12.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo A1.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo A1.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo A2.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo A2.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo A3.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo A3.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo A4.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo A4.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo B1.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo B1.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo B2.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo B2.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo B3.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo B3.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo B4.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo B4.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo C1.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo C1.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo C2.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo C2.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo C3.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo C3.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo C4.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo C4.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo D1.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo D1.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo D2.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo D2.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo D3.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo D3.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de \a click no campo D4.
+             \details Função responsável por processar a interrupção de \a click no 
+             no campo D4.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.BoardMove(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processa a interrupção de movimentação do tabuleiro.
+             \details Função responsável por desenhar todo o tabuleiro com as peças em 
+             suas respectivas posições sempre que o tabuleiro é movido.
+             \param sender Objeto que possui as propiedades do próprio elemento que 
+             disparou o evento.
+             \param e Argumentos específicos deste evento.
+            *************************************************************************
+        </member>
+        <member name="F:JogoDasTacasRussas.FormBoard.components">
+            \brief Variável de designer obrigatória.
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.Dispose(System.Boolean)">
+            ************************************************************************
+             \brief Descarta os recursos (exceto a memória) usados pelo \a Form.
+             \details Função responsável por decartar os recursos (exceto a memória) 
+             que são usados pelo \a Form.
+             \param disposing Valor booleando, quando for \a true irá liberar recursos 
+             gerenciados e não gerenciados; quando for \a false irá para liberar apenas 
+             recursos não gerenciados.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.FormBoard.InitializeComponent">
+            ************************************************************************
+             \brief Inicializa os componentes.
+             \details Função responsável por inicializar os componentes presentes na 
+             tela do jogo.
+            *************************************************************************
+        </member>
+        <member name="M:JogoDasTacasRussas.Program.Main">
+            ************************************************************************
+             \brief Função Main.
+             \details Entrypoint da aplicação.  
+            *************************************************************************
+        </member>
+    </members>
+</doc>

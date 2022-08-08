@@ -6,7 +6,7 @@
     * jogada pode apresentar. 
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 13/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     enum PlayStatus : int
     {

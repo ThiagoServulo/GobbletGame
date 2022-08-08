@@ -10,7 +10,7 @@ namespace JogoDasTacasRussas
     * o tabuleiro do jogo será apresentado.
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 31/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     public partial class FormBoard : Form
     {

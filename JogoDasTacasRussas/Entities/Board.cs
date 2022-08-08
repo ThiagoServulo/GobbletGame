@@ -10,7 +10,7 @@ namespace JogoDasTacasRussas.Entities
     * do jogo, ou seja, onde as peças serão colocadas.
     * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
     * \date 19/07/2022
-    * \version v1.0
+    * \version v1.0.0
     ***************************************************************************/
     class Board
     {
