@@ -5,6 +5,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ApplicationIcon>Forms\icone.ico</ApplicationIcon>
+    <Authors>Thiago Sérvulo Guimarães</Authors>
+    <Company>Thiago Sérvulo Guimarães</Company>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

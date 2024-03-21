@@ -1,20 +1,41 @@
+# Gobblet Game
 
-# Jogo das taças russas
+## Description and Rules
+The Gobblet Game is an abstract experience that blends strategy and memory. Each player possesses three sets of pieces, each comprised of four cylinders of staggered sizes that nest within one another, reminiscent of the iconic Matryoshka dolls.
 
-### Descrição e regras
-Taças Russas é um jogo abstrato onde cada jogador possui 3 conjuntos de peças, cada um deles contendo 4 cilindros de tamanhos escalonados que encaixam-se (semelhante às famosas Matrioskas russas).
+The objective is to place four of your pieces in a horizontal, vertical, or diagonal line on the board. The game starts with all pieces off the board, and on each turn, players can either place a new piece on the board or move an existing one to another position.
 
-Seu objetivo é colocar no tabuleiro quatro de suas peças em uma linha horizontal, vertical ou diagonal. Suas peças começam fora do tabuleiro e, no seu turno, você pode colocar uma nova peça no tabuleiro ou mover uma existente para qualquer outro local. 
+**Important:** A larger piece can always cover a smaller one, regardless of whether it belongs to you or your opponent. Thus, in addition to strategy, the game also challenges your memory, as it is crucial to remember which of your pieces are covering others before moving them to avoid inadvertently granting advantages to your opponent.
 
-**Importante:** Uma peça maior sempre pode ser usada para cobrir qualquer outra menor - sua ou de seu oponente. Neste sentido ele também é um jogo de memória, afinal você precisa lembrar qual a cor que suas peças estão cobrindo antes de mover uma delas, ou corre o risco de dar a vitória ao seu adversário em uma jogada sua.
+![Initial board][board_1]
 
-### Detalhes
-Para iniciar o jogo, o usuário deve informar o número de rodadas que o jogo irá conter. O número de rodadas deve ser um número ímpar maior que zero. Vence o jogo quem ganhar a maior quantidade de rodadas.
+![Game board][board_2]
 
-O primeiro jogador a jogar na rodada 1 será o que escolher as peças vermelhas. Nas próximas rodadas o primeiro jogador será o que perdeu na rodada anterior.
+## Game Details
+Before commencing, the user must specify the number of rounds the game will have. This number must be odd and greater than zero. The overall winner will be the player who wins the most rounds.
 
-### Detalhes técnicos
-O jogo foi desenvolvido em C# com auxílio do Windows Form para criar as interfaces visuais. No seu código fonte, foram tratados vários conceitos técnicos importantes como: interfaces, herança de classes, polimorfismo, sopreposição de métodos, tratativa de excessões, delegates, structs, entre outros.
+In round 1, the first player chooses the red pieces. In subsequent rounds, the first player will be the one who lost in the previous round.
 
-Para poder documentar o código fonte deixando-o mais compreensível e explicativo, foi usado o Doxygen. O Doxygen é uma ferramenta capaz de gerar documentações softwares personalizadas, tornando o código auto explicativo.
+## Technical Details
+The Gobblet Game was developed in C# with the assistance of Windows Forms to create the visual interfaces. The source code encompasses a range of crucial technical concepts, such as interfaces, class inheritance, polymorphism, method overriding, exception handling, delegates, structs, among others.
 
+To document the code clearly and explanatorily, Doxygen was employed. This tool can generate customized software documentation, making the code more self-explanatory and facilitating understanding of its operation and structure.
+
+## Versions
+
+### V1.0.0
+
+* Date: 2022-08/08. 
+* This is the first stable version of the game, incorporating all the functionalities described in the documentation.
+
+### V1.0.1
+
+* Date: 2024-03-21. 
+* This version introduces minor changes to the application, addresses small bugs, and translates both the code and documentation into English.
+
+## Author
+
+[@thiagoservulo](https://github.com/ThiagoServulo)
+
+[board_1]: images/board_1.png
+[board_2]: images/board_2.png
