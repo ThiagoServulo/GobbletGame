@@ -4,30 +4,29 @@ using System.Windows.Forms;
 namespace GobbletGame.Entities
 {
     /** ************************************************************************
-    * \brief Informações sobre um jogador.
-    * \details  A classe Player armazena as informações referentes ao jogador 
-    * que está realizando uma movimentação de uma peça. Logo, ela contém a 
-    * quantidade de vitórias que o jogador possui e o tipo de jogador (Jogador X 
-    * ou Y) que ele é.
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 13/07/2022
-    * \version v1.0.0
+    * \brief Information about a player.
+    * \details The Player class stores information about the player making a 
+    * piece movement. Therefore, it contains the number of victories the player 
+    * has and the type of player (Player X or Y) they are.
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     class Player
     {
-        /// \brief Quantidade de vitórias do jogador.
+        /// \brief Number of victories of the player.
         public int Victories { get; private set; }
 
-        /// \brief Tipo do jogador (Jogador X ou Y).
+        /// \brief Type of player (Player X or Y).
         public PlayerType Type { get; private set; }
 
-        /// \brief \a label que apresenta a quantidade de vitórias do jogador.
+        /// \brief \a label displaying the player's number of victories.
         public Label LabelVictories { get; private set; }
 
 
         /** ************************************************************************
-        * \brief Construtor da classe Player.
-        * \param type Tipo de jogador (Jogador X ou Y).
+        * \brief Constructor of the Player class.
+        * \param type Type of player (Player X or Y).
         ***************************************************************************/
         public Player(PlayerType type, Label label)
         {
@@ -38,8 +37,8 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Adiciona uma vitória para o joador.
-        * \details Função responsável por adicionar uma vitória para o jogador.
+        * \brief Add a victory for the player.
+        * \details Function responsible for adding a victory for the player.
         ***************************************************************************/
         public void AddVictory()
         {

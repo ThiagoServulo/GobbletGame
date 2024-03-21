@@ -4,25 +4,25 @@ using GobbletGame.Entities.Enums;
 namespace GobbletGame.Entities
 {
     /** ************************************************************************
-    * \brief Informações sobre a movimentação das peças.
-    * \details A classe Move armazena as informações referentes a jogada que 
-    * está sendo realizada. Logo, ela contém o campo de origem e de destino 
-    * do movimento que será realizado.
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 14/07/2022
-    * \version v1.0.0
+    * \brief Information about piece movement.
+    * \details The Move class stores information about the move being made.
+    * Therefore, it contains the source and destination fields of the move to
+    * be made.
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     class Move
     {
-        /// \brief Campo de origem da jogada.
+        /// \brief Source field of the move.
         public Field Origin { get; private set; }
 
-        /// \brief Campo de destino da jogada.
+        /// \brief Destination field of the move.
         public Field Destiny { get; private set; }
 
 
         /** ************************************************************************
-        * \brief Construtor da classe Move.
+        * \brief Constructor of the Move class.
         ***************************************************************************/
         public Move()
         {
@@ -32,20 +32,20 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Processa a jogada atual.
-        * \details Função responsável por processar a jogada realizada, atribuindo
-        * o campo selecionado a posição de origem ou destino da jogada.
-        * \param field Campo selecionado pelo jogador.
-        * \param player Jogador que está realizando a jogada.
-        * \return Valor do tipo \link GobbletGame.Entities.Enums PlayStatus
-        * \endlink, indicando o status atual da jogada que está sendo realizada.
+        * \brief Process the current move.
+        * \details Function responsible for processing the move made, assigning
+        * the selected field to either the source or destination position of the move.
+        * \param field Field selected by the player.
+        * \param player Player making the move.
+        * \return A value of type \link GobbletGame.Entities.Enums PlayStatus
+        * \endlink, indicating the current status of the move being made.
         ***************************************************************************/
         public PlayStatus Play(Field field, Player player)
         {
-            // Se o campo de origem estiver vazio ele será atribuído
+            // If the source field is empty, it will be assigned
             if (this.Origin == null)
             {
-                // Checa se o campo de origem é válido para aquele jogador
+                // Check if the source field is valid for that player
                 if (!this.IsValidOrigin(field, player))
                 {
                     return PlayStatus.WaitOriginField;
@@ -58,7 +58,7 @@ namespace GobbletGame.Entities
                 }
             }
 
-            // Se o campo for selecionado duas vezes, ele não será mais considerado a origem 
+            // If the field is selected twice, it will no longer be considered as the source
             if (this.Origin == field)
             {
                 this.Origin.ChangeCircleColor();
@@ -66,8 +66,8 @@ namespace GobbletGame.Entities
                 return PlayStatus.WaitOriginField;
             }
 
-            // Se for selecionado um outro campo de origem, o antigo campo retorna ao estado inicial
-            // e o novo é atribuído
+            // If another source field is selected, the old field returns to its initial
+            // state and the new one is assigned
             if ((field.FieldPictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
                 (field.FieldPictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY)))
             {
@@ -77,7 +77,7 @@ namespace GobbletGame.Entities
                 return PlayStatus.WaitDestinyField;
             }
 
-            // Checa se o campo de destino é válido para aquele jogador
+            // Check if the destination field is valid for that player
             if (this.IsValidDestiny(field))
             {
                 this.Destiny = field;
@@ -85,15 +85,16 @@ namespace GobbletGame.Entities
                 return PlayStatus.Finish;
             }
 
-            // Caso nenhuma condição acima satisfaça, o campo selecionado é atribuído como o de destino
+            // If none of the above conditions are met, the selected field is assigned as the destination
             return PlayStatus.WaitDestinyField;
         }
 
 
         /** ************************************************************************
-        * \brief Processa a movimentação da peça.
-        * \details Função responsável por realizar a movimentação da peça, ou 
-        * seja, transferir a peça da posição de origem para a posição de destino.
+        * \brief Process the piece movement.
+        * \details Function responsible for performing the piece movement, i.e., 
+        * transferring the piece from the source position to the destination
+        * position.
         ***************************************************************************/
         public void MovePiece()
         {
@@ -109,70 +110,72 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Valida o campo de origem da jogada.
-        * \details Função que valida se o campo de origem selecionado é válido 
-        * para um determinado jogador.
-        * \param field Campo selecionado pelo jogador.
-        * \param player Jogador que está realizando a jogada.
-        * \return Valor do tipo booleano, inicando se o campo de origem é válida 
-        * ou não
+        * \brief Validate the source field of the move.
+        * \details Function that validates if the selected source field is valid 
+        * for a certain player.
+        * \param field Field selected by the player.
+        * \param player Player making the move.
+        * \return A boolean value, indicating whether the source field is valid or
+        * not.
         ***************************************************************************/
         public bool IsValidOrigin(Field field, Player player)
         {
-            // Um jogador só poderá selecionar os campos iniciais referentes a sua cor
+            // A player can only select initial fields corresponding to their color
             if ((field.FieldPictureBox.Name.Contains('X') && (player.Type == PlayerType.PlayerX)) ||
                 (field.FieldPictureBox.Name.Contains('Y') && (player.Type == PlayerType.PlayerY)))
             {
                 return true;
             }
 
-            // Um jogador não poderá selecionar um campo incial que não contenha peças
+            // A player cannot select an initial field that does not contain pieces
             if (field.GetLast() == null)
             {
                 return false;
             }
 
-            // Um jogador só poderá selecionar um campo incial que contenha alguma peça de sua cor
+            // A player can only select an initial field that contains a piece of their color
             if (((field.GetLast().Color.Primary == Color.DarkRed) && (player.Type == PlayerType.PlayerX)) ||
                 ((field.GetLast().Color.Primary == Color.DarkBlue) && (player.Type == PlayerType.PlayerY)))
             {
                 return true;
             }
 
-            // Se nenhuma condição acima for satisfeita, o campo de origem é inválido para a jogada
+            // If none of the above conditions are met, the source field is invalid for the move
             return false;
         }
 
 
         /** ************************************************************************
-        * \brief Valida o campo de destino da jogada.
-        * \details Função que valida se o campo de destino selecionado é válido.
-        * \param field Campo selecionado pelo jogador.
-        * \return Valor do tipo booleano, inicando se o campo de destino é válida
-        * ou não
+        * \brief Validate the destination field of the move.
+        * \details Function that validates if the selected destination field is
+        * valid.
+        * \param field Field selected by the player.
+        * \return A boolean value, indicating whether the destination field is valid
+        * or not.
         ***************************************************************************/
         public bool IsValidDestiny(Field field)
         {
-            // O campo de destino não pode ser um campo inicial
+            // The destination field cannot be an initial field
             if (field.FieldPictureBox.Name.Contains('X') || field.FieldPictureBox.Name.Contains('Y'))
             {
                 return false;
             }
 
-            // O campo de destino pode ser um campo vazio
+            // The destination field can be an empty field
             if (field.GetLast() == null)
             {
                 return true;
             }
 
-            // O campo de destino só será válido caso a peça contida no campo de origem seja
-            // maior que a peça presnete no campo de destino
+            // The destination field will only be valid if the piece contained in the
+            // source field is larger than the piece present in the destination field
             if (this.Origin.GetLast().CompareTo(field.GetLast()) > 0)
             {
                 return true;
             }
 
-            // Se nenhuma condição acima for satisfeita, o campo de destino é inválido para a jogada
+            // If none of the above conditions are met, the destination field is
+            // invalid for the move
             return false;
         }
     }

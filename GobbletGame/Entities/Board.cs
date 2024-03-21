@@ -49,28 +49,28 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Construtor da classe Board.
-        * \param pictureBoxes Lista contendo os \a pictureBoxes do tabuleiro.
-        * \param labelPlayerX \a label que apresenta a quantidade de vitórias do
-        * jogador X.
-        * \param labelPlayerY \a label que apresenta a quantidade de vitórias do
-        * jogador Y.
+        * \brief Constructor of the Board class.
+        * \param pictureBoxes List containing the \a pictureBoxes of the board.
+        * \param labelPlayerX \a label that displays the number of victories of
+        * player X.
+        * \param labelPlayerY \a label that displays the number of victories of
+        * player Y.
         ***************************************************************************/
         public Board(PictureBox[] pictureBoxes, int roundQuantity, Label labelPlayerX, Label labelPlayerY)
         {
-            // Inicializa a primeira rodada
+            // Initialize the first round
             this.CurrentRound = 1;
 
-            // Salva a quantidade de rodadas
+            // Save the number of rounds
             this.RoundQuantity = roundQuantity;
 
-            // Armazena os pictureBoxes do tabuleiro.
+            // Store the pictureBoxes of the board
             this.PictureBoxes = pictureBoxes;
 
-            // Inicialização do tabuleiro
+            // Board initialization
             this.InitBoard();
 
-            // Inicialização dos jogadores
+            // Players initialization
             this.PlayerX = new Player(PlayerType.PlayerX, labelPlayerX);
             this.PlayerY = new Player(PlayerType.PlayerY, labelPlayerY);
             this.CurrentPlayer = this.PlayerX;
@@ -78,12 +78,12 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Inicializa o tabuleiro.
-        * \details Função responsável por inicializar o tabuleiro do jogo.
+        * \brief Initialize the board.
+        * \details Function responsible for initializing the game board.
         ***************************************************************************/
         public void InitBoard()
         {
-            // Inicialização da movimentação
+            // Movement initialization
             this.PlayerMove = new Move();
             
             int indexFieldsPlayerX = 0;
@@ -94,70 +94,70 @@ namespace GobbletGame.Entities
             {
                 if (this.PictureBoxes[i].Name.Contains('X'))
                 {
-                    // Agrupamento dos campos iniciais do Jogador X
+                    // Grouping of initial fields for Player X
                     this.InitFieldsPlayerX[indexFieldsPlayerX] = new Field(PictureBoxes[i]);
                     indexFieldsPlayerX += 1;
                 }
                 else if (this.PictureBoxes[i].Name.Contains('Y'))
                 {
-                    // Agrupamento dos campos iniciais do Jogador Y
+                    // Grouping of initial fields for Player Y
                     this.InitFieldsPlayerY[indexFieldsPlayerY] = new Field(PictureBoxes[i]);
                     ++indexFieldsPlayerY;
                 }
                 else
                 {
-                    // Agrupamento dos campos do tabuleiro comum aos jogadores
+                    // Grouping of fields on the board common to both players
                     this.FieldsBoard[indexFieldsBoard] = new Field(PictureBoxes[i]);
                     ++indexFieldsBoard;
                 }
             }
 
-            // Inicialização das peças do Jogador X
+            // Initialization of pieces for Player X
             this.InitFields(this.InitFieldsPlayerX, Color.DarkRed, Color.IndianRed);
 
-            // Inicialização das peças do Jogador Y
+            // Initialization of pieces for Player Y
             this.InitFields(this.InitFieldsPlayerY, Color.DarkBlue, Color.LightBlue);
 
-            // Inicialização do tabuleiro
+            // Board initialization
             this.InitFields(this.FieldsBoard, null, null);
 
-            // Concatenação de todos os campos do tabuleiro
+            // Concatenation of all fields on the board
             this.AllFields = new Field[][] { this.FieldsBoard, this.InitFieldsPlayerY, this.InitFieldsPlayerX };
         }
 
 
         /** ************************************************************************
-        * \brief Inicializa os campos.
-        * \details Função responsável por inicializar os campos do tabuleiro, 
-        * adicionando as peças ou deixando-os vazios.
-        * \param fields Lista contendo os campos que serão inicializados.
-        * \param primaryColor Cor primária da possível peça adicionada.
-        * \param secundaryColor Cor secundária da possível peça adicionada.
+        * \brief Initialize the fields.
+        * \details Function responsible for initializing the fields on the board,
+        * adding pieces or leaving them empty.
+        * \param fields List containing the fields to be initialized.
+        * \param primaryColor Primary color of the possible added piece.
+        * \param secondaryColor Secondary color of the possible added piece.
         ***************************************************************************/
         public void InitFields(Field[] fields, Color? primaryColor, Color? secundaryColor)
         {
             for (int i = 0; i < fields.Length; i++)
             {
-                // Habilitar para que o campo possa ser selecionado
+                // Enable the field to be selected
                 fields[i].FieldPictureBox.Enabled = true;
 
-                if (primaryColor == null || secundaryColor == null) // Se as cores forem nulas, o campo será limpado
+                if (primaryColor == null || secundaryColor == null) // If the colors are null, the field will be cleared
                 {
                     fields[i].DrawCircle(null);
                 }
-                else if (i < 3) // Adiciona o menor círculo existente
+                else if (i < 3) // Add the smallest existing circle
                 {
                     fields[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type1));
                 }
-                else if (i < 6) // Adiciona o segundo menor círculo existente
+                else if (i < 6) // Add the second smallest existing circle
                 {
                     fields[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type2));
                 }
-                else if (i < 9) // Adiciona o segundo maior círculo existente
+                else if (i < 9) // Add the second largest existing circle
                 {
                     fields[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type3));
                 }
-                else // Adiciona o maior círculo existente
+                else // Add the largest existing circle
                 {
                     fields[i].AddCircle(new Circle((Color)primaryColor, (Color)secundaryColor, CircleType.Type4));
                 }
@@ -166,17 +166,17 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Processa o envento de click sobre um \a pictureBox.
-        * \details Função responsável por processar a interrupção do usuário ao 
-        * clicar em um determinado \a pictureBox.
-        * \param pictureBox \a pictureBox clicado pelo usuário.
-        * \return Valor do tipo booleano indicando se a partida terminou ou não.
+        * \brief Processes the click event on a \a pictureBox.
+        * \details Function responsible for processing the user interruption when
+        * clicking on a specific \a pictureBox.
+        * \param pictureBox \a pictureBox clicked by the user.
+        * \return Boolean value indicating whether the game has ended or not.
         ***************************************************************************/
         public bool Click(PictureBox pictureBox)
         {
             Field field = this.GetField(pictureBox);
 
-            // Se a jogada estiver sido finalizada, será alternado para o próximo jogador
+            // If the move has been completed, it will switch to the next player
             if (this.PlayerMove.Play(field, this.CurrentPlayer) == PlayStatus.Finish)
             {
                 Player playerWinner = this.CheckWinner();
@@ -189,10 +189,10 @@ namespace GobbletGame.Entities
                     this.CurrentRound += 1;
                     if (this.CurrentRound > this.RoundQuantity)
                     {
-                        if (MessageBox.Show($"Vitória do {namePlayer}!\nDeseja jogar outra partida?", 
-                            "Fim de jogo!", MessageBoxButtons.YesNo) == DialogResult.No)
+                        if (MessageBox.Show($"Victory of {namePlayer}!\nDo you want to play another match?", 
+                            "End of game!", MessageBoxButtons.YesNo) == DialogResult.No)
                         {
-                            // Terminar a aplicação
+                            // Terminate the application.
                             Application.Exit();
                         }
                         return true;
@@ -206,46 +206,45 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Atualiza o \a label de vitórias de um jogador.
-        * \details Função responsável por atualizar o \a label de vitórias de um 
-        * jogador.
-        * \param playerWinner Jogador que venceu a rodada.
-        * \return Valor do tipo \a string contendo o nome do vencedor.
+        * \brief Update the player's victory \a label.
+        * \details Function responsible for updating the player's victory \a label.
+        * \param playerWinner Player who won the round.
+        * \return Value of type \a string containing the name of the winner.
         ***************************************************************************/
         public string UpdateLabelPlayer(Player playerWinner)
         {
             if(playerWinner == PlayerX)
             {
-                this.PlayerX.LabelVictories.Text = $"Vitórias: {this.PlayerX.Victories}";
-                return "Jogador 1";
+                this.PlayerX.LabelVictories.Text = $"Victories: {this.PlayerX.Victories}";
+                return "Player 1";
             }
             else
             {
-                this.PlayerY.LabelVictories.Text = $"Vitórias: {this.PlayerY.Victories}";
-                return "Jogador 2";
+                this.PlayerY.LabelVictories.Text = $"Victories: {this.PlayerY.Victories}";
+                return "Player 2";
             }
         }
 
 
         /** ************************************************************************
-        * \brief Exibe o ganhador da rodada.
-        * \details Função responsável por mostrar o jogador que venceu a rodada atual
-        * em um \a MessageBox.
-        * \param namePlayer Nome do jogador que venceu a rodada.
+        * \brief Displays the winner of the round.
+        * \details Function responsible for showing the player who won the current
+        * round in a \a MessageBox.
+        * \param namePlayer Name of the player who won the round.
         ***************************************************************************/
         public void ShowMessageBoxWinner(string namePlayer)
         {
-            MessageBox.Show($"Vitória do {namePlayer}");
+            MessageBox.Show($"Victory of {namePlayer}");
         }
 
 
         /** ************************************************************************
-        * \brief Identifica um campo.
-        * \details Função responsável por converter um \a pictureBox para um campo
-        * conhecido.
-        * \param pictureBox \a pictureBox clicado pelo usuário.
-        * \return Valor do tipo Field, que apresenta as informações do campo 
-        * referentes ao \a pictureBox informado.
+        * \brief Identifies a field.
+        * \details Function responsible for converting a \a pictureBox into a known
+        * field.
+        * \param pictureBox \a pictureBox clicked by the user.
+        * \return Value of type Field, which contains the field information
+        * related to the provided \a pictureBox.
         ***************************************************************************/
         public Field GetField(PictureBox pictureBox)
         {
@@ -264,8 +263,9 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Troca o jogador atual.
-        * \details Função responsável por realizar a troca do jogador atual.
+        * \brief Switches the current player.
+        * \details Function responsible for performing the switch of the current
+        * player.
         ***************************************************************************/
         public void ChangeCurrentPlayer()
         {
@@ -274,14 +274,15 @@ namespace GobbletGame.Entities
 
 
         /** ************************************************************************
-        * \brief Verifica se há um ganhador.
-        * \details Função responsável por verificar se há um ganhador na partida.
-        * \return Valor do tipo Player, indicando o ganhador da partida atual. Se
-        * não houver ganhador é retornado \a null.
+        * \brief Checks for a winner.
+        * \details Function responsible for checking if there is a winner in the
+        * match.
+        * \return Value of type Player, indicating the winner of the current match.
+        * If there is no winner, it returns \a null.
         ***************************************************************************/
         public Player CheckWinner()
         {
-            // Checar colunas
+            // Check columns
             for(int i = 0; i <= 12; i+=4)
             {
                 if (this.FieldsBoard[i].Equals(this.FieldsBoard[i + 1]) && 
@@ -292,7 +293,7 @@ namespace GobbletGame.Entities
                 }
             }
 
-            // Checar linhas
+            // Check rows
             for (int i = 0; i <= 4; i++)
             {
                 if (this.FieldsBoard[i].Equals(this.FieldsBoard[i + 4]) &&
@@ -303,7 +304,7 @@ namespace GobbletGame.Entities
                 }
             }
 
-            // Checar diagonal principal
+            // Check main diagonal
             if (this.FieldsBoard[0].Equals(this.FieldsBoard[5]) &&
                 this.FieldsBoard[0].Equals(this.FieldsBoard[10]) &&
                 this.FieldsBoard[0].Equals(this.FieldsBoard[15]))
@@ -311,7 +312,7 @@ namespace GobbletGame.Entities
                 return this.CheckPlayer(this.FieldsBoard[0]);
             }
 
-            // Checar diagonal principal
+            // Check secondary diagonal
             if (this.FieldsBoard[3].Equals(this.FieldsBoard[6]) &&
                 this.FieldsBoard[3].Equals(this.FieldsBoard[9]) &&
                 this.FieldsBoard[3].Equals(this.FieldsBoard[12]))
@@ -319,26 +320,26 @@ namespace GobbletGame.Entities
                 return this.CheckPlayer(this.FieldsBoard[3]);
             }
 
-            // Retorna null se não houver ganhador
+            // Returns null if there is no winner
             return null;
         }
 
 
         /** ************************************************************************
-        * \brief Verifica o jogador dono da peça.
-        * \details Função responsável por checar de qual jogador é a peça que se
-        * encontra no campo informado.
-        * \param field Campo que será analizado.
-        * \return Valor do tipo Player, indicando o jogador dono da peça presente
-        * no campo.
+        * \brief Checks the player who owns the piece.
+        * \details Function responsible for checking which player owns the piece
+        * located in the provided field.
+        * \param field Field to be analyzed.
+        * \return Value of type Player, indicating the player who owns the piece in 
+        * the field.
         ***************************************************************************/
         public Player CheckPlayer(Field field)
         {
-            // Pega a cor do círculo presnete no campo
+            // Get the color of the circle present in the field
             Color circleColor = field.GetLast().Color.Primary;
 
-            // Ver o jogador dono desta peça
-            if(circleColor == Color.DarkRed)
+            // See the player who owns this piece
+            if (circleColor == Color.DarkRed)
             {
                 return this.PlayerX;
             }
@@ -347,15 +348,15 @@ namespace GobbletGame.Entities
                 return this.PlayerY;
             }
 
-            // Retorna null se o jogador não for encontrado
+            // Return null if the player is not found
             return null;
         }
 
 
         /** ************************************************************************
-        * \brief Atualiza o tabuleiro.
-        * \details Função responsável por atualizar o tabuleiro, recolocando as
-        * peças nos lugares que elas estavam.
+        * \brief Update the board.
+        * \details Function responsible for updating the board, placing the pieces 
+        * back in their respective positions.
         ***************************************************************************/
         public void UpdateBoard()
         {
