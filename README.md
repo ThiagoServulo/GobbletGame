@@ -25,7 +25,7 @@ To document the code clearly and explanatorily, Doxygen was employed. This tool 
 
 ### V1.0.0
 
-* Date: 2022-08/08. 
+* Date: 2022-08-08. 
 * This is the first stable version of the game, incorporating all the functionalities described in the documentation.
 
 ### V1.0.1
