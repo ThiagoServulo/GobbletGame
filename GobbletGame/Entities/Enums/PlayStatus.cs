@@ -1,22 +1,22 @@
 ﻿namespace GobbletGame.Entities.Enums
 {
     /** ************************************************************************
-    * \brief Agrupa os tipos de status de uma jogada.
-    * \details A enumeração PlayStatus agrupa os possíveis status que uma
-    * jogada pode apresentar. 
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 13/07/2022
-    * \version v1.0.0
+    * \brief Groups the types of play statuses.
+    * \details The PlayStatus enumeration groups the possible statuses that a
+    * play can have.
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     enum PlayStatus : int
     {
-        /// \brief Jogada ainda não iniciada, aguardando o campo de origem.
+        /// \brief Play not yet started, awaiting source field.
         WaitOriginField = 0,
 
-        /// \brief Campo de origem marcado, aguardando o campo de destino.
+        /// \brief Source field marked, awaiting destination field.
         WaitDestinyField = 1,
 
-        /// \brief Jogada finalizada, os campos de origem e destino foram marcados.
+        /// \brief Play completed, source and destination fields have been marked.
         Finish = 2
     }
 }

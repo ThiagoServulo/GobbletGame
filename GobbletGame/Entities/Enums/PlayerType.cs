@@ -1,18 +1,18 @@
 ﻿namespace GobbletGame.Entities.Enums
 {
     /** ************************************************************************
-    * \brief Agrupa os tipos de jogadores.
-    * \details A enumeração PlayerType agrupa os tipos de jogadores. 
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 13/07/2022
-    * \version v1.0
+    * \brief Groups the types of players.
+    * \details The PlayerType enumeration groups the types of players.
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     enum PlayerType : int
     {
-        /// \brief Refere-se ao jogador 1.
+        /// \brief Refers to player 1.
         PlayerX = 1,
 
-        /// \brief Refere-se ao jogador 2.
+        /// \brief Refers to player 2.
         PlayerY = 2
     }
 }

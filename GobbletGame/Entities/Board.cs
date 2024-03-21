@@ -5,46 +5,46 @@ using GobbletGame.Entities.Enums;
 namespace GobbletGame.Entities
 {
     /** ************************************************************************
-    * \brief Informações sobre o tabuleiro.
-    * \details A classe Board armazena as informações referentes ao tabuleiro 
-    * do jogo, ou seja, onde as peças serão colocadas.
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 19/07/2022
-    * \version v1.0.0
+    * \brief Information about the board.
+    * \details The Board class stores information regarding the game board,
+    * where the pieces will be placed.
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     class Board
     {
-        /// \brief Informações da jogada atual.
+        /// \brief Information about the current play.
         public Move PlayerMove { get; private set; }
 
-        /// \brief Lista contendo os campos iniciais do jogador X.
-        public Field[] InitFieldsPlayerX { get; private set; } = new Field[12]; 
+        /// \brief List containing the initial fields of player X.
+        public Field[] InitFieldsPlayerX { get; private set; } = new Field[12];
 
-        /// \brief Lista contendo os campos iniciais do jogador Y.
+        /// \brief List containing the initial fields of player Y.
         public Field[] InitFieldsPlayerY { get; private set; } = new Field[12];
 
-        /// \brief Lista contendo os campos do tabuleiro comum para os jogadores.
+        /// \brief List containing the common board fields for the players.
         public Field[] FieldsBoard { get; private set; } = new Field[16];
 
-        /// \brief Lista contendo todos os campos do tabuleiro.
+        /// \brief List containing all the fields of the board.
         public Field[][] AllFields { get; private set; }
 
-        /// \brief Informações relativas ao jogador X.
+        /// \brief Information related to player X.
         public Player PlayerX { get; private set; }
 
-        /// \brief Informações relativas ao jogador Y.
+        /// \brief Information related to player Y.
         public Player PlayerY { get; private set; }
 
-        /// \brief Informações relativas ao jogador atual.
+        /// \brief Information related to the current player.
         public Player CurrentPlayer { get; private set; }
 
-        /// \brief Lista contendo os \a pictureBoxes do tabuleiro.
+        /// \brief List containing the \a pictureBoxes of the board.
         public PictureBox[] PictureBoxes { get; private set; }
 
-        /// \brief Quantidade de rodadas que o jogo terá.
+        /// \brief Number of rounds the game will have.
         public int RoundQuantity { get; private set; }
 
-        /// \brief Número da rodada atual.
+        /// \brief Number of the current round.
         public int CurrentRound { get; private set; }
 
 

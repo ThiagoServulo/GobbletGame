@@ -1,19 +1,19 @@
 ﻿namespace GobbletGame.Entities.Enums
 {
     /** ************************************************************************
-    * \brief Agrupa os tipos de cores.
-    * \details A enumeração ColorType agrupa os tipos de cores que a peça pode 
-    * apresentar. 
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 16/07/2022
-    * \version v1.0.0
+    * \brief Groups the types of colors.
+    * \details The ColorType enumeration groups the types of colors that the
+    * piece can have. 
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     enum ColorType : int
     {
-        /// \brief Cor primária da peça.
+        /// \brief Primary color of the piece.
         Primary = 1,
 
-        /// \brief Cor secundária da peça.
+        /// \brief Secondary color of the piece.
         Secundary = 2
     }
 }

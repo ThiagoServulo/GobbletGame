@@ -1,26 +1,26 @@
 ﻿namespace GobbletGame.Entities.Enums
 {
     /** ************************************************************************
-    * \brief Agrupa os tipos de círculos.
-    * \details A enumeração CircleType agrupa os tipos de círculo que irão 
-    * representar as peças. Cada tipo será responsável por determinar as
-    * diferentes dimensões que a peça pode apresentar. 
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 16/07/2022
-    * \version v1.0.0
+    * \brief Groups the types of circles.
+    * \details The CircleType enumeration groups the types of circles that will
+    * represent the pieces. Each type will be responsible for determining the
+    * different dimensions that the piece can have.
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     enum CircleType : int
     {
-        /// \brief Menor peça do tabuleiro.
+        /// \brief The smallest piece on the board.
         Type1 = 1,
 
-        /// \brief Segunda menor peça do tabuleiro.
+        /// \brief The second smallest piece on the board.
         Type2 = 2,
 
-        /// \brief Segunda maior peça do tabuleiro.
+        /// \brief The second largest piece on the board.
         Type3 = 3,
 
-        /// \brief Maior peça do tabuleiro.
+        /// \brief The largest piece on the board.
         Type4 = 4
     }
 }
