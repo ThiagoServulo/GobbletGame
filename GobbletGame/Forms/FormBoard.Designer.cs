@@ -3,17 +3,17 @@ namespace GobbletGame
 {
     partial class FormBoard
     {
-        /// \brief Variável de designer obrigatória.
+        /// \brief Mandatory designer variable.
         private System.ComponentModel.IContainer components = null;
 
 
         /** ************************************************************************
-        * \brief Descarta os recursos (exceto a memória) usados pelo \a Form.
-        * \details Função responsável por decartar os recursos (exceto a memória) 
-        * que são usados pelo \a Form.
-        * \param disposing Valor booleando, quando for \a true irá liberar recursos 
-        * gerenciados e não gerenciados; quando for \a false irá para liberar apenas 
-        * recursos não gerenciados.
+        * \brief Dispose of the resources (except memory) used by the \a Form.
+        * \details Function responsible for disposing of the resources (except
+        * memory) used by the \a Form.
+        * \param disposing Boolean value, when \a true it will release managed and 
+        * unmanaged resources; when \a false it will only release unmanaged 
+        * resources.
         ***************************************************************************/
         protected override void Dispose(bool disposing)
         {
@@ -28,9 +28,9 @@ namespace GobbletGame
         #region Windows Form Designer generated code
 
         /** ************************************************************************
-        * \brief Inicializa os componentes.
-        * \details Função responsável por inicializar os componentes presentes na 
-        * tela do jogo.
+        * \brief Initialize the components.
+        * \details Function responsible for initializing the components present on 
+        * the game screen.
         ***************************************************************************/
         private void InitializeComponent()
         {
@@ -186,10 +186,10 @@ namespace GobbletGame
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBoxJogadorX = new System.Windows.Forms.GroupBox();
-            this.labelVitoriasJogadorX = new System.Windows.Forms.Label();
-            this.groupBoxJogadorY = new System.Windows.Forms.GroupBox();
-            this.labelVitoriasJogadorY = new System.Windows.Forms.Label();
+            this.groupBoxPlayerX = new System.Windows.Forms.GroupBox();
+            this.labelVictoriesPlayerX = new System.Windows.Forms.Label();
+            this.groupBoxPlayerY = new System.Windows.Forms.GroupBox();
+            this.labelVictoriesPlayerY = new System.Windows.Forms.Label();
             this.labelGameTitle = new System.Windows.Forms.Label();
             this.labelRoundQuantity = new System.Windows.Forms.Label();
             this.textBoxRoundQuantity = new System.Windows.Forms.TextBox();
@@ -335,8 +335,8 @@ namespace GobbletGame
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox140)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox141)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox142)).BeginInit();
-            this.groupBoxJogadorX.SuspendLayout();
-            this.groupBoxJogadorY.SuspendLayout();
+            this.groupBoxPlayerX.SuspendLayout();
+            this.groupBoxPlayerY.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -355,7 +355,7 @@ namespace GobbletGame
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(112, 33);
             this.buttonStart.TabIndex = 1;
-            this.buttonStart.Text = "Começar";
+            this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.ButtonStartClick);
             // 
@@ -1712,45 +1712,45 @@ namespace GobbletGame
             this.label8.TabIndex = 151;
             this.label8.Text = "3";
             // 
-            // groupBoxJogadorX
+            // groupBoxPlayerX
             // 
-            this.groupBoxJogadorX.Controls.Add(this.labelVitoriasJogadorX);
-            this.groupBoxJogadorX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxJogadorX.Location = new System.Drawing.Point(67, 59);
-            this.groupBoxJogadorX.Name = "groupBoxJogadorX";
-            this.groupBoxJogadorX.Size = new System.Drawing.Size(231, 74);
-            this.groupBoxJogadorX.TabIndex = 153;
-            this.groupBoxJogadorX.TabStop = false;
-            this.groupBoxJogadorX.Text = "Jogador 1";
+            this.groupBoxPlayerX.Controls.Add(this.labelVictoriesPlayerX);
+            this.groupBoxPlayerX.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxPlayerX.Location = new System.Drawing.Point(67, 59);
+            this.groupBoxPlayerX.Name = "groupBoxPlayerX";
+            this.groupBoxPlayerX.Size = new System.Drawing.Size(231, 74);
+            this.groupBoxPlayerX.TabIndex = 153;
+            this.groupBoxPlayerX.TabStop = false;
+            this.groupBoxPlayerX.Text = "Player 1";
             // 
-            // labelVitoriasJogadorX
+            // labelVictoriesPlayerX
             // 
-            this.labelVitoriasJogadorX.AutoSize = true;
-            this.labelVitoriasJogadorX.Location = new System.Drawing.Point(64, 32);
-            this.labelVitoriasJogadorX.Name = "labelVitoriasJogadorX";
-            this.labelVitoriasJogadorX.Size = new System.Drawing.Size(95, 25);
-            this.labelVitoriasJogadorX.TabIndex = 0;
-            this.labelVitoriasJogadorX.Text = "Vitórias: 0";
+            this.labelVictoriesPlayerX.AutoSize = true;
+            this.labelVictoriesPlayerX.Location = new System.Drawing.Point(64, 32);
+            this.labelVictoriesPlayerX.Name = "labelVictoriesPlayerX";
+            this.labelVictoriesPlayerX.Size = new System.Drawing.Size(95, 25);
+            this.labelVictoriesPlayerX.TabIndex = 0;
+            this.labelVictoriesPlayerX.Text = "Victories: 0";
             // 
-            // groupBoxJogadorY
+            // groupBoxPlayerY
             // 
-            this.groupBoxJogadorY.Controls.Add(this.labelVitoriasJogadorY);
-            this.groupBoxJogadorY.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxJogadorY.Location = new System.Drawing.Point(905, 59);
-            this.groupBoxJogadorY.Name = "groupBoxJogadorY";
-            this.groupBoxJogadorY.Size = new System.Drawing.Size(231, 74);
-            this.groupBoxJogadorY.TabIndex = 154;
-            this.groupBoxJogadorY.TabStop = false;
-            this.groupBoxJogadorY.Text = "Jogador 2";
+            this.groupBoxPlayerY.Controls.Add(this.labelVictoriesPlayerY);
+            this.groupBoxPlayerY.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxPlayerY.Location = new System.Drawing.Point(905, 59);
+            this.groupBoxPlayerY.Name = "groupBoxPlayerY";
+            this.groupBoxPlayerY.Size = new System.Drawing.Size(231, 74);
+            this.groupBoxPlayerY.TabIndex = 154;
+            this.groupBoxPlayerY.TabStop = false;
+            this.groupBoxPlayerY.Text = "Player 2";
             // 
-            // labelVitoriasJogadorY
+            // labelVictoriesPlayerY
             // 
-            this.labelVitoriasJogadorY.AutoSize = true;
-            this.labelVitoriasJogadorY.Location = new System.Drawing.Point(64, 32);
-            this.labelVitoriasJogadorY.Name = "labelVitoriasJogadorY";
-            this.labelVitoriasJogadorY.Size = new System.Drawing.Size(95, 25);
-            this.labelVitoriasJogadorY.TabIndex = 0;
-            this.labelVitoriasJogadorY.Text = "Vitórias: 0";
+            this.labelVictoriesPlayerY.AutoSize = true;
+            this.labelVictoriesPlayerY.Location = new System.Drawing.Point(64, 32);
+            this.labelVictoriesPlayerY.Name = "labelVictoriesPlayerY";
+            this.labelVictoriesPlayerY.Size = new System.Drawing.Size(95, 25);
+            this.labelVictoriesPlayerY.TabIndex = 0;
+            this.labelVictoriesPlayerY.Text = "Victories: 0";
             // 
             // labelGameTitle
             // 
@@ -1760,7 +1760,7 @@ namespace GobbletGame
             this.labelGameTitle.Name = "labelGameTitle";
             this.labelGameTitle.Size = new System.Drawing.Size(484, 106);
             this.labelGameTitle.TabIndex = 155;
-            this.labelGameTitle.Text = "Taças Russas";
+            this.labelGameTitle.Text = "Gobblet Game";
             // 
             // labelRoundQuantity
             // 
@@ -1770,7 +1770,7 @@ namespace GobbletGame
             this.labelRoundQuantity.Name = "labelRoundQuantity";
             this.labelRoundQuantity.Size = new System.Drawing.Size(375, 32);
             this.labelRoundQuantity.TabIndex = 156;
-            this.labelRoundQuantity.Text = "Informe a quantidade de rodadas:";
+            this.labelRoundQuantity.Text = "Please provide the number of rounds:";
             // 
             // textBoxRoundQuantity
             // 
@@ -1789,8 +1789,8 @@ namespace GobbletGame
             this.Controls.Add(this.textBoxRoundQuantity);
             this.Controls.Add(this.labelRoundQuantity);
             this.Controls.Add(this.labelGameTitle);
-            this.Controls.Add(this.groupBoxJogadorY);
-            this.Controls.Add(this.groupBoxJogadorX);
+            this.Controls.Add(this.groupBoxPlayerY);
+            this.Controls.Add(this.groupBoxPlayerX);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -1948,7 +1948,7 @@ namespace GobbletGame
             this.MinimizeBox = false;
             this.Name = "FormBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Jogo das Taças Russas";
+            this.Text = "Gobblet Game";
             this.Move += new System.EventHandler(this.BoardMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -2092,10 +2092,10 @@ namespace GobbletGame
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox140)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox141)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox142)).EndInit();
-            this.groupBoxJogadorX.ResumeLayout(false);
-            this.groupBoxJogadorX.PerformLayout();
-            this.groupBoxJogadorY.ResumeLayout(false);
-            this.groupBoxJogadorY.PerformLayout();
+            this.groupBoxPlayerX.ResumeLayout(false);
+            this.groupBoxPlayerX.PerformLayout();
+            this.groupBoxPlayerY.ResumeLayout(false);
+            this.groupBoxPlayerY.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2254,10 +2254,10 @@ namespace GobbletGame
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox groupBoxJogadorX;
-        private System.Windows.Forms.Label labelVitoriasJogadorX;
-        private System.Windows.Forms.GroupBox groupBoxJogadorY;
-        private System.Windows.Forms.Label labelVitoriasJogadorY;
+        private System.Windows.Forms.GroupBox groupBoxPlayerX;
+        private System.Windows.Forms.Label labelVictoriesPlayerX;
+        private System.Windows.Forms.GroupBox groupBoxPlayerY;
+        private System.Windows.Forms.Label labelVictoriesPlayerY;
         private System.Windows.Forms.Label labelGameTitle;
         private System.Windows.Forms.Label labelRoundQuantity;
         private System.Windows.Forms.TextBox textBoxRoundQuantity;

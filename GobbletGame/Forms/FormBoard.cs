@@ -5,31 +5,31 @@ using GobbletGame.Entities;
 namespace GobbletGame
 {
     /** ************************************************************************
-    * \brief Informações a tela onde o tabuleiro será apresentada.
-    * \details A classe FormBoard armazena as informações referentes a tela onde
-    * o tabuleiro do jogo será apresentado.
-    * \author Thiago Sérvulo Guimarães - thiago.servulo@sga.pucminas.br
-    * \date 31/07/2022
-    * \version v1.0.0
+    * \brief Information about the screen where the game board will be presented.
+    * \details The FormBoard class stores information about the screen where 
+    * the game board will be presented.
+    * \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+    * \date 21/03/2024
+    * \version v1.0.1
     ***************************************************************************/
     public partial class FormBoard : Form
     {
-        /// \brief Tabuleiro do jogo.
+        /// \brief Game board.
         Board BoardGame;
 
-        /// \brief Campos que o tabuleiro apresenta.
+        /// \brief Fields presented on the game board.
         PictureBox[] PictureBoxes;
 
 
         /** ************************************************************************
-        * \brief Construtor da classe FormBoard.
+        * \brief Constructor of the FormBoard class.
         ***************************************************************************/
         public FormBoard()
         {
-            // Inicializa os componentes
+            // Initialize the components
             this.InitializeComponent();
 
-            // Preenche o array de picture boxes
+            // Fill the array of picture boxes
             this.PictureBoxes = new PictureBox[]{
                 this.pictureBoxX1,  this.pictureBoxX2,  this.pictureBoxX3,  this.pictureBoxX4,  this.pictureBoxX5,
                 this.pictureBoxX6,  this.pictureBoxX7,  this.pictureBoxX8,  this.pictureBoxX9,  this.pictureBoxX10,
@@ -41,31 +41,31 @@ namespace GobbletGame
                 this.pictureBoxC4,  this.pictureBoxD1,  this.pictureBoxD2,  this.pictureBoxD3,  this.pictureBoxD4
             };
 
-            // Inicializa o tabuleiro
+            // Initialize the game board
             this.InitFormBoard();
         }
 
 
         /** ************************************************************************
-        * \brief Inicializa a tela do tabuleiro.
-        * \details Função responsável por inicializar a tela onde o tabuleiro será
-        * apresentada, resetando os \a labels e colocando as devidas permissões 
-        * iniciais.
+        * \brief Initialize the game board screen.
+        * \details Function responsible for initializing the screen where the game
+        * board will be presented, resetting the \a labels and setting the
+        * appropriate initial permissions.
         ***************************************************************************/
         public void InitFormBoard()
         {
-            // Iniciar contador de vitórias
-            this.labelVitoriasJogadorX.Text = "Vitórias: 0";
-            this.labelVitoriasJogadorY.Text = "Vitórias: 0";
+            // Start the win counter
+            this.labelVictoriesPlayerX.Text = "Victories: 0";
+            this.labelVictoriesPlayerY.Text = "Victories: 0";
 
-            // Iniciar caixa de texto 
+            // Start the text box
             this.textBoxRoundQuantity.Text = "";
             this.textBoxRoundQuantity.Enabled = true;
 
-            // Habilitar botão de start
+            // Enable the start button
             this.buttonStart.Enabled = true;
 
-            // Bloquear campos do jogo
+            // Lock game fields
             foreach (PictureBox pictureBox in this.PictureBoxes)
             {
                 pictureBox.Enabled = false;
@@ -74,19 +74,19 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Inicia o jogo.
-        * \details Função responsável por inicializar o jogo, habilitando os campos
-        * e inicializando o tabuleiro.
-        * \param roundQuantity Quantidade de rodadas que o jogo irá conter.
+        * \brief Start the game.
+        * \details Function responsible for starting the game, enabling the fields
+        * and initializing the board.
+        * \param roundQuantity Number of rounds that the game will have.
         ***************************************************************************/
         public void StartGame(int roundQuantity)
         {
-            // Inicializa o tabuleiro
+            // Initialize the game board
             this.BoardGame = new Board(this.PictureBoxes, roundQuantity, 
-                this.labelVitoriasJogadorX, this.labelVitoriasJogadorY);
+                this.labelVictoriesPlayerX, this.labelVictoriesPlayerY);
 
-            // Habilita os campos do tabuleiro
-            foreach(PictureBox pictureBox in this.PictureBoxes)
+            // Enable the fields on the game board
+            foreach (PictureBox pictureBox in this.PictureBoxes)
             {
                 pictureBox.Enabled = true;
             }
@@ -94,14 +94,14 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no botão \a start.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * botão \a start.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
-        * \exception FormatException Excessão lançada quando a quantidade de rodadas
-        * informada pelo usuário não é um número inteiro ímpar maior que zero.
+        * \brief Processes the click interrupt on the \a start button.
+        * \details Function responsible for processing the click interrupt on the 
+        * \a start button.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
+        * \exception FormatException Exception thrown when the number of rounds 
+        * provided by the user is not a positive odd integer.
         ***************************************************************************/
         private void ButtonStartClick(object sender, EventArgs e)
         {
@@ -120,35 +120,35 @@ namespace GobbletGame
             }
             catch(FormatException)
             {
-                MessageBox.Show("Erro: A quantidade de rodadas deve ser um número impar maior que zero");
+                MessageBox.Show("Error: The number of rounds must be a positive odd integer.");
                 this.InitFormBoard();
             }
         }
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click em um \a pictureBox.
-        * \details Função responsável por processar a interrupção de \a click em um 
-        * \a pictureBox.
-        * \param pictureBox Campo que foi clicado pelo usuário
+        * \brief Processes the click interrupt on a \a pictureBox.
+        * \details Function responsible for processing the click interrupt on a \a
+        * pictureBox.
+        * \param pictureBox Field that was clicked by the user.
         ***************************************************************************/
         public void ClickField(PictureBox pictureBox)
         {
             if(this.BoardGame.Click(pictureBox))
             {
-                // Caso a partida tenha terminado, o tabuleiro é reinicializado
+                // If the game has ended, the board is reset
                 InitFormBoard();
             }
         }
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X1.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X1.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X1 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X1 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX1Click(object sender, EventArgs e)
         {
@@ -157,12 +157,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X2.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X2.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X2 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X2 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX2Click(object sender, EventArgs e)
         {
@@ -171,12 +171,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X3.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X3.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X3 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X3 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX3Click(object sender, EventArgs e)
         {
@@ -185,12 +185,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X4.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X4.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X4 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X4 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX4Click(object sender, EventArgs e)
         {
@@ -199,12 +199,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X5.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X5.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X5 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X5 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX5Click(object sender, EventArgs e)
         {
@@ -213,12 +213,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X6.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X6.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X6 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X6 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX6Click(object sender, EventArgs e)
         {
@@ -227,12 +227,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X7.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X7.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X7 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X7 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX7Click(object sender, EventArgs e)
         {
@@ -241,12 +241,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X8.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X8.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X8 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X8 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX8Click(object sender, EventArgs e)
         {
@@ -255,12 +255,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X9.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X9.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X9 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X9 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX9Click(object sender, EventArgs e)
         {
@@ -269,12 +269,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X10.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X10.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X10 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X10 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX10Click(object sender, EventArgs e)
         {
@@ -283,12 +283,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X11.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X11.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X11 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X11 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX11Click(object sender, EventArgs e)
         {
@@ -297,12 +297,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo X12.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo X12.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the X12 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * X12 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxX12Click(object sender, EventArgs e)
         {
@@ -311,12 +311,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y1.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y1.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y1 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y1 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY1Click(object sender, EventArgs e)
         {
@@ -325,12 +325,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y2.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y2.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y2 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y2 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY2Click(object sender, EventArgs e)
         {
@@ -339,12 +339,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y3.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y3.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y3 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y3 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY3Click(object sender, EventArgs e)
         {
@@ -353,12 +353,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y4.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y4.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y4 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y4 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY4Click(object sender, EventArgs e)
         {
@@ -367,12 +367,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y5.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y5.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y5 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y5 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY5Click(object sender, EventArgs e)
         {
@@ -381,12 +381,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y6.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y6.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y6 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y6 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY6Click(object sender, EventArgs e)
         {
@@ -395,12 +395,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y7.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y7.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y7 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y7 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY7Click(object sender, EventArgs e)
         {
@@ -409,12 +409,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y8.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y8.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y8 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y8 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY8Click(object sender, EventArgs e)
         {
@@ -423,12 +423,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y9.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y9.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y9 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y9 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY9Click(object sender, EventArgs e)
         {
@@ -437,12 +437,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y10.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y10.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y10 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y10 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY10Click(object sender, EventArgs e)
         {
@@ -451,12 +451,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y11.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y11.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y11 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y11 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY11Click(object sender, EventArgs e)
         {
@@ -465,12 +465,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo Y12.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo Y12.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the Y12 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * Y12 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxY12Click(object sender, EventArgs e)
         {
@@ -479,12 +479,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo A1.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo A1.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the A1 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * A1 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxA1Click(object sender, EventArgs e)
         {
@@ -493,12 +493,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo A2.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo A2.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the A2 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * A2 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxA2Click(object sender, EventArgs e)
         {
@@ -507,12 +507,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo A3.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo A3.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the A3 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * A3 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxA3Click(object sender, EventArgs e)
         {
@@ -521,12 +521,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo A4.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo A4.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the A4 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * A4 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxA4Click(object sender, EventArgs e)
         {
@@ -535,12 +535,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo B1.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo B1.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the B1 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * B1 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxB1Click(object sender, EventArgs e)
         {
@@ -549,12 +549,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo B2.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo B2.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the B2 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * B2 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxB2Click(object sender, EventArgs e)
         {
@@ -563,12 +563,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo B3.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo B3.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the B3 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * B3 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxB3Click(object sender, EventArgs e)
         {
@@ -577,12 +577,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo B4.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo B4.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the B4 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * B4 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxB4Click(object sender, EventArgs e)
         {
@@ -591,12 +591,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo C1.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo C1.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the C1 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * C1 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxC1Click(object sender, EventArgs e)
         {
@@ -605,12 +605,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo C2.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo C2.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the C2 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * C2 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxC2Click(object sender, EventArgs e)
         {
@@ -619,12 +619,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo C3.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo C3.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the C3 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * C3 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxC3Click(object sender, EventArgs e)
         {
@@ -633,12 +633,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo C4.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo C4.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the C4 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * C4 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxC4Click(object sender, EventArgs e)
         {
@@ -647,12 +647,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo D1.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo D1.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the D1 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * D1 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxD1Click(object sender, EventArgs e)
         {
@@ -661,12 +661,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo D2.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo D2.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the D2 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * D2 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxD2Click(object sender, EventArgs e)
         {
@@ -675,12 +675,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo D3.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo D3.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the D3 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * D3 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxD3Click(object sender, EventArgs e)
         {
@@ -689,12 +689,12 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de \a click no campo D4.
-        * \details Função responsável por processar a interrupção de \a click no 
-        * no campo D4.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the click interrupt on the D4 field.
+        * \details Function responsible for processing the click interrupt on the 
+        * D4 field.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void PictureBoxD4Click(object sender, EventArgs e)
         {
@@ -703,17 +703,17 @@ namespace GobbletGame
 
 
         /** ************************************************************************
-        * \brief Processa a interrupção de movimentação do tabuleiro.
-        * \details Função responsável por desenhar todo o tabuleiro com as peças em 
-        * suas respectivas posições sempre que o tabuleiro é movido.
-        * \param sender Objeto que possui as propiedades do próprio elemento que 
-        * disparou o evento.
-        * \param e Argumentos específicos deste evento.
+        * \brief Processes the interrupt of the board movement.
+        * \details Function responsible for drawing the entire board with the pieces 
+        * in their respective positions whenever the board is moved.
+        * \param sender Object that holds properties of the element itself that 
+        * fired the event.
+        * \param e Specific arguments of this event.
         ***************************************************************************/
         private void BoardMove(object sender, EventArgs e)
         {
-            // Checa se o tabuleiro existe
-            if(this.BoardGame != null)
+            // Check if the board exists
+            if (this.BoardGame != null)
             {
                 this.BoardGame.UpdateBoard();
             }

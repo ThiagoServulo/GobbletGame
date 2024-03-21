@@ -6,8 +6,8 @@ namespace GobbletGame
     static class Program
     {
         /** ************************************************************************
-        * \brief Função Main.
-        * \details Entrypoint da aplicação.  
+        * \brief Main function.
+        * \details Entry point of the application.
         ***************************************************************************/
         [STAThread]
         static void Main()
