@@ -1,5 +1,5 @@
 ﻿
-namespace JogoDasTacasRussas
+namespace GobbletGame
 {
     partial class FormBoard
     {

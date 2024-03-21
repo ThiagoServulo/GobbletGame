@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "JogoDasTacasRussas/1.0.0": {
+      "GobbletGame/1.0.0": {
         "runtime": {
-          "JogoDasTacasRussas.dll": {}
+          "GobbletGame.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "JogoDasTacasRussas/1.0.0": {
+    "GobbletGame/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

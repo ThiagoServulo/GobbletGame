@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>JogoDasTacasRussas</name>
+        <name>GobbletGame</name>
     </assembly>
     <members>
-        <member name="T:JogoDasTacasRussas.Entities.Board">
+        <member name="T:GobbletGame.Entities.Board">
             ************************************************************************
              \brief Informações sobre o tabuleiro.
              \details A classe Board armazena as informações referentes ao tabuleiro 
@@ -14,40 +14,40 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.PlayerMove">
+        <member name="P:GobbletGame.Entities.Board.PlayerMove">
             \brief Informações da jogada atual.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.InitFieldsPlayerX">
+        <member name="P:GobbletGame.Entities.Board.InitFieldsPlayerX">
             \brief Lista contendo os campos iniciais do jogador X.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.InitFieldsPlayerY">
+        <member name="P:GobbletGame.Entities.Board.InitFieldsPlayerY">
             \brief Lista contendo os campos iniciais do jogador Y.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.FieldsBoard">
+        <member name="P:GobbletGame.Entities.Board.FieldsBoard">
             \brief Lista contendo os campos do tabuleiro comum para os jogadores.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.AllFields">
+        <member name="P:GobbletGame.Entities.Board.AllFields">
             \brief Lista contendo todos os campos do tabuleiro.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.PlayerX">
+        <member name="P:GobbletGame.Entities.Board.PlayerX">
             \brief Informações relativas ao jogador X.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.PlayerY">
+        <member name="P:GobbletGame.Entities.Board.PlayerY">
             \brief Informações relativas ao jogador Y.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.CurrentPlayer">
+        <member name="P:GobbletGame.Entities.Board.CurrentPlayer">
             \brief Informações relativas ao jogador atual.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.PictureBoxes">
+        <member name="P:GobbletGame.Entities.Board.PictureBoxes">
             \brief Lista contendo os \a pictureBoxes do tabuleiro.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.RoundQuantity">
+        <member name="P:GobbletGame.Entities.Board.RoundQuantity">
             \brief Quantidade de rodadas que o jogo terá.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Board.CurrentRound">
+        <member name="P:GobbletGame.Entities.Board.CurrentRound">
             \brief Número da rodada atual.
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.#ctor(System.Windows.Forms.PictureBox[],System.Int32,System.Windows.Forms.Label,System.Windows.Forms.Label)">
+        <member name="M:GobbletGame.Entities.Board.#ctor(System.Windows.Forms.PictureBox[],System.Int32,System.Windows.Forms.Label,System.Windows.Forms.Label)">
             ************************************************************************
              \brief Construtor da classe Board.
              \param pictureBoxes Lista contendo os \a pictureBoxes do tabuleiro.
@@ -57,13 +57,13 @@
              jogador Y.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.InitBoard">
+        <member name="M:GobbletGame.Entities.Board.InitBoard">
             ************************************************************************
              \brief Inicializa o tabuleiro.
              \details Função responsável por inicializar o tabuleiro do jogo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.InitFields(JogoDasTacasRussas.Entities.Field[],System.Nullable{System.Drawing.Color},System.Nullable{System.Drawing.Color})">
+        <member name="M:GobbletGame.Entities.Board.InitFields(GobbletGame.Entities.Field[],System.Nullable{System.Drawing.Color},System.Nullable{System.Drawing.Color})">
             ************************************************************************
              \brief Inicializa os campos.
              \details Função responsável por inicializar os campos do tabuleiro, 
@@ -73,7 +73,7 @@
              \param secundaryColor Cor secundária da possível peça adicionada.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.Click(System.Windows.Forms.PictureBox)">
+        <member name="M:GobbletGame.Entities.Board.Click(System.Windows.Forms.PictureBox)">
             ************************************************************************
              \brief Processa o envento de click sobre um \a pictureBox.
              \details Função responsável por processar a interrupção do usuário ao 
@@ -82,7 +82,7 @@
              \return Valor do tipo booleano indicando se a partida terminou ou não.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.UpdateLabelPlayer(JogoDasTacasRussas.Entities.Player)">
+        <member name="M:GobbletGame.Entities.Board.UpdateLabelPlayer(GobbletGame.Entities.Player)">
             ************************************************************************
              \brief Atualiza o \a label de vitórias de um jogador.
              \details Função responsável por atualizar o \a label de vitórias de um 
@@ -91,7 +91,7 @@
              \return Valor do tipo \a string contendo o nome do vencedor.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.ShowMessageBoxWinner(System.String)">
+        <member name="M:GobbletGame.Entities.Board.ShowMessageBoxWinner(System.String)">
             ************************************************************************
              \brief Exibe o ganhador da rodada.
              \details Função responsável por mostrar o jogador que venceu a rodada atual
@@ -99,7 +99,7 @@
              \param namePlayer Nome do jogador que venceu a rodada.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.GetField(System.Windows.Forms.PictureBox)">
+        <member name="M:GobbletGame.Entities.Board.GetField(System.Windows.Forms.PictureBox)">
             ************************************************************************
              \brief Identifica um campo.
              \details Função responsável por converter um \a pictureBox para um campo
@@ -109,13 +109,13 @@
              referentes ao \a pictureBox informado.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.ChangeCurrentPlayer">
+        <member name="M:GobbletGame.Entities.Board.ChangeCurrentPlayer">
             ************************************************************************
              \brief Troca o jogador atual.
              \details Função responsável por realizar a troca do jogador atual.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.CheckWinner">
+        <member name="M:GobbletGame.Entities.Board.CheckWinner">
             ************************************************************************
              \brief Verifica se há um ganhador.
              \details Função responsável por verificar se há um ganhador na partida.
@@ -123,7 +123,7 @@
              não houver ganhador é retornado \a null.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.CheckPlayer(JogoDasTacasRussas.Entities.Field)">
+        <member name="M:GobbletGame.Entities.Board.CheckPlayer(GobbletGame.Entities.Field)">
             ************************************************************************
              \brief Verifica o jogador dono da peça.
              \details Função responsável por checar de qual jogador é a peça que se
@@ -133,14 +133,14 @@
              no campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Board.UpdateBoard">
+        <member name="M:GobbletGame.Entities.Board.UpdateBoard">
             ************************************************************************
              \brief Atualiza o tabuleiro.
              \details Função responsável por atualizar o tabuleiro, recolocando as
              peças nos lugares que elas estavam.
             *************************************************************************
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Circle">
+        <member name="T:GobbletGame.Entities.Circle">
             ************************************************************************
              \brief Informações sobre as peças dos jogadores.
              \details A classe Circle armazena as informações referentes as peças que 
@@ -151,25 +151,25 @@
              \version v1.0
             *************************************************************************
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Circle.X">
+        <member name="P:GobbletGame.Entities.Circle.X">
             \brief Posição inicial no eixo X do quadrado que círculo será inscrito.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Circle.Y">
+        <member name="P:GobbletGame.Entities.Circle.Y">
             \brief Posição inicial no eixo Y do quadrado que círculo será inscrito.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Circle.Width">
+        <member name="P:GobbletGame.Entities.Circle.Width">
             \brief Largura do quadrado que círculo será inscrito.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Circle.Height">
+        <member name="P:GobbletGame.Entities.Circle.Height">
             \brief Altura do quadrado que círculo será inscrito.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Circle.Color">
+        <member name="P:GobbletGame.Entities.Circle.Color">
             \brief Classe com as informações sobre as cores do círculo.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Circle.Type">
+        <member name="P:GobbletGame.Entities.Circle.Type">
             \brief Tipo do círculo.
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Circle.#ctor(System.Drawing.Color,System.Drawing.Color,JogoDasTacasRussas.Entities.Enums.CircleType)">
+        <member name="M:GobbletGame.Entities.Circle.#ctor(System.Drawing.Color,System.Drawing.Color,GobbletGame.Entities.Enums.CircleType)">
             ************************************************************************
              \brief Construtor da classe Circle.
              \param primaryColor Cor primária do círculo instanciado.
@@ -178,8 +178,8 @@
              \exception Exception Exceção caso o tipo de círculo seja inválido.
             *************************************************************************
         </member>
-        <!-- Badly formed XML comment ignored for member "M:JogoDasTacasRussas.Entities.Circle.CompareTo(System.Object)" -->
-        <member name="M:JogoDasTacasRussas.Entities.Circle.Equals(System.Object)">
+        <!-- Badly formed XML comment ignored for member "M:GobbletGame.Entities.Circle.CompareTo(System.Object)" -->
+        <member name="M:GobbletGame.Entities.Circle.Equals(System.Object)">
             ************************************************************************
              \brief Verifica se dois círculos são iguais.
              \details Função sobrescrita responsável por verificar se dois círculos são 
@@ -189,7 +189,7 @@
              são iguais ou não.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Circle.GetHashCode">
+        <member name="M:GobbletGame.Entities.Circle.GetHashCode">
             ************************************************************************
              \brief Retorna a hash referente ao círculo.
              \details Função sobrescrita responsável por gerar uma hash referente a um
@@ -198,7 +198,7 @@
              objeto.
             *************************************************************************
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.ColorInfo">
+        <member name="T:GobbletGame.Entities.ColorInfo">
             ************************************************************************
              \brief Informações sobre as cores da peça.
              \details A classe ColorInfo armazena as informações referentes as cores 
@@ -208,30 +208,30 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.ColorInfo.Primary">
+        <member name="P:GobbletGame.Entities.ColorInfo.Primary">
             \brief Cor primária da peça. 
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.ColorInfo.Secundary">
+        <member name="P:GobbletGame.Entities.ColorInfo.Secundary">
             \brief Cor secundária da peça.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.ColorInfo.TypeCurrent">
+        <member name="P:GobbletGame.Entities.ColorInfo.TypeCurrent">
             \brief Tipo atual da cor (primário ou secundário).
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.ColorInfo.#ctor(System.Drawing.Color,System.Drawing.Color)">
+        <member name="M:GobbletGame.Entities.ColorInfo.#ctor(System.Drawing.Color,System.Drawing.Color)">
             ************************************************************************
              \brief Construtor da classe ColorInfo.
              \param primary Cor primária da peça. 
              \param secundary Cor secundária da peça. 
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.ColorInfo.ChangeColor">
+        <member name="M:GobbletGame.Entities.ColorInfo.ChangeColor">
             ************************************************************************
              \brief Muda cor da peça.
              \details Função responsável por realizar a troca do tipo de cor atual da 
              peça.
             *************************************************************************
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Enums.CircleType">
+        <member name="T:GobbletGame.Entities.Enums.CircleType">
             ************************************************************************
              \brief Agrupa os tipos de círculos.
              \details A enumeração CircleType agrupa os tipos de círculo que irão 
@@ -242,19 +242,19 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type1">
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type1">
             \brief Menor peça do tabuleiro.
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type2">
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type2">
             \brief Segunda menor peça do tabuleiro.
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type3">
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type3">
             \brief Segunda maior peça do tabuleiro.
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.CircleType.Type4">
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type4">
             \brief Maior peça do tabuleiro.
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Enums.ColorType">
+        <member name="T:GobbletGame.Entities.Enums.ColorType">
             ************************************************************************
              \brief Agrupa os tipos de cores.
              \details A enumeração ColorType agrupa os tipos de cores que a peça pode 
@@ -264,13 +264,13 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.ColorType.Primary">
+        <member name="F:GobbletGame.Entities.Enums.ColorType.Primary">
             \brief Cor primária da peça.
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.ColorType.Secundary">
+        <member name="F:GobbletGame.Entities.Enums.ColorType.Secundary">
             \brief Cor secundária da peça.
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Enums.PlayerType">
+        <member name="T:GobbletGame.Entities.Enums.PlayerType">
             ************************************************************************
              \brief Agrupa os tipos de jogadores.
              \details A enumeração PlayerType agrupa os tipos de jogadores. 
@@ -279,13 +279,13 @@
              \version v1.0
             *************************************************************************
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayerType.PlayerX">
+        <member name="F:GobbletGame.Entities.Enums.PlayerType.PlayerX">
             \brief Refere-se ao jogador 1.
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayerType.PlayerY">
+        <member name="F:GobbletGame.Entities.Enums.PlayerType.PlayerY">
             \brief Refere-se ao jogador 2.
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Enums.PlayStatus">
+        <member name="T:GobbletGame.Entities.Enums.PlayStatus">
             ************************************************************************
              \brief Agrupa os tipos de status de uma jogada.
              \details A enumeração PlayStatus agrupa os possíveis status que uma
@@ -295,16 +295,16 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayStatus.WaitOriginField">
+        <member name="F:GobbletGame.Entities.Enums.PlayStatus.WaitOriginField">
             \brief Jogada ainda não iniciada, aguardando o campo de origem.
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayStatus.WaitDestinyField">
+        <member name="F:GobbletGame.Entities.Enums.PlayStatus.WaitDestinyField">
             \brief Campo de origem marcado, aguardando o campo de destino.
         </member>
-        <member name="F:JogoDasTacasRussas.Entities.Enums.PlayStatus.Finish">
+        <member name="F:GobbletGame.Entities.Enums.PlayStatus.Finish">
             \brief Jogada finalizada, os campos de origem e destino foram marcados.
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Field">
+        <member name="T:GobbletGame.Entities.Field">
             ************************************************************************
              \brief Informações sobre o campo.
              \details A classe Field armazena as informações referentes aos campos
@@ -314,19 +314,19 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Field.FieldPictureBox">
+        <member name="P:GobbletGame.Entities.Field.FieldPictureBox">
             \brief \a pictureBox referente a este campo.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Field.StackCircles">
+        <member name="P:GobbletGame.Entities.Field.StackCircles">
             \brief Pilha que recebe os círculos adicionados neste campo.
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.#ctor(System.Windows.Forms.PictureBox)">
+        <member name="M:GobbletGame.Entities.Field.#ctor(System.Windows.Forms.PictureBox)">
             ************************************************************************
              \brief Construtor da classe Field.
              \param pictureBox \a pictureBox referente a este campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.AddCircle(JogoDasTacasRussas.Entities.Circle)">
+        <member name="M:GobbletGame.Entities.Field.AddCircle(GobbletGame.Entities.Circle)">
             ************************************************************************
              \brief Adiciona um círculo no campo.
              \details Função responsável por adicionar um círculo ao topo da pilha 
@@ -334,7 +334,7 @@
              \param circle Círculo que será adicionado neste campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.PopCircle">
+        <member name="M:GobbletGame.Entities.Field.PopCircle">
             ************************************************************************
              \brief Remove um círculo do campo.
              \details Função responsável por remover o círculo que está no topo da
@@ -343,14 +343,14 @@
              topo da pilha deste campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.ChangeCircleColor">
+        <member name="M:GobbletGame.Entities.Field.ChangeCircleColor">
             ************************************************************************
              \brief Troca a cor do círculo.
              \details Função responsável por trocar a cor do círculo que se encontra
              neste campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.GetLast">
+        <member name="M:GobbletGame.Entities.Field.GetLast">
             ************************************************************************
              \brief Pega as informações do círculo atual de um campo.
              \details Função responsável por pegar o círculo que se encontra no topo 
@@ -359,26 +359,26 @@
              topo da pilha deste campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.Clear">
+        <member name="M:GobbletGame.Entities.Field.Clear">
             ************************************************************************
              \brief Limpa a pilha de círculos.
              \details Função responsável por limpar a pilha de círculos deste campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.DrawCircle(JogoDasTacasRussas.Entities.Circle)">
+        <member name="M:GobbletGame.Entities.Field.DrawCircle(GobbletGame.Entities.Circle)">
             ************************************************************************
              \brief Desenha um círculo.
              \details Função responsável por desenhar um círculo neste campo.
              \param circle Círculo que será desenhado.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.EraseField">
+        <member name="M:GobbletGame.Entities.Field.EraseField">
             ************************************************************************
              \brief Limpa o campo.
              \details Função responsável por limpar o campo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.Equals(System.Object)">
+        <member name="M:GobbletGame.Entities.Field.Equals(System.Object)">
             ************************************************************************
              \brief Compara dois campos.
              \details Função sobrescrita responsável por comprar dois objetos do tipo 
@@ -388,7 +388,7 @@
              são iguais ou não.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Field.GetHashCode">
+        <member name="M:GobbletGame.Entities.Field.GetHashCode">
             ************************************************************************
              \brief Gera a chave hash referente ao campo.
              \details Função sobrescrita responsável por gerar uma chave hash referente 
@@ -397,7 +397,7 @@
              ao campo.
             *************************************************************************
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Move">
+        <member name="T:GobbletGame.Entities.Move">
             ************************************************************************
              \brief Informações sobre a movimentação das peças.
              \details A classe Move armazena as informações referentes a jogada que 
@@ -408,36 +408,36 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Move.Origin">
+        <member name="P:GobbletGame.Entities.Move.Origin">
             \brief Campo de origem da jogada.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Move.Destiny">
+        <member name="P:GobbletGame.Entities.Move.Destiny">
             \brief Campo de destino da jogada.
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Move.#ctor">
+        <member name="M:GobbletGame.Entities.Move.#ctor">
             ************************************************************************
              \brief Construtor da classe Move.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Move.Play(JogoDasTacasRussas.Entities.Field,JogoDasTacasRussas.Entities.Player)">
+        <member name="M:GobbletGame.Entities.Move.Play(GobbletGame.Entities.Field,GobbletGame.Entities.Player)">
             ************************************************************************
              \brief Processa a jogada atual.
              \details Função responsável por processar a jogada realizada, atribuindo
              o campo selecionado a posição de origem ou destino da jogada.
              \param field Campo selecionado pelo jogador.
              \param player Jogador que está realizando a jogada.
-             \return Valor do tipo \link JogoDasTacasRussas.Entities.Enums PlayStatus
+             \return Valor do tipo \link GobbletGame.Entities.Enums PlayStatus
              \endlink, indicando o status atual da jogada que está sendo realizada.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Move.MovePiece">
+        <member name="M:GobbletGame.Entities.Move.MovePiece">
             ************************************************************************
              \brief Processa a movimentação da peça.
              \details Função responsável por realizar a movimentação da peça, ou 
              seja, transferir a peça da posição de origem para a posição de destino.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Move.IsValidOrigin(JogoDasTacasRussas.Entities.Field,JogoDasTacasRussas.Entities.Player)">
+        <member name="M:GobbletGame.Entities.Move.IsValidOrigin(GobbletGame.Entities.Field,GobbletGame.Entities.Player)">
             ************************************************************************
              \brief Valida o campo de origem da jogada.
              \details Função que valida se o campo de origem selecionado é válido 
@@ -448,7 +448,7 @@
              ou não
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Move.IsValidDestiny(JogoDasTacasRussas.Entities.Field)">
+        <member name="M:GobbletGame.Entities.Move.IsValidDestiny(GobbletGame.Entities.Field)">
             ************************************************************************
              \brief Valida o campo de destino da jogada.
              \details Função que valida se o campo de destino selecionado é válido.
@@ -457,7 +457,7 @@
              ou não
             *************************************************************************
         </member>
-        <member name="T:JogoDasTacasRussas.Entities.Player">
+        <member name="T:GobbletGame.Entities.Player">
             ************************************************************************
              \brief Informações sobre um jogador.
              \details  A classe Player armazena as informações referentes ao jogador 
@@ -469,28 +469,28 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Player.Victories">
+        <member name="P:GobbletGame.Entities.Player.Victories">
             \brief Quantidade de vitórias do jogador.
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Player.Type">
+        <member name="P:GobbletGame.Entities.Player.Type">
             \brief Tipo do jogador (Jogador X ou Y).
         </member>
-        <member name="P:JogoDasTacasRussas.Entities.Player.LabelVictories">
+        <member name="P:GobbletGame.Entities.Player.LabelVictories">
             \brief \a label que apresenta a quantidade de vitórias do jogador.
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Player.#ctor(JogoDasTacasRussas.Entities.Enums.PlayerType,System.Windows.Forms.Label)">
+        <member name="M:GobbletGame.Entities.Player.#ctor(GobbletGame.Entities.Enums.PlayerType,System.Windows.Forms.Label)">
             ************************************************************************
              \brief Construtor da classe Player.
              \param type Tipo de jogador (Jogador X ou Y).
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Entities.Player.AddVictory">
+        <member name="M:GobbletGame.Entities.Player.AddVictory">
             ************************************************************************
              \brief Adiciona uma vitória para o joador.
              \details Função responsável por adicionar uma vitória para o jogador.
             *************************************************************************
         </member>
-        <member name="T:JogoDasTacasRussas.FormBoard">
+        <member name="T:GobbletGame.FormBoard">
             ************************************************************************
              \brief Informações a tela onde o tabuleiro será apresentada.
              \details A classe FormBoard armazena as informações referentes a tela onde
@@ -500,18 +500,18 @@
              \version v1.0.0
             *************************************************************************
         </member>
-        <member name="F:JogoDasTacasRussas.FormBoard.BoardGame">
+        <member name="F:GobbletGame.FormBoard.BoardGame">
             \brief Tabuleiro do jogo.
         </member>
-        <member name="F:JogoDasTacasRussas.FormBoard.PictureBoxes">
+        <member name="F:GobbletGame.FormBoard.PictureBoxes">
             \brief Campos que o tabuleiro apresenta.
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.#ctor">
+        <member name="M:GobbletGame.FormBoard.#ctor">
             ************************************************************************
              \brief Construtor da classe FormBoard.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.InitFormBoard">
+        <member name="M:GobbletGame.FormBoard.InitFormBoard">
             ************************************************************************
              \brief Inicializa a tela do tabuleiro.
              \details Função responsável por inicializar a tela onde o tabuleiro será
@@ -519,7 +519,7 @@
              iniciais.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.StartGame(System.Int32)">
+        <member name="M:GobbletGame.FormBoard.StartGame(System.Int32)">
             ************************************************************************
              \brief Inicia o jogo.
              \details Função responsável por inicializar o jogo, habilitando os campos
@@ -527,7 +527,7 @@
              \param roundQuantity Quantidade de rodadas que o jogo irá conter.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.ButtonStartClick(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.ButtonStartClick(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no botão \a start.
              \details Função responsável por processar a interrupção de \a click no 
@@ -539,7 +539,7 @@
              informada pelo usuário não é um número inteiro ímpar maior que zero.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.ClickField(System.Windows.Forms.PictureBox)">
+        <member name="M:GobbletGame.FormBoard.ClickField(System.Windows.Forms.PictureBox)">
             ************************************************************************
              \brief Processa a interrupção de \a click em um \a pictureBox.
              \details Função responsável por processar a interrupção de \a click em um 
@@ -547,7 +547,7 @@
              \param pictureBox Campo que foi clicado pelo usuário
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX1Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX1Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X1.
              \details Função responsável por processar a interrupção de \a click no 
@@ -557,7 +557,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX2Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX2Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X2.
              \details Função responsável por processar a interrupção de \a click no 
@@ -567,7 +567,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX3Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX3Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X3.
              \details Função responsável por processar a interrupção de \a click no 
@@ -577,7 +577,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX4Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX4Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X4.
              \details Função responsável por processar a interrupção de \a click no 
@@ -587,7 +587,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX5Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX5Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X5.
              \details Função responsável por processar a interrupção de \a click no 
@@ -597,7 +597,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX6Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX6Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X6.
              \details Função responsável por processar a interrupção de \a click no 
@@ -607,7 +607,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX7Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX7Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X7.
              \details Função responsável por processar a interrupção de \a click no 
@@ -617,7 +617,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX8Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX8Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X8.
              \details Função responsável por processar a interrupção de \a click no 
@@ -627,7 +627,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX9Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX9Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X9.
              \details Função responsável por processar a interrupção de \a click no 
@@ -637,7 +637,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX10Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX10Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X10.
              \details Função responsável por processar a interrupção de \a click no 
@@ -647,7 +647,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX11Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX11Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X11.
              \details Função responsável por processar a interrupção de \a click no 
@@ -657,7 +657,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxX12Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxX12Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo X12.
              \details Função responsável por processar a interrupção de \a click no 
@@ -667,7 +667,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY1Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY1Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y1.
              \details Função responsável por processar a interrupção de \a click no 
@@ -677,7 +677,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY2Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY2Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y2.
              \details Função responsável por processar a interrupção de \a click no 
@@ -687,7 +687,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY3Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY3Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y3.
              \details Função responsável por processar a interrupção de \a click no 
@@ -697,7 +697,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY4Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY4Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y4.
              \details Função responsável por processar a interrupção de \a click no 
@@ -707,7 +707,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY5Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY5Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y5.
              \details Função responsável por processar a interrupção de \a click no 
@@ -717,7 +717,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY6Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY6Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y6.
              \details Função responsável por processar a interrupção de \a click no 
@@ -727,7 +727,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY7Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY7Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y7.
              \details Função responsável por processar a interrupção de \a click no 
@@ -737,7 +737,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY8Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY8Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y8.
              \details Função responsável por processar a interrupção de \a click no 
@@ -747,7 +747,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY9Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY9Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y9.
              \details Função responsável por processar a interrupção de \a click no 
@@ -757,7 +757,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY10Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY10Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y10.
              \details Função responsável por processar a interrupção de \a click no 
@@ -767,7 +767,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY11Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY11Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y11.
              \details Função responsável por processar a interrupção de \a click no 
@@ -777,7 +777,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxY12Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxY12Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo Y12.
              \details Função responsável por processar a interrupção de \a click no 
@@ -787,7 +787,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA1Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxA1Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo A1.
              \details Função responsável por processar a interrupção de \a click no 
@@ -797,7 +797,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA2Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxA2Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo A2.
              \details Função responsável por processar a interrupção de \a click no 
@@ -807,7 +807,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA3Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxA3Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo A3.
              \details Função responsável por processar a interrupção de \a click no 
@@ -817,7 +817,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxA4Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxA4Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo A4.
              \details Função responsável por processar a interrupção de \a click no 
@@ -827,7 +827,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB1Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxB1Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo B1.
              \details Função responsável por processar a interrupção de \a click no 
@@ -837,7 +837,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB2Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxB2Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo B2.
              \details Função responsável por processar a interrupção de \a click no 
@@ -847,7 +847,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB3Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxB3Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo B3.
              \details Função responsável por processar a interrupção de \a click no 
@@ -857,7 +857,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxB4Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxB4Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo B4.
              \details Função responsável por processar a interrupção de \a click no 
@@ -867,7 +867,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC1Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxC1Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo C1.
              \details Função responsável por processar a interrupção de \a click no 
@@ -877,7 +877,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC2Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxC2Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo C2.
              \details Função responsável por processar a interrupção de \a click no 
@@ -887,7 +887,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC3Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxC3Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo C3.
              \details Função responsável por processar a interrupção de \a click no 
@@ -897,7 +897,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxC4Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxC4Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo C4.
              \details Função responsável por processar a interrupção de \a click no 
@@ -907,7 +907,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD1Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxD1Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo D1.
              \details Função responsável por processar a interrupção de \a click no 
@@ -917,7 +917,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD2Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxD2Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo D2.
              \details Função responsável por processar a interrupção de \a click no 
@@ -927,7 +927,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD3Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxD3Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo D3.
              \details Função responsável por processar a interrupção de \a click no 
@@ -937,7 +937,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.PictureBoxD4Click(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.PictureBoxD4Click(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de \a click no campo D4.
              \details Função responsável por processar a interrupção de \a click no 
@@ -947,7 +947,7 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.BoardMove(System.Object,System.EventArgs)">
+        <member name="M:GobbletGame.FormBoard.BoardMove(System.Object,System.EventArgs)">
             ************************************************************************
              \brief Processa a interrupção de movimentação do tabuleiro.
              \details Função responsável por desenhar todo o tabuleiro com as peças em 
@@ -957,10 +957,10 @@
              \param e Argumentos específicos deste evento.
             *************************************************************************
         </member>
-        <member name="F:JogoDasTacasRussas.FormBoard.components">
+        <member name="F:GobbletGame.FormBoard.components">
             \brief Variável de designer obrigatória.
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.Dispose(System.Boolean)">
+        <member name="M:GobbletGame.FormBoard.Dispose(System.Boolean)">
             ************************************************************************
              \brief Descarta os recursos (exceto a memória) usados pelo \a Form.
              \details Função responsável por decartar os recursos (exceto a memória) 
@@ -970,14 +970,14 @@
              recursos não gerenciados.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.FormBoard.InitializeComponent">
+        <member name="M:GobbletGame.FormBoard.InitializeComponent">
             ************************************************************************
              \brief Inicializa os componentes.
              \details Função responsável por inicializar os componentes presentes na 
              tela do jogo.
             *************************************************************************
         </member>
-        <member name="M:JogoDasTacasRussas.Program.Main">
+        <member name="M:GobbletGame.Program.Main">
             ************************************************************************
              \brief Função Main.
              \details Entrypoint da aplicação.  

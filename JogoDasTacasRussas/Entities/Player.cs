@@ -1,7 +1,7 @@
-﻿using JogoDasTacasRussas.Entities.Enums;
+﻿using GobbletGame.Entities.Enums;
 using System.Windows.Forms;
 
-namespace JogoDasTacasRussas.Entities
+namespace GobbletGame.Entities
 {
     /** ************************************************************************
     * \brief Informações sobre um jogador.

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using JogoDasTacasRussas.Entities;
+using GobbletGame.Entities;
 
-namespace JogoDasTacasRussas
+namespace GobbletGame
 {
     /** ************************************************************************
     * \brief Informações a tela onde o tabuleiro será apresentada.

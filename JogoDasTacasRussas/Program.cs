@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace JogoDasTacasRussas
+namespace GobbletGame
 {
     static class Program
     {

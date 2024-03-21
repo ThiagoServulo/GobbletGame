@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using JogoDasTacasRussas.Entities.Enums;
+using GobbletGame.Entities.Enums;
 
-namespace JogoDasTacasRussas.Entities
+namespace GobbletGame.Entities
 {
     /** ************************************************************************
     * \brief Informações sobre o tabuleiro.

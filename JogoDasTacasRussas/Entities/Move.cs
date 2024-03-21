@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
-using JogoDasTacasRussas.Entities.Enums;
+using GobbletGame.Entities.Enums;
 
-namespace JogoDasTacasRussas.Entities
+namespace GobbletGame.Entities
 {
     /** ************************************************************************
     * \brief Informações sobre a movimentação das peças.
@@ -37,7 +37,7 @@ namespace JogoDasTacasRussas.Entities
         * o campo selecionado a posição de origem ou destino da jogada.
         * \param field Campo selecionado pelo jogador.
         * \param player Jogador que está realizando a jogada.
-        * \return Valor do tipo \link JogoDasTacasRussas.Entities.Enums PlayStatus
+        * \return Valor do tipo \link GobbletGame.Entities.Enums PlayStatus
         * \endlink, indicando o status atual da jogada que está sendo realizada.
         ***************************************************************************/
         public PlayStatus Play(Field field, Player player)

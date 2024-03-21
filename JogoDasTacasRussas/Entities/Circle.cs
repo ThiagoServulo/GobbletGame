@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using JogoDasTacasRussas.Entities.Enums;
+using GobbletGame.Entities.Enums;
 
-namespace JogoDasTacasRussas.Entities
+namespace GobbletGame.Entities
 {
     /** ************************************************************************
     * \brief Informações sobre as peças dos jogadores.

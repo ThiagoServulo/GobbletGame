@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
-using JogoDasTacasRussas.Entities.Enums;
+using GobbletGame.Entities.Enums;
 
-namespace JogoDasTacasRussas.Entities
+namespace GobbletGame.Entities
 {
     /** ************************************************************************
     * \brief Informações sobre o campo.

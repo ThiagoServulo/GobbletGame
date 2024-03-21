@@ -1,4 +1,4 @@
-﻿namespace JogoDasTacasRussas.Entities.Enums
+﻿namespace GobbletGame.Entities.Enums
 {
     /** ************************************************************************
     * \brief Agrupa os tipos de status de uma jogada.
