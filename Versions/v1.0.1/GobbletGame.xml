@@ -1,0 +1,988 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GobbletGame</name>
+    </assembly>
+    <members>
+        <member name="T:GobbletGame.Entities.Board">
+            ************************************************************************
+             \brief Information about the board.
+             \details The Board class stores information regarding the game board,
+             where the pieces will be placed.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="P:GobbletGame.Entities.Board.PlayerMove">
+            \brief Information about the current play.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.InitFieldsPlayerX">
+            \brief List containing the initial fields of player X.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.InitFieldsPlayerY">
+            \brief List containing the initial fields of player Y.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.FieldsBoard">
+            \brief List containing the common board fields for the players.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.AllFields">
+            \brief List containing all the fields of the board.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.PlayerX">
+            \brief Information related to player X.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.PlayerY">
+            \brief Information related to player Y.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.CurrentPlayer">
+            \brief Information related to the current player.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.PictureBoxes">
+            \brief List containing the \a pictureBoxes of the board.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.RoundQuantity">
+            \brief Number of rounds the game will have.
+        </member>
+        <member name="P:GobbletGame.Entities.Board.CurrentRound">
+            \brief Number of the current round.
+        </member>
+        <member name="M:GobbletGame.Entities.Board.#ctor(System.Windows.Forms.PictureBox[],System.Int32,System.Windows.Forms.Label,System.Windows.Forms.Label)">
+            ************************************************************************
+                    * \brief Constructor of the Board class.
+                    * \param pictureBoxes List containing the \a pictureBoxes of the board.
+                    * \param labelPlayerX \a label that displays the number of victories of
+                    * player X.
+                    * \param labelPlayerY \a label that displays the number of victories of
+                    * player Y.
+                    **************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.InitBoard">
+            ************************************************************************
+             \brief Initialize the board.
+             \details Function responsible for initializing the game board.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.InitFields(GobbletGame.Entities.Field[],System.Nullable{System.Drawing.Color},System.Nullable{System.Drawing.Color})">
+            ************************************************************************
+             \brief Initialize the fields.
+             \details Function responsible for initializing the fields on the board,
+             adding pieces or leaving them empty.
+             \param fields List containing the fields to be initialized.
+             \param primaryColor Primary color of the possible added piece.
+             \param secondaryColor Secondary color of the possible added piece.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.Click(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Processes the click event on a \a pictureBox.
+             \details Function responsible for processing the user interruption when
+             clicking on a specific \a pictureBox.
+             \param pictureBox \a pictureBox clicked by the user.
+             \return Boolean value indicating whether the game has ended or not.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.UpdateLabelPlayer(GobbletGame.Entities.Player)">
+            ************************************************************************
+             \brief Update the player's victory \a label.
+             \details Function responsible for updating the player's victory \a label.
+             \param playerWinner Player who won the round.
+             \return Value of type \a string containing the name of the winner.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.ShowMessageBoxWinner(System.String)">
+            ************************************************************************
+             \brief Displays the winner of the round.
+             \details Function responsible for showing the player who won the current
+             round in a \a MessageBox.
+             \param namePlayer Name of the player who won the round.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.GetField(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Identifies a field.
+             \details Function responsible for converting a \a pictureBox into a known
+             field.
+             \param pictureBox \a pictureBox clicked by the user.
+             \return Value of type Field, which contains the field information
+             related to the provided \a pictureBox.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.ChangeCurrentPlayer">
+            ************************************************************************
+             \brief Switches the current player.
+             \details Function responsible for performing the switch of the current
+             player.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.CheckWinner">
+            ************************************************************************
+             \brief Checks for a winner.
+             \details Function responsible for checking if there is a winner in the
+             match.
+             \return Value of type Player, indicating the winner of the current match.
+             If there is no winner, it returns \a null.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.CheckPlayer(GobbletGame.Entities.Field)">
+            ************************************************************************
+             \brief Checks the player who owns the piece.
+             \details Function responsible for checking which player owns the piece
+             located in the provided field.
+             \param field Field to be analyzed.
+             \return Value of type Player, indicating the player who owns the piece in 
+             the field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Board.UpdateBoard">
+            ************************************************************************
+             \brief Update the board.
+             \details Function responsible for updating the board, placing the pieces 
+             back in their respective positions.
+            *************************************************************************
+        </member>
+        <member name="T:GobbletGame.Entities.Circle">
+            ************************************************************************
+             \brief Information about player pieces.
+             \details The Circle class stores information about the pieces that can be
+             moved by the players. These pieces are in the shape of circles and can
+             have four different sizes.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="P:GobbletGame.Entities.Circle.X">
+            \brief Initial position on the X-axis of the square in which the circle will be inscribed.
+        </member>
+        <member name="P:GobbletGame.Entities.Circle.Y">
+            \brief Initial position on the Y-axis of the square in which the circle will be inscribed.
+        </member>
+        <member name="P:GobbletGame.Entities.Circle.Width">
+            \brief Width of the square in which the circle will be inscribed.
+        </member>
+        <member name="P:GobbletGame.Entities.Circle.Height">
+            \brief Height of the square in which the circle will be inscribed.
+        </member>
+        <member name="P:GobbletGame.Entities.Circle.Color">
+            \brief Class with information about the circle's colors.
+        </member>
+        <member name="P:GobbletGame.Entities.Circle.Type">
+            \brief Circle type.
+        </member>
+        <member name="M:GobbletGame.Entities.Circle.#ctor(System.Drawing.Color,System.Drawing.Color,GobbletGame.Entities.Enums.CircleType)">
+            ************************************************************************
+             \brief Constructor of the Circle class.
+             \param primaryColor Primary color of the instantiated circle.
+             \param secondaryColor Secondary color of the instantiated circle.
+             \param type Type of the instantiated circle.
+             \exception Exception Exception thrown if the circle type is invalid.
+            *************************************************************************
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:GobbletGame.Entities.Circle.CompareTo(System.Object)" -->
+        <member name="M:GobbletGame.Entities.Circle.Equals(System.Object)">
+            ************************************************************************
+             \brief Checks if two circles are equal.
+             \details Overridden function responsible for checking if two circles are 
+             equal.
+             \param obj Circle with which the comparison will be performed.
+             \return A boolean value, indicating whether the two compared objects are 
+             equal or not.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Circle.GetHashCode">
+            ************************************************************************
+             \brief Returns the hash code for the circle.
+             \details Overridden function responsible for generating a hash code for a
+             circle.
+             \return An integer value, which is the key associated with the object.
+            *************************************************************************
+        </member>
+        <member name="T:GobbletGame.Entities.ColorInfo">
+            ************************************************************************
+             \brief Information about piece colors.
+             \details The ColorInfo class stores information about the colors that a 
+             particular piece can have, as well as its current color.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="P:GobbletGame.Entities.ColorInfo.Primary">
+            \brief Primary color of the piece.
+        </member>
+        <member name="P:GobbletGame.Entities.ColorInfo.Secundary">
+            \brief Secundary color of the piece.
+        </member>
+        <member name="P:GobbletGame.Entities.ColorInfo.TypeCurrent">
+            \brief Current type of color (primary or secondary).
+        </member>
+        <member name="M:GobbletGame.Entities.ColorInfo.#ctor(System.Drawing.Color,System.Drawing.Color)">
+            ************************************************************************
+             \brief Constructor of the ColorInfo class.
+             \param primary Primary color of the piece.
+             \param secondary Secondary color of the piece.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.ColorInfo.ChangeColor">
+            ************************************************************************
+             \brief Changes the piece's color.
+             \details Function responsible for changing the current color type of the
+             piece.
+            *************************************************************************
+        </member>
+        <member name="T:GobbletGame.Entities.Enums.CircleType">
+            ************************************************************************
+             \brief Groups the types of circles.
+             \details The CircleType enumeration groups the types of circles that will
+             represent the pieces. Each type will be responsible for determining the
+             different dimensions that the piece can have.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type1">
+            \brief The smallest piece on the board.
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type2">
+            \brief The second smallest piece on the board.
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type3">
+            \brief The second largest piece on the board.
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.CircleType.Type4">
+            \brief The largest piece on the board.
+        </member>
+        <member name="T:GobbletGame.Entities.Enums.ColorType">
+            ************************************************************************
+             \brief Groups the types of colors.
+             \details The ColorType enumeration groups the types of colors that the
+             piece can have. 
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.ColorType.Primary">
+            \brief Primary color of the piece.
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.ColorType.Secundary">
+            \brief Secondary color of the piece.
+        </member>
+        <member name="T:GobbletGame.Entities.Enums.PlayerType">
+            ************************************************************************
+             \brief Groups the types of players.
+             \details The PlayerType enumeration groups the types of players.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.PlayerType.PlayerX">
+            \brief Refers to player 1.
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.PlayerType.PlayerY">
+            \brief Refers to player 2.
+        </member>
+        <member name="T:GobbletGame.Entities.Enums.PlayStatus">
+            ************************************************************************
+             \brief Groups the types of play statuses.
+             \details The PlayStatus enumeration groups the possible statuses that a
+             play can have.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.PlayStatus.WaitOriginField">
+            \brief Play not yet started, awaiting source field.
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.PlayStatus.WaitDestinyField">
+            \brief Source field marked, awaiting destination field.
+        </member>
+        <member name="F:GobbletGame.Entities.Enums.PlayStatus.Finish">
+            \brief Play completed, source and destination fields have been marked.
+        </member>
+        <member name="T:GobbletGame.Entities.Field">
+            ************************************************************************
+             \brief Information about the field.
+             \details The Field class stores information about the fields that the
+             board will contain.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="P:GobbletGame.Entities.Field.FieldPictureBox">
+            \brief \a pictureBox related to this field.
+        </member>
+        <member name="P:GobbletGame.Entities.Field.StackCircles">
+            \brief Stack that receives the circles added to this field.
+        </member>
+        <member name="M:GobbletGame.Entities.Field.#ctor(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Constructor of the Field class.
+             \param pictureBox \a pictureBox related to this field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.AddCircle(GobbletGame.Entities.Circle)">
+            ************************************************************************
+             \brief Adds a circle to the field.
+             \details Function responsible for adding a circle to the top of the stack
+             related to this field.
+             \param circle Circle that will be added to this field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.PopCircle">
+            ************************************************************************
+             \brief Removes a circle from the field.
+             \details Function responsible for removing the circle at the top of the
+             stack of this field and returning it.
+             \return Value of type Circle, corresponding to the circle that was at the
+             top of the stack of this field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.ChangeCircleColor">
+            ************************************************************************
+             \brief Changes the circle's color.
+             \details Function responsible for changing the color of the circle that is
+             in this field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.GetLast">
+            ************************************************************************
+             \brief Retrieve information about the current circle from a field.
+             \details This function is responsible for retrieving the circle at the top
+             of the stack of this field and returning its information.
+             \return A value of type Circle, corresponding to the circle that was at
+             the top of the stack of this field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.Clear">
+            ************************************************************************
+             \brief Clears the stack of circles.
+             \details This function is responsible for clearing the stack of circles
+             in this field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.DrawCircle(GobbletGame.Entities.Circle)">
+            ************************************************************************
+             \brief Draw a circle.
+             \details This function is responsible for drawing a circle in this field.
+             \param circle Circle to be drawn.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.EraseField">
+            ************************************************************************
+             \brief Clear the field.
+             \details This function is responsible for clearing the field.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.Equals(System.Object)">
+            ************************************************************************
+             \brief Compare two fields.
+             \details Overridden function responsible for comparing two objects of type 
+             Field.
+             \param obj Field to be compared.
+             \return A boolean value, indicating whether the two compared fields are
+             equal or not.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Field.GetHashCode">
+            ************************************************************************
+             \brief Generate the hash key for the field.
+             \details Overridden function responsible for generating a hash key for
+             this field.
+             \return An integer value, representing the hash key for the field.
+            *************************************************************************
+        </member>
+        <member name="T:GobbletGame.Entities.Move">
+            ************************************************************************
+             \brief Information about piece movement.
+             \details The Move class stores information about the move being made.
+             Therefore, it contains the source and destination fields of the move to
+             be made.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="P:GobbletGame.Entities.Move.Origin">
+            \brief Source field of the move.
+        </member>
+        <member name="P:GobbletGame.Entities.Move.Destiny">
+            \brief Destination field of the move.
+        </member>
+        <member name="M:GobbletGame.Entities.Move.#ctor">
+            ************************************************************************
+             \brief Constructor of the Move class.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Move.Play(GobbletGame.Entities.Field,GobbletGame.Entities.Player)">
+            ************************************************************************
+             \brief Process the current move.
+             \details Function responsible for processing the move made, assigning
+             the selected field to either the source or destination position of the move.
+             \param field Field selected by the player.
+             \param player Player making the move.
+             \return A value of type \link GobbletGame.Entities.Enums PlayStatus
+             \endlink, indicating the current status of the move being made.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Move.MovePiece">
+            ************************************************************************
+             \brief Process the piece movement.
+             \details Function responsible for performing the piece movement, i.e., 
+             transferring the piece from the source position to the destination
+             position.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Move.IsValidOrigin(GobbletGame.Entities.Field,GobbletGame.Entities.Player)">
+            ************************************************************************
+             \brief Validate the source field of the move.
+             \details Function that validates if the selected source field is valid 
+             for a certain player.
+             \param field Field selected by the player.
+             \param player Player making the move.
+             \return A boolean value, indicating whether the source field is valid or
+             not.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Move.IsValidDestiny(GobbletGame.Entities.Field)">
+            ************************************************************************
+             \brief Validate the destination field of the move.
+             \details Function that validates if the selected destination field is
+             valid.
+             \param field Field selected by the player.
+             \return A boolean value, indicating whether the destination field is valid
+             or not.
+            *************************************************************************
+        </member>
+        <member name="T:GobbletGame.Entities.Player">
+            ************************************************************************
+             \brief Information about a player.
+             \details The Player class stores information about the player making a 
+             piece movement. Therefore, it contains the number of victories the player 
+             has and the type of player (Player X or Y) they are.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="P:GobbletGame.Entities.Player.Victories">
+            \brief Number of victories of the player.
+        </member>
+        <member name="P:GobbletGame.Entities.Player.Type">
+            \brief Type of player (Player X or Y).
+        </member>
+        <member name="P:GobbletGame.Entities.Player.LabelVictories">
+            \brief \a label displaying the player's number of victories.
+        </member>
+        <member name="M:GobbletGame.Entities.Player.#ctor(GobbletGame.Entities.Enums.PlayerType,System.Windows.Forms.Label)">
+            ************************************************************************
+             \brief Constructor of the Player class.
+             \param type Type of player (Player X or Y).
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Entities.Player.AddVictory">
+            ************************************************************************
+             \brief Add a victory for the player.
+             \details Function responsible for adding a victory for the player.
+            *************************************************************************
+        </member>
+        <member name="T:GobbletGame.FormBoard">
+            ************************************************************************
+             \brief Information about the screen where the game board will be presented.
+             \details The FormBoard class stores information about the screen where 
+             the game board will be presented.
+             \author Thiago Sérvulo Guimarães - thiagoservulog@gmail.com
+             \date 21/03/2024
+             \version v1.0.1
+            *************************************************************************
+        </member>
+        <member name="F:GobbletGame.FormBoard.BoardGame">
+            \brief Game board.
+        </member>
+        <member name="F:GobbletGame.FormBoard.PictureBoxes">
+            \brief Fields presented on the game board.
+        </member>
+        <member name="M:GobbletGame.FormBoard.#ctor">
+            ************************************************************************
+             \brief Constructor of the FormBoard class.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.InitFormBoard">
+            ************************************************************************
+             \brief Initialize the game board screen.
+             \details Function responsible for initializing the screen where the game
+             board will be presented, resetting the \a labels and setting the
+             appropriate initial permissions.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.StartGame(System.Int32)">
+            ************************************************************************
+             \brief Start the game.
+             \details Function responsible for starting the game, enabling the fields
+             and initializing the board.
+             \param roundQuantity Number of rounds that the game will have.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.ButtonStartClick(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the \a start button.
+             \details Function responsible for processing the click interrupt on the 
+             \a start button.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+             \exception FormatException Exception thrown when the number of rounds 
+             provided by the user is not a positive odd integer.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.ClickField(System.Windows.Forms.PictureBox)">
+            ************************************************************************
+             \brief Processes the click interrupt on a \a pictureBox.
+             \details Function responsible for processing the click interrupt on a \a
+             pictureBox.
+             \param pictureBox Field that was clicked by the user.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X1 field.
+             \details Function responsible for processing the click interrupt on the 
+             X1 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X2 field.
+             \details Function responsible for processing the click interrupt on the 
+             X2 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X3 field.
+             \details Function responsible for processing the click interrupt on the 
+             X3 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X4 field.
+             \details Function responsible for processing the click interrupt on the 
+             X4 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX5Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X5 field.
+             \details Function responsible for processing the click interrupt on the 
+             X5 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX6Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X6 field.
+             \details Function responsible for processing the click interrupt on the 
+             X6 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX7Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X7 field.
+             \details Function responsible for processing the click interrupt on the 
+             X7 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX8Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X8 field.
+             \details Function responsible for processing the click interrupt on the 
+             X8 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX9Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X9 field.
+             \details Function responsible for processing the click interrupt on the 
+             X9 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX10Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X10 field.
+             \details Function responsible for processing the click interrupt on the 
+             X10 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX11Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X11 field.
+             \details Function responsible for processing the click interrupt on the 
+             X11 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxX12Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the X12 field.
+             \details Function responsible for processing the click interrupt on the 
+             X12 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y1 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y1 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y2 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y2 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y3 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y3 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y4 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y4 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY5Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y5 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y5 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY6Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y6 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y6 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY7Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y7 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y7 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY8Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y8 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y8 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY9Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y9 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y9 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY10Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y10 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y10 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY11Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y11 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y11 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxY12Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the Y12 field.
+             \details Function responsible for processing the click interrupt on the 
+             Y12 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxA1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the A1 field.
+             \details Function responsible for processing the click interrupt on the 
+             A1 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxA2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the A2 field.
+             \details Function responsible for processing the click interrupt on the 
+             A2 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxA3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the A3 field.
+             \details Function responsible for processing the click interrupt on the 
+             A3 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxA4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the A4 field.
+             \details Function responsible for processing the click interrupt on the 
+             A4 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxB1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the B1 field.
+             \details Function responsible for processing the click interrupt on the 
+             B1 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxB2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the B2 field.
+             \details Function responsible for processing the click interrupt on the 
+             B2 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxB3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the B3 field.
+             \details Function responsible for processing the click interrupt on the 
+             B3 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxB4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the B4 field.
+             \details Function responsible for processing the click interrupt on the 
+             B4 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxC1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the C1 field.
+             \details Function responsible for processing the click interrupt on the 
+             C1 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxC2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the C2 field.
+             \details Function responsible for processing the click interrupt on the 
+             C2 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxC3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the C3 field.
+             \details Function responsible for processing the click interrupt on the 
+             C3 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxC4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the C4 field.
+             \details Function responsible for processing the click interrupt on the 
+             C4 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxD1Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the D1 field.
+             \details Function responsible for processing the click interrupt on the 
+             D1 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxD2Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the D2 field.
+             \details Function responsible for processing the click interrupt on the 
+             D2 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxD3Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the D3 field.
+             \details Function responsible for processing the click interrupt on the 
+             D3 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.PictureBoxD4Click(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the click interrupt on the D4 field.
+             \details Function responsible for processing the click interrupt on the 
+             D4 field.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.BoardMove(System.Object,System.EventArgs)">
+            ************************************************************************
+             \brief Processes the interrupt of the board movement.
+             \details Function responsible for drawing the entire board with the pieces 
+             in their respective positions whenever the board is moved.
+             \param sender Object that holds properties of the element itself that 
+             fired the event.
+             \param e Specific arguments of this event.
+            *************************************************************************
+        </member>
+        <member name="F:GobbletGame.FormBoard.components">
+            \brief Mandatory designer variable.
+        </member>
+        <member name="M:GobbletGame.FormBoard.Dispose(System.Boolean)">
+            ************************************************************************
+             \brief Dispose of the resources (except memory) used by the \a Form.
+             \details Function responsible for disposing of the resources (except
+             memory) used by the \a Form.
+             \param disposing Boolean value, when \a true it will release managed and 
+             unmanaged resources; when \a false it will only release unmanaged 
+             resources.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.FormBoard.InitializeComponent">
+            ************************************************************************
+             \brief Initialize the components.
+             \details Function responsible for initializing the components present on 
+             the game screen.
+            *************************************************************************
+        </member>
+        <member name="M:GobbletGame.Program.Main">
+            ************************************************************************
+             \brief Main function.
+             \details Entry point of the application.
+            *************************************************************************
+        </member>
+    </members>
+</doc>
