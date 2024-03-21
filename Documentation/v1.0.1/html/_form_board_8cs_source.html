@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gobblet Game: Código-Fonte de D:/Projetos/GobbletGame/GobbletGame/Forms/FormBoard.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icone.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">Gobblet Game
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_24346230585b6ef1defe16872cc5c7d6.html">Projetos</a></li><li class="navelem"><a class="el" href="dir_2d53231708b039db2b66481efe39ee45.html">GobbletGame</a></li><li class="navelem"><a class="el" href="dir_a40da49644f13a85cb03abf9405cdc4e.html">GobbletGame</a></li><li class="navelem"><a class="el" href="dir_83400b7c0bee31944dfd2b77476eebe8.html">Forms</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FormBoard.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_form_board_8cs.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Windows.Forms;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_gobblet_game_1_1_entities.html">GobbletGame.Entities</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_gobblet_game.html">GobbletGame</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_gobblet_game_1_1_form_board.html">   15</a></span>    <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_class" href="class_gobblet_game_1_1_form_board.html">FormBoard</a> : Form</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_class" href="class_gobblet_game_1_1_entities_1_1_board.html">Board</a> BoardGame;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        PictureBox[] PictureBoxes;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_gobblet_game_1_1_form_board.html#a21b3747df6dce3efa2c14683ef9b05b6">   27</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a21b3747df6dce3efa2c14683ef9b05b6">FormBoard</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="comment">// Initialize the components</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            this.InitializeComponent();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="comment">// Fill the array of picture boxes</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            this.PictureBoxes = <span class="keyword">new</span> PictureBox[]{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3c535e782d82cd1bdaf5553b7073fb0d">pictureBoxX1</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a4d547cc6b85db8e4f65fbb43dd3d031d">pictureBoxX2</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ad46c0e6d1649e62c843f6fdc7fdbb985">pictureBoxX3</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3c601948208b4447b83754e66bbe3df7">pictureBoxX4</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a47fa092e5b2b08c120c17d75212fa5b1">pictureBoxX5</a>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a32886a7dc02379588a2d47c5d9c01343">pictureBoxX6</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a28ac2b1e4c50c7a33634809a76c40d25">pictureBoxX7</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a1a5cde7d9161a59558d1fd44c33e281c">pictureBoxX8</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a7542781d412491eacae0e39429c33bdd">pictureBoxX9</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a13276c6ecf6dbd874cbd74afe75b7fdd">pictureBoxX10</a>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ad03d5e2b08ec65ad3d2475cfe35df2d0">pictureBoxX11</a>, this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a43623368a08a9e0bc4e7526748f00b39">pictureBoxX12</a>, this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a513f3d0e8e7a0e7a28d4571877841472">pictureBoxY1</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ae5f35781d1e3f6f6d85937d7f9e5b6c6">pictureBoxY2</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a8316b04b154e4d1f9f1d9259ea6bea65">pictureBoxY3</a>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a35f00459e8ee8998e35b8892eb9af117">pictureBoxY4</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3c00729615c3aa187f6c491ae4b651e5">pictureBoxY5</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ac4d33686087f2a67829df9befaf740b4">pictureBoxY6</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a365a30e3fdd1213a292b28377afb7ced">pictureBoxY7</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a68c0c327979fda33e4c51661184e5ea5">pictureBoxY8</a>,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a437879cb934298e05da945a6c8498c02">pictureBoxY9</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#abc76222cacc3b63bbe5fed23dc50e5d9">pictureBoxY10</a>, this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#aac6936bce36ecbf3cc699b2290be5b3f">pictureBoxY11</a>, this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a0e5118aad05f6b891ce7b693f824d368">pictureBoxY12</a>, this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a5891b0f72989b2138a6c6cad41bcc918">pictureBoxA1</a>,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a72d33a4ded6fc4e2849311df48cc5046">pictureBoxA2</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#abc932ec3dada27dc299fa27039498451">pictureBoxA3</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#abc7dbdfc22ab17d6eb73cd1cb7f697a9">pictureBoxA4</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a9d374faf55fa1703bd96d49b32e20997">pictureBoxB1</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#adba7a4306af4fab1a74e16d88a6ef029">pictureBoxB2</a>,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ab9bbcfcbe4b25cef927c13bbf0404333">pictureBoxB3</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a0fa1fb74231822cd25d157adc2d2c099">pictureBoxB4</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a1b6a99992c14b2e134cffe29c2fd2fca">pictureBoxC1</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a9926a6c75002ff2e15bc29df824d423e">pictureBoxC2</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3460c53497442d615d4992a8b9270c0b">pictureBoxC3</a>,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ad4f0ecf4d95d8b42b99517d79f5c4995">pictureBoxC4</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3fc39d8bc81e2f3a21c2baac87ebbe6f">pictureBoxD1</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#afb49d50c82752b7f0c10fb0efdddd3fb">pictureBoxD2</a>,  this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#af00509b40921f11367814a15a4d31a29">pictureBoxD3</a>,  this.pictureBoxD4</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            };</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="comment">// Initialize the game board</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#ae2fd8eaa0c48cac657263b8d35134931">InitFormBoard</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_gobblet_game_1_1_form_board.html#ae2fd8eaa0c48cac657263b8d35134931">   55</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#ae2fd8eaa0c48cac657263b8d35134931">InitFormBoard</a>()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="comment">// Start the win counter</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            this.labelVictoriesPlayerX.Text = <span class="stringliteral">&quot;Victories: 0&quot;</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            this.labelVictoriesPlayerY.Text = <span class="stringliteral">&quot;Victories: 0&quot;</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="comment">// Start the text box</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            this.textBoxRoundQuantity.Text = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            this.textBoxRoundQuantity.Enabled = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="comment">// Enable the start button</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            this.buttonStart.Enabled = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="comment">// Lock game fields</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">foreach</span> (PictureBox pictureBox <span class="keywordflow">in</span> this.PictureBoxes)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                pictureBox.Enabled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_gobblet_game_1_1_form_board.html#a98ab21ec0288788b6fa9d1d0c2fc554e">   82</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a98ab21ec0288788b6fa9d1d0c2fc554e">StartGame</a>(<span class="keywordtype">int</span> roundQuantity)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="comment">// Initialize the game board</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            this.BoardGame = <span class="keyword">new</span> <a class="code hl_class" href="class_gobblet_game_1_1_entities_1_1_board.html">Board</a>(this.PictureBoxes, roundQuantity, </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                this.labelVictoriesPlayerX, this.labelVictoriesPlayerY);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="comment">// Enable the fields on the game board</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">foreach</span> (PictureBox pictureBox <span class="keywordflow">in</span> this.PictureBoxes)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                pictureBox.Enabled = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> ButtonStartClick(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keywordtype">int</span> roundQuantity = <span class="keywordtype">int</span>.Parse(this.textBoxRoundQuantity.Text);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">if</span> (((roundQuantity % 2) == 0) || (roundQuantity &lt; 0))</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> FormatException();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                this.textBoxRoundQuantity.Enabled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                this.buttonStart.Enabled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a98ab21ec0288788b6fa9d1d0c2fc554e">StartGame</a>(roundQuantity);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">catch</span>(FormatException)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                MessageBox.Show(<span class="stringliteral">&quot;Error: The number of rounds must be a positive odd integer.&quot;</span>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#ae2fd8eaa0c48cac657263b8d35134931">InitFormBoard</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">  135</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(PictureBox pictureBox)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="keywordflow">if</span>(this.BoardGame.<a class="code hl_function" href="class_gobblet_game_1_1_entities_1_1_board.html#a489df3b07331f36ae40b0ce298332d92">Click</a>(pictureBox))</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="comment">// If the game has ended, the board is reset</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#ae2fd8eaa0c48cac657263b8d35134931">InitFormBoard</a>();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX1Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3c535e782d82cd1bdaf5553b7073fb0d">pictureBoxX1</a>);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX2Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a4d547cc6b85db8e4f65fbb43dd3d031d">pictureBoxX2</a>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX3Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ad46c0e6d1649e62c843f6fdc7fdbb985">pictureBoxX3</a>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX4Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3c601948208b4447b83754e66bbe3df7">pictureBoxX4</a>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX5Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a47fa092e5b2b08c120c17d75212fa5b1">pictureBoxX5</a>);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX6Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a32886a7dc02379588a2d47c5d9c01343">pictureBoxX6</a>);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX7Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a28ac2b1e4c50c7a33634809a76c40d25">pictureBoxX7</a>);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX8Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a1a5cde7d9161a59558d1fd44c33e281c">pictureBoxX8</a>);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX9Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        {</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a7542781d412491eacae0e39429c33bdd">pictureBoxX9</a>);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX10Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a13276c6ecf6dbd874cbd74afe75b7fdd">pictureBoxX10</a>);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        }</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX11Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        {</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ad03d5e2b08ec65ad3d2475cfe35df2d0">pictureBoxX11</a>);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        }</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxX12Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a43623368a08a9e0bc4e7526748f00b39">pictureBoxX12</a>);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY1Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        {</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a513f3d0e8e7a0e7a28d4571877841472">pictureBoxY1</a>);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        }</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY2Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ae5f35781d1e3f6f6d85937d7f9e5b6c6">pictureBoxY2</a>);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY3Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        {</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a8316b04b154e4d1f9f1d9259ea6bea65">pictureBoxY3</a>);</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        }</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY4Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        {</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a35f00459e8ee8998e35b8892eb9af117">pictureBoxY4</a>);</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        }</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> </div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY5Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        {</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3c00729615c3aa187f6c491ae4b651e5">pictureBoxY5</a>);</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        }</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY6Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        {</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ac4d33686087f2a67829df9befaf740b4">pictureBoxY6</a>);</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        }</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY7Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        {</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a365a30e3fdd1213a292b28377afb7ced">pictureBoxY7</a>);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        }</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY8Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        {</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a68c0c327979fda33e4c51661184e5ea5">pictureBoxY8</a>);</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        }</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY9Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>        {</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a437879cb934298e05da945a6c8498c02">pictureBoxY9</a>);</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        }</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span> </div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY10Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>        {</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#abc76222cacc3b63bbe5fed23dc50e5d9">pictureBoxY10</a>);</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        }</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span> </div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY11Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>        {</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#aac6936bce36ecbf3cc699b2290be5b3f">pictureBoxY11</a>);</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>        }</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span> </div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxY12Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>        {</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a0e5118aad05f6b891ce7b693f824d368">pictureBoxY12</a>);</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        }</div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span> </div>
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span> </div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxA1Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        {</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a5891b0f72989b2138a6c6cad41bcc918">pictureBoxA1</a>);</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        }</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span> </div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxA2Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>        {</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a72d33a4ded6fc4e2849311df48cc5046">pictureBoxA2</a>);</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        }</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span> </div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span> </div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxA3Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        {</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#abc932ec3dada27dc299fa27039498451">pictureBoxA3</a>);</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>        }</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span> </div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxA4Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>        {</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#abc7dbdfc22ab17d6eb73cd1cb7f697a9">pictureBoxA4</a>);</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>        }</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span> </div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span> </div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxB1Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        {</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a9d374faf55fa1703bd96d49b32e20997">pictureBoxB1</a>);</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>        }</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span> </div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span> </div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxB2Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        {</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#adba7a4306af4fab1a74e16d88a6ef029">pictureBoxB2</a>);</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        }</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span> </div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxB3Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        {</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ab9bbcfcbe4b25cef927c13bbf0404333">pictureBoxB3</a>);</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>        }</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span> </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxB4Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        {</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a0fa1fb74231822cd25d157adc2d2c099">pictureBoxB4</a>);</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        }</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span> </div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span> </div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxC1Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        {</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a1b6a99992c14b2e134cffe29c2fd2fca">pictureBoxC1</a>);</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>        }</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span> </div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxC2Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>        {</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a9926a6c75002ff2e15bc29df824d423e">pictureBoxC2</a>);</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        }</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span> </div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxC3Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>        {</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3460c53497442d615d4992a8b9270c0b">pictureBoxC3</a>);</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        }</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span> </div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxC4Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        {</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#ad4f0ecf4d95d8b42b99517d79f5c4995">pictureBoxC4</a>);</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>        }</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxD1Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>        {</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a3fc39d8bc81e2f3a21c2baac87ebbe6f">pictureBoxD1</a>);</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>        }</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span> </div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxD2Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>        {</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#afb49d50c82752b7f0c10fb0efdddd3fb">pictureBoxD2</a>);</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>        }</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span> </div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span> </div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxD3Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>        {</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#af00509b40921f11367814a15a4d31a29">pictureBoxD3</a>);</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        }</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span> </div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span> </div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> PictureBoxD4Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        {</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>            this.<a class="code hl_function" href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">ClickField</a>(this.<a class="code hl_variable" href="class_gobblet_game_1_1_form_board.html#a657d4caecab5acc10a61fc48bce6e2b9">pictureBoxD4</a>);</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        }</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span> </div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span> </div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> BoardMove(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        {</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>            <span class="comment">// Check if the board exists</span></div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>            <span class="keywordflow">if</span> (this.BoardGame != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>            {</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>                this.BoardGame.<a class="code hl_function" href="class_gobblet_game_1_1_entities_1_1_board.html#a3ade07b955fa077aff0b08d34d152b5f">UpdateBoard</a>();</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>            }</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        }</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>    }</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>}</div>
+<div class="ttc" id="aclass_gobblet_game_1_1_entities_1_1_board_html"><div class="ttname"><a href="class_gobblet_game_1_1_entities_1_1_board.html">GobbletGame.Entities.Board</a></div><div class="ttdoc">Information about the board.</div><div class="ttdef"><b>Definition:</b> <a href="_board_8cs_source.html#l00015">Board.cs:16</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_entities_1_1_board_html_a3ade07b955fa077aff0b08d34d152b5f"><div class="ttname"><a href="class_gobblet_game_1_1_entities_1_1_board.html#a3ade07b955fa077aff0b08d34d152b5f">GobbletGame.Entities.Board.UpdateBoard</a></div><div class="ttdeci">void UpdateBoard()</div><div class="ttdoc">Update the board.</div><div class="ttdef"><b>Definition:</b> <a href="_board_8cs_source.html#l00361">Board.cs:361</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_entities_1_1_board_html_a489df3b07331f36ae40b0ce298332d92"><div class="ttname"><a href="class_gobblet_game_1_1_entities_1_1_board.html#a489df3b07331f36ae40b0ce298332d92">GobbletGame.Entities.Board.Click</a></div><div class="ttdeci">bool Click(PictureBox pictureBox)</div><div class="ttdoc">Processes the click event on a pictureBox.</div><div class="ttdef"><b>Definition:</b> <a href="_board_8cs_source.html#l00175">Board.cs:175</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html">GobbletGame.FormBoard</a></div><div class="ttdoc">Information about the screen where the game board will be presented.</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8cs_source.html#l00015">FormBoard.cs:16</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a0e5118aad05f6b891ce7b693f824d368"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a0e5118aad05f6b891ce7b693f824d368">GobbletGame.FormBoard.pictureBoxY12</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY12</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02171">FormBoard.Designer.cs:2171</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a0fa1fb74231822cd25d157adc2d2c099"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a0fa1fb74231822cd25d157adc2d2c099">GobbletGame.FormBoard.pictureBoxB4</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxB4</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02231">FormBoard.Designer.cs:2231</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a13276c6ecf6dbd874cbd74afe75b7fdd"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a13276c6ecf6dbd874cbd74afe75b7fdd">GobbletGame.FormBoard.pictureBoxX10</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX10</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02121">FormBoard.Designer.cs:2121</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a1a5cde7d9161a59558d1fd44c33e281c"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a1a5cde7d9161a59558d1fd44c33e281c">GobbletGame.FormBoard.pictureBoxX8</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX8</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02136">FormBoard.Designer.cs:2136</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a1b6a99992c14b2e134cffe29c2fd2fca"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a1b6a99992c14b2e134cffe29c2fd2fca">GobbletGame.FormBoard.pictureBoxC1</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxC1</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02242">FormBoard.Designer.cs:2242</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a21b3747df6dce3efa2c14683ef9b05b6"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a21b3747df6dce3efa2c14683ef9b05b6">GobbletGame.FormBoard.FormBoard</a></div><div class="ttdeci">FormBoard()</div><div class="ttdoc">Constructor of the FormBoard class.</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8cs_source.html#l00027">FormBoard.cs:27</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a28ac2b1e4c50c7a33634809a76c40d25"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a28ac2b1e4c50c7a33634809a76c40d25">GobbletGame.FormBoard.pictureBoxX7</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX7</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02126">FormBoard.Designer.cs:2126</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a32886a7dc02379588a2d47c5d9c01343"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a32886a7dc02379588a2d47c5d9c01343">GobbletGame.FormBoard.pictureBoxX6</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX6</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02161">FormBoard.Designer.cs:2161</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a34282b7f4a32d4f6f56c1c9f11bcab63"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a34282b7f4a32d4f6f56c1c9f11bcab63">GobbletGame.FormBoard.ClickField</a></div><div class="ttdeci">void ClickField(PictureBox pictureBox)</div><div class="ttdoc">Processes the click interrupt on a pictureBox.</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8cs_source.html#l00135">FormBoard.cs:135</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a3460c53497442d615d4992a8b9270c0b"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a3460c53497442d615d4992a8b9270c0b">GobbletGame.FormBoard.pictureBoxC3</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxC3</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02240">FormBoard.Designer.cs:2240</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a35f00459e8ee8998e35b8892eb9af117"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a35f00459e8ee8998e35b8892eb9af117">GobbletGame.FormBoard.pictureBoxY4</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY4</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02221">FormBoard.Designer.cs:2221</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a365a30e3fdd1213a292b28377afb7ced"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a365a30e3fdd1213a292b28377afb7ced">GobbletGame.FormBoard.pictureBoxY7</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY7</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02216">FormBoard.Designer.cs:2216</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a3c00729615c3aa187f6c491ae4b651e5"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a3c00729615c3aa187f6c491ae4b651e5">GobbletGame.FormBoard.pictureBoxY5</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY5</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02201">FormBoard.Designer.cs:2201</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a3c535e782d82cd1bdaf5553b7073fb0d"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a3c535e782d82cd1bdaf5553b7073fb0d">GobbletGame.FormBoard.pictureBoxX1</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX1</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02111">FormBoard.Designer.cs:2111</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a3c601948208b4447b83754e66bbe3df7"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a3c601948208b4447b83754e66bbe3df7">GobbletGame.FormBoard.pictureBoxX4</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX4</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02116">FormBoard.Designer.cs:2116</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a3fc39d8bc81e2f3a21c2baac87ebbe6f"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a3fc39d8bc81e2f3a21c2baac87ebbe6f">GobbletGame.FormBoard.pictureBoxD1</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxD1</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02238">FormBoard.Designer.cs:2238</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a43623368a08a9e0bc4e7526748f00b39"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a43623368a08a9e0bc4e7526748f00b39">GobbletGame.FormBoard.pictureBoxX12</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX12</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02151">FormBoard.Designer.cs:2151</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a437879cb934298e05da945a6c8498c02"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a437879cb934298e05da945a6c8498c02">GobbletGame.FormBoard.pictureBoxY9</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY9</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02176">FormBoard.Designer.cs:2176</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a47fa092e5b2b08c120c17d75212fa5b1"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a47fa092e5b2b08c120c17d75212fa5b1">GobbletGame.FormBoard.pictureBoxX5</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX5</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02141">FormBoard.Designer.cs:2141</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a4d547cc6b85db8e4f65fbb43dd3d031d"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a4d547cc6b85db8e4f65fbb43dd3d031d">GobbletGame.FormBoard.pictureBoxX2</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX2</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02146">FormBoard.Designer.cs:2146</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a513f3d0e8e7a0e7a28d4571877841472"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a513f3d0e8e7a0e7a28d4571877841472">GobbletGame.FormBoard.pictureBoxY1</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY1</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02226">FormBoard.Designer.cs:2226</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a5891b0f72989b2138a6c6cad41bcc918"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a5891b0f72989b2138a6c6cad41bcc918">GobbletGame.FormBoard.pictureBoxA1</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxA1</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02227">FormBoard.Designer.cs:2227</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a657d4caecab5acc10a61fc48bce6e2b9"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a657d4caecab5acc10a61fc48bce6e2b9">GobbletGame.FormBoard.pictureBoxD4</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxD4</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02235">FormBoard.Designer.cs:2235</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a68c0c327979fda33e4c51661184e5ea5"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a68c0c327979fda33e4c51661184e5ea5">GobbletGame.FormBoard.pictureBoxY8</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY8</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02196">FormBoard.Designer.cs:2196</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a72d33a4ded6fc4e2849311df48cc5046"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a72d33a4ded6fc4e2849311df48cc5046">GobbletGame.FormBoard.pictureBoxA2</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxA2</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02228">FormBoard.Designer.cs:2228</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a7542781d412491eacae0e39429c33bdd"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a7542781d412491eacae0e39429c33bdd">GobbletGame.FormBoard.pictureBoxX9</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX9</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02156">FormBoard.Designer.cs:2156</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a8316b04b154e4d1f9f1d9259ea6bea65"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a8316b04b154e4d1f9f1d9259ea6bea65">GobbletGame.FormBoard.pictureBoxY3</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY3</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02186">FormBoard.Designer.cs:2186</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a98ab21ec0288788b6fa9d1d0c2fc554e"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a98ab21ec0288788b6fa9d1d0c2fc554e">GobbletGame.FormBoard.StartGame</a></div><div class="ttdeci">void StartGame(int roundQuantity)</div><div class="ttdoc">Start the game.</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8cs_source.html#l00082">FormBoard.cs:82</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a9926a6c75002ff2e15bc29df824d423e"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a9926a6c75002ff2e15bc29df824d423e">GobbletGame.FormBoard.pictureBoxC2</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxC2</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02241">FormBoard.Designer.cs:2241</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_a9d374faf55fa1703bd96d49b32e20997"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#a9d374faf55fa1703bd96d49b32e20997">GobbletGame.FormBoard.pictureBoxB1</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxB1</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02234">FormBoard.Designer.cs:2234</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_aac6936bce36ecbf3cc699b2290be5b3f"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#aac6936bce36ecbf3cc699b2290be5b3f">GobbletGame.FormBoard.pictureBoxY11</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY11</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02191">FormBoard.Designer.cs:2191</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_ab9bbcfcbe4b25cef927c13bbf0404333"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#ab9bbcfcbe4b25cef927c13bbf0404333">GobbletGame.FormBoard.pictureBoxB3</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxB3</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02232">FormBoard.Designer.cs:2232</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_abc76222cacc3b63bbe5fed23dc50e5d9"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#abc76222cacc3b63bbe5fed23dc50e5d9">GobbletGame.FormBoard.pictureBoxY10</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY10</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02211">FormBoard.Designer.cs:2211</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_abc7dbdfc22ab17d6eb73cd1cb7f697a9"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#abc7dbdfc22ab17d6eb73cd1cb7f697a9">GobbletGame.FormBoard.pictureBoxA4</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxA4</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02230">FormBoard.Designer.cs:2230</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_abc932ec3dada27dc299fa27039498451"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#abc932ec3dada27dc299fa27039498451">GobbletGame.FormBoard.pictureBoxA3</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxA3</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02229">FormBoard.Designer.cs:2229</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_ac4d33686087f2a67829df9befaf740b4"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#ac4d33686087f2a67829df9befaf740b4">GobbletGame.FormBoard.pictureBoxY6</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY6</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02181">FormBoard.Designer.cs:2181</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_ad03d5e2b08ec65ad3d2475cfe35df2d0"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#ad03d5e2b08ec65ad3d2475cfe35df2d0">GobbletGame.FormBoard.pictureBoxX11</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX11</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02131">FormBoard.Designer.cs:2131</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_ad46c0e6d1649e62c843f6fdc7fdbb985"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#ad46c0e6d1649e62c843f6fdc7fdbb985">GobbletGame.FormBoard.pictureBoxX3</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxX3</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02166">FormBoard.Designer.cs:2166</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_ad4f0ecf4d95d8b42b99517d79f5c4995"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#ad4f0ecf4d95d8b42b99517d79f5c4995">GobbletGame.FormBoard.pictureBoxC4</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxC4</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02239">FormBoard.Designer.cs:2239</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_adba7a4306af4fab1a74e16d88a6ef029"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#adba7a4306af4fab1a74e16d88a6ef029">GobbletGame.FormBoard.pictureBoxB2</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxB2</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02233">FormBoard.Designer.cs:2233</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_ae2fd8eaa0c48cac657263b8d35134931"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#ae2fd8eaa0c48cac657263b8d35134931">GobbletGame.FormBoard.InitFormBoard</a></div><div class="ttdeci">void InitFormBoard()</div><div class="ttdoc">Initialize the game board screen.</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8cs_source.html#l00055">FormBoard.cs:55</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_ae5f35781d1e3f6f6d85937d7f9e5b6c6"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#ae5f35781d1e3f6f6d85937d7f9e5b6c6">GobbletGame.FormBoard.pictureBoxY2</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxY2</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02206">FormBoard.Designer.cs:2206</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_af00509b40921f11367814a15a4d31a29"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#af00509b40921f11367814a15a4d31a29">GobbletGame.FormBoard.pictureBoxD3</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxD3</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02236">FormBoard.Designer.cs:2236</a></div></div>
+<div class="ttc" id="aclass_gobblet_game_1_1_form_board_html_afb49d50c82752b7f0c10fb0efdddd3fb"><div class="ttname"><a href="class_gobblet_game_1_1_form_board.html#afb49d50c82752b7f0c10fb0efdddd3fb">GobbletGame.FormBoard.pictureBoxD2</a></div><div class="ttdeci">System.Windows.Forms.PictureBox pictureBoxD2</div><div class="ttdef"><b>Definition:</b> <a href="_form_board_8_designer_8cs_source.html#l02237">FormBoard.Designer.cs:2237</a></div></div>
+<div class="ttc" id="anamespace_gobblet_game_1_1_entities_html"><div class="ttname"><a href="namespace_gobblet_game_1_1_entities.html">GobbletGame.Entities</a></div><div class="ttdef"><b>Definition:</b> <a href="_board_8cs_source.html#l00005">Board.cs:6</a></div></div>
+<div class="ttc" id="anamespace_gobblet_game_html"><div class="ttname"><a href="namespace_gobblet_game.html">GobbletGame</a></div><div class="ttdef"><b>Definition:</b> <a href="_board_8cs_source.html#l00005">Board.cs:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
